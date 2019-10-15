@@ -11,9 +11,9 @@ public class Driveinfo {
 
     //司机手机号
     private  Integer dphone;
-    //司机设置密码
-    private String dpassword;
     //司机姓名
     private String dname;
+    //司机设置密码
+    private String dpassword;
 
 }

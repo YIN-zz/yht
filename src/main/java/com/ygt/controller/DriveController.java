@@ -12,9 +12,5 @@ public class DriveController {
     @Autowired
     private DriveinfoService driveinfoService;
 
-    @RequestMapping("findDriverinfo")
-    public String findDriverinfo(Integer dphone){
-        Driveinfo driver = driveinfoService.findDriver(dphone);
-        return "index";
-    }
+
 }

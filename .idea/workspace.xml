@@ -7,28 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b9c1bb0-bf5c-435f-81c5-7c6ae852105a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/PoliceinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/PoliceinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/Policeinfodao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/Policeinfodao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/Driveinfodao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/Driveinfodao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driveinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driveinfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/DriveinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/DriveinfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/PoliceinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/PoliceinfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/easytubepass.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/PoliceinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/PoliceinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/Policeinfodao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/Policeinfodao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/DriveinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/DriveinfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/PoliceinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/PoliceinfoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/PoliceinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/PoliceinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Policeinfodao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Policeinfodao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/DriveinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/DriveinfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/PoliceinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/PoliceinfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/commons-lang-2.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/fastjson-1.2.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/httpcore-4.2.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/jetty-util-9.3.7.v20160115.jar" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,8 +191,16 @@
       <updated>1571018766105</updated>
       <workItem from="1571018773456" duration="17672000" />
       <workItem from="1571046097551" duration="7752000" />
-      <workItem from="1571100574874" duration="9848000" />
+      <workItem from="1571100574874" duration="11044000" />
     </task>
+    <task id="LOCAL-00001" summary="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）">
+      <created>1571110664457</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571110664457</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,5 +218,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）" />
+    <option name="LAST_COMMIT_MESSAGE" value="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）" />
   </component>
 </project>

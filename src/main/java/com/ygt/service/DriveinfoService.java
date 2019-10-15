@@ -11,8 +11,5 @@ public class DriveinfoService {
     @Autowired
     private Driveinfodao driveinfodao;
 
-    public Driveinfo findDriver(Integer dphone){
-        Driveinfo driveinfo = driveinfodao.findDriveinfo(dphone);
-        return driveinfo;
-    }
+
 }
