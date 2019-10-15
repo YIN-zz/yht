@@ -13,7 +13,6 @@ public class DriveinfoService {
 
     public Driveinfo findDriver(Integer dphone){
         Driveinfo driveinfo = driveinfodao.findDriveinfo(dphone);
-        System.out.println(driveinfo);
         return driveinfo;
     }
 }
