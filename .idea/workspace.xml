@@ -7,13 +7,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b9c1bb0-bf5c-435f-81c5-7c6ae852105a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriveinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriveController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/PoliceinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/PoliceinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/SendCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/SendCodeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/Driveinfodao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/Driveinfodao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/Policeinfodao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/Policeinfodao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driveinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driveinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Policeinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Policeinfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/DriveinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/DriveinfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/PoliceinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/PoliceinfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-mybatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/DriveController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/PoliceinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/PoliceinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/Driveinfodao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/Driveinfodao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/Policeinfodao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/Policeinfodao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Driveinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Driveinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Policeinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Policeinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/DriveinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/DriveinfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/PoliceinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/PoliceinfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/applicationContext-mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/applicationContext-mybatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/DriveController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/PoliceinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/PoliceinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Driveinfodao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Driveinfodao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Policeinfodao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Policeinfodao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Driveinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Driveinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Policeinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Policeinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/DriveinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/DriveinfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/PoliceinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/PoliceinfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/spring/applicationContext-mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/spring/applicationContext-mybatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/jackson-annotations-2.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/jackson-core-2.4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/jackson-databind-2.4.2.jar" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +72,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -78,7 +112,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -191,7 +225,9 @@
       <updated>1571018766105</updated>
       <workItem from="1571018773456" duration="17672000" />
       <workItem from="1571046097551" duration="7752000" />
-      <workItem from="1571100574874" duration="11044000" />
+      <workItem from="1571100574874" duration="21175000" />
+      <workItem from="1571125737584" duration="12549000" />
+      <workItem from="1571187791627" duration="20118000" />
     </task>
     <task id="LOCAL-00001" summary="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）">
       <created>1571110664457</created>
@@ -200,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571110664457</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）">
+      <created>1571111872165</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571111872165</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

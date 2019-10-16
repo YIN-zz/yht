@@ -11,18 +11,26 @@ public interface Policeinfodao {
 
     //警员注册
     @Insert("insert into policeinfo(pphone,pname,paddress,ppassword) values(#{arg0},#{arg1},#{arg2},#{arg3})")
-    boolean addpoliceinfo(Integer pphone, String pname, String paddress, String ppassword);
+    boolean addpoliceinfo(String pphone, String pname, String paddress, String ppassword);
 
     //警员登录
     @Select("select * from policeinfo where pphone=#{arg0} and ppassword=#{arg1}")
-    Policeinfo findonepolice(Integer pphone, String ppassword);
+    Policeinfo findonepolice(String pphone, String ppassword);
 
     //警员修改密码
-    @Update("update policeinfo set ppassword=#{0} where ppassword=#{1)")
-    boolean updatepolice(Integer pphone,String ppassword);
+    @Update("update policeinfo set ppassword=#{arg1} where pphone=#{arg0)")
+    boolean updatepolice(String pphone,String ppassword);
+
+    //警员查看个人信息
+    @Select("select * from policeinfo where pphone = #{arg0}")
+    Policeinfo findpolices(String pphone);
+
+    //查询警员信息（根据手机号）
+    @Select("select pid,pphone,pname,paddress from policeinfo where pphone=#{arg0}")
+    Policeinfo findpolice(String pphone);
 
     //查询所有警员信息
-    @Select("select pphone,pname,paddress from policeinfo")
+    @Select("select pid,pphone,pname,paddress from policeinfo")
     List<Policeinfo> findallPolice();
 
 }

@@ -9,8 +9,9 @@ import lombok.*;
 @ToString
 public class Driveinfo {
 
+    private Integer did;
     //司机手机号
-    private  Integer dphone;
+    private String dphone;
     //司机姓名
     private String dname;
     //司机设置密码

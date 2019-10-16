@@ -38,9 +38,9 @@
 		<!-- 配置Mybatis的全局配置文件 -->
 		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
 		<!-- 配置mapper.xml文件 -->
- 		<property name="mapperLocations" value="classpath*:mapper/*.xml"/>
+ 		<!--<property name="mapperLocations" value="classpath*:mapper/*.xml"/>-->
 		<!-- 别名包 -->
-		<property name="typeAliasesPackage" value="com.mall.pojo"/>
+		<!--<property name="typeAliasesPackage" value="com.mall.pojo"/>-->
 	</bean>
 	
 	<!-- mapper接口的扫描器 -->

@@ -9,7 +9,9 @@ import lombok.*;
 @ToString
 public class Policeinfo {
 
-    private Integer pphone;
+    private Integer pid;
+
+    private String pphone;
 
     private String pname;
 
