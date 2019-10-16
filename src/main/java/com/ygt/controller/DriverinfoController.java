@@ -33,7 +33,7 @@ public class DriverinfoController {
 
     //出入库信息的添加
     @RequestMapping("addDriverinfo")
-    public String addDriverinfo(HttpSession session, Driverinfo driverinfo, Chemicalsinfo chemicalsinfo,String dname){
+    public String addDriverinfo(HttpSession session, Driverinfo driverinfo, String dname){
         Integer sid = Integer.parseInt((String) session.getAttribute("sid"));
         driverinfo.setSid(sid);
         Date date = new Date();
@@ -43,10 +43,11 @@ public class DriverinfoController {
         Integer chid = driverinfoService.selectChemicalsinfo(dname);
         driverinfo.setChid(chid);
         driverinfoService.addDriverinfo(driverinfo);
-
+        Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid);
         //对库中化学品和设备总数量和重量进行修改，
         if (driverinfo.getRinout().equals("出库")){
             //出库修改
+
             double cwerght = chemicalsinfo.getCwerght() - driverinfo.getDwerght();
             int ccount =  chemicalsinfo.getCcount() - driverinfo.getDcount();
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid);
