@@ -28,7 +28,7 @@ public class DriverinfoController {
     public String allDriverinfo(String rinout, String rtime, String dname, Model model){
         List<Driverinfo> listDriverinfo = driverinfoService.allDriverinfo(rinout, rtime, dname);
         model.addAttribute("list",listDriverinfo);
-        return  "";
+        return  "index";
     }
 
     //出入库信息的添加
@@ -59,6 +59,6 @@ public class DriverinfoController {
         }
 
 
-        return "";
+        return "index";
     }
 }

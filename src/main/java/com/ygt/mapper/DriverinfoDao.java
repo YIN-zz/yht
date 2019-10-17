@@ -20,7 +20,7 @@ public interface DriverinfoDao {
       int selectChemicalsinfo(String dname);
 
     //出入库信息的生成
-    @Insert("insert into policeinfo(drid, recordid, dtype, dname, dcount, dwerght, rtime, rdriver, rphone, rnumber, recordphoto, driverphoto, carphoto, ruse, rinout, sid, chid) values(#{arg0},#{arg1},#{arg2},#{arg3},#{arg4},#{arg5},#{arg6},#{arg7},#{arg8},#{arg9},#{arg10},#{arg11},#{arg12},#{arg13},#{arg14},#{arg15},#{arg16},#{arg17})")
+    @Insert("insert into policeinfo(recordid, dtype, dname, dcount, dwerght, rtime, rdriver, rphone, rnumber, recordphoto, driverphoto, carphoto, ruse, rinout, sid, chid) values(#{recordid},#{dtype},#{dname},#{dcount},#{dwerght},#{rtime},#{rdriver},#{rphone},#{rnumber},#{recordphoto},#{driverphoto},#{carphoto},#{ruse},#{rinout},#{sid},#{chid})")
     boolean addDriverinfo(Driverinfo driverinfo);
 
 
