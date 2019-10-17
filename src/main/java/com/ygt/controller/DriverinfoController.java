@@ -6,7 +6,7 @@ import com.ygt.service.ChemicalsinfoService;
 import com.ygt.service.DriverinfoService;
 
 
-
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -27,7 +27,7 @@ public class DriverinfoController {
 
     //出入库和时间、货物名称查询
     @RequestMapping("allDriverinfo")
-    public String allDriverinfo(String rinout, String rtime, String dname, Model model){
+    public String allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("dname")String dname, Model model){
         List<Driverinfo> listDriverinfo = driverinfoService.allDriverinfo(rinout, rtime, dname);
         model.addAttribute("list",listDriverinfo);
         return  "index";

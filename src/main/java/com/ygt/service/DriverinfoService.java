@@ -3,6 +3,7 @@ package com.ygt.service;
 import com.ygt.mapper.DriverinfoDao;
 import com.ygt.pojo.Driverinfo;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class DriverinfoService {
     private DriverinfoDao driverinfoDao;
 
  //查询所有出入库的信息  根据模糊条件
-    public List<Driverinfo> allDriverinfo(String rinout, String rtime, String dname){
+    public List<Driverinfo> allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("dname")String dname){
 
         return  driverinfoDao.allDriverinfo(rinout,rtime,dname);
     }
