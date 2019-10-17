@@ -25,7 +25,7 @@ public class Notice {
     private String npicture;
 
     //发布s时间
-    private DateTime ntime;
+    private String ntime;
 
    //警员id
     private Integer pid;

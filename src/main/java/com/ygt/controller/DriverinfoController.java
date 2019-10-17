@@ -4,9 +4,11 @@ import com.ygt.pojo.Chemicalsinfo;
 import com.ygt.pojo.Driverinfo;
 import com.ygt.service.ChemicalsinfoService;
 import com.ygt.service.DriverinfoService;
-import org.joda.time.DateTime;
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,10 +38,9 @@ public class DriverinfoController {
     public String addDriverinfo(HttpSession session, Driverinfo driverinfo, String dname){
         Integer sid = Integer.parseInt((String) session.getAttribute("sid"));
         driverinfo.setSid(sid);
-        Date date = new Date();
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
-        String format = dateFormat.format(date);
-        driverinfo.setRtime(DateTime.parse(format));
+        String format = dateFormat.format(new Date());
+        driverinfo.setRtime(format);
         Integer chid = driverinfoService.selectChemicalsinfo(dname);
         driverinfo.setChid(chid);
         driverinfoService.addDriverinfo(driverinfo);

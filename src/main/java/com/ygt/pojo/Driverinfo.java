@@ -1,7 +1,8 @@
 package com.ygt.pojo;
 
 import lombok.*;
-import org.joda.time.DateTime;
+
+
 
 
 @AllArgsConstructor
@@ -30,7 +31,7 @@ public class Driverinfo {
     private double dwerght;
 
     //出入库时间
-    private DateTime rtime;
+    private String rtime;
 
     //货车司机名字
     private String rdriver;

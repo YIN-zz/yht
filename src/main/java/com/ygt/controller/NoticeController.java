@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -20,6 +22,9 @@ public class NoticeController {
     public String addNotice(Notice notice, HttpSession session){
         Integer pid = (Integer) session.getAttribute("pid");
         notice.setPid(pid);
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
+        String format = dateFormat.format(new Date());
+        notice.setNtime(format);
         noticeService.addNotice(notice);
         return "index";
     }

@@ -4,9 +4,9 @@ package com.ygt.mapper;
 import com.ygt.pojo.Driverinfo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
-import org.joda.time.DateTime;
 
-import java.awt.*;
+
+import java.util.Date;
 import java.util.List;
 
 public interface DriverinfoDao {
