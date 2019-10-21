@@ -1,6 +1,7 @@
 package com.ygt.pojo;
 
 import lombok.*;
+import org.joda.time.DateTime;
 
 @AllArgsConstructor
 @Getter
@@ -11,7 +12,7 @@ public class Notice {
     //警员发布信息id
     private Integer noid;
 
-    //通知通告消息id
+    //通知通告消息
     private String nmessage;
 
     //发布文字
@@ -23,7 +24,10 @@ public class Notice {
     //发布图片
     private String npicture;
 
-    //警员id
+    //发布s时间
+    private String ntime;
+
+   //警员id
     private Integer pid;
 
 
