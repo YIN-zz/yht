@@ -58,7 +58,7 @@ public class Driverinfo {
     private String rinout;
 
     //仓库管理员id
-    private Integer sid;
+    private Integer mid;
 
     //易制毒化学品设备id
     private Integer chid;

@@ -12,7 +12,7 @@ public class Notice {
     //警员发布信息id
     private Integer noid;
 
-    //通知通告消息id
+    //通知通告消息
     private String nmessage;
 
     //发布文字
