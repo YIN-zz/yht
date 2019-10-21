@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
-public interface Policeinfodao {
+public interface PoliceinfoDao {
 
     //警员注册
     @Insert("insert into policeinfo(pphone,pname,paddress,ppassword) values(#{arg0},#{arg1},#{arg2},#{arg3})")

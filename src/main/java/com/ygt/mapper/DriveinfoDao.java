@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
-public interface Driveinfodao {
+public interface DriveinfoDao {
 
     //司机注册
     @Insert("insert into driveinfo(dphone,dname,dpassword) values(#{arg0},#{arg1},#{arg2})")

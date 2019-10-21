@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
-public interface Managerinfodao {
+public interface ManagerinfoDao {
 
     //企管注册
     @Insert("insert into managerinfo(mphone,mname,mpassword,mrelease,maddress,mposition) values(#{arg0},#{arg1},#{arg2},#{arg3},#{arg4},#{arg5})")

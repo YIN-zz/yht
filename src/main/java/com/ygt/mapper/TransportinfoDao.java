@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.Date;
 import java.util.List;
 
-public interface Transportinfodao {
+public interface TransportinfoDao {
 
     //添加基本运输的信息并将运输备案号transport保存到session中
     @Insert("insert into transportinfo values(#{arg0},#{arg1},#{arg2},#{arg3},#{arg4},#{arg5},#{arg6},#{arg7})")

@@ -1,6 +1,6 @@
 package com.ygt.service;
 
-import com.ygt.mapper.Managerinfodao;
+import com.ygt.mapper.ManagerinfoDao;
 import com.ygt.pojo.Managerinfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 public class ManagerService {
 
     @Autowired
-    private Managerinfodao managerinfodao;
+    private ManagerinfoDao managerinfodao;
 
     //企管注册
     public boolean addmanagerinfo(String mphone,String mname,String mpassword,String mrelease,String maddress,String mposition){

@@ -5,7 +5,6 @@ import com.ygt.service.DriveinfoService;
 import com.ygt.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -36,6 +35,8 @@ public class DriveinfoController {
         Driveinfo finddriveinfo = driveinfoService.finddriveinfo(dphone, md5Util.md5(new String (dpassword)));
         Integer did = finddriveinfo.getDid();
         session.setAttribute("did",did);
+        String dname = finddriveinfo.getDname();
+        session.setAttribute("dname",dname);
         if(finddriveinfo!=null)
             return "index";
         return "main";

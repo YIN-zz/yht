@@ -1,6 +1,6 @@
 package com.ygt.service;
 
-import com.ygt.mapper.Driveinfodao;
+import com.ygt.mapper.DriveinfoDao;
 import com.ygt.pojo.Driveinfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 public class DriveinfoService {
 
     @Autowired
-    private Driveinfodao driveinfodao;
+    private DriveinfoDao driveinfodao;
 
     //司机注册
     public boolean adddriveinfo(String dphone,String dname,String dpassword){

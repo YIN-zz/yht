@@ -2,10 +2,8 @@ package com.ygt.controller;
 
 import com.ygt.pojo.Transportinfo;
 import com.ygt.service.TransportinfoService;
-import com.ygt.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,9 +18,6 @@ public class TransportinfoController {
     @Autowired
     private TransportinfoService transportinfoService;
 
-    @Autowired
-    private MD5Util md5Util;
-
     //添加基本运输的信息并将运输备案号transport保存到session中
     @RequestMapping("enrolltransport")
     public String enrolltransport(String transport, String tcard, String tbourn, Date ttime ,HttpSession session) throws NoSuchAlgorithmException {
@@ -31,7 +26,7 @@ public class TransportinfoController {
         String tstart = "未出发";
         String tend = "未到达";
         String dphone = (String)session.getAttribute("dphone");
-        transportinfoService.addtransportinfo(tid,transport,md5Util.md5(new String (tcard)), tbourn, ttime,tstart,tend,dphone);
+        transportinfoService.addtransportinfo(tid,transport,tcard, tbourn, ttime,tstart,tend,dphone);
         return "index";
     }
 

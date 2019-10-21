@@ -1,6 +1,6 @@
 package com.ygt.service;
 
-import com.ygt.mapper.Policeinfodao;
+import com.ygt.mapper.PoliceinfoDao;
 import com.ygt.pojo.Policeinfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 public class PoliceinfoService {
 
     @Autowired
-    private Policeinfodao policeinfodao;
+    private PoliceinfoDao policeinfodao;
 
     //警员注册
     public boolean addpoliceinfo(String pphone,String pname,String paddress,String ppassword){
