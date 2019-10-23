@@ -110,6 +110,7 @@ public class DriverinfoController {
             int ccount =  chemicalsinfo.getCcount() + goodsinfo.getGoodcount();
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid,company);
         }
+
         return "";
     }
 
