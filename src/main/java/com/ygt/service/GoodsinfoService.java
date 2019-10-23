@@ -5,6 +5,8 @@ import com.ygt.pojo.Goodsinfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GoodsinfoService {
     @Autowired
@@ -15,4 +17,8 @@ public class GoodsinfoService {
         return goodsinfoDao.addBeiAn(goodsinfo);
     }
 
+    public List<Goodsinfo> findgoodsinfo(Integer drid){
+        List<Goodsinfo> findgoodsinfo = goodsinfoDao.findgoodsinfo(drid);
+        return findgoodsinfo;
+    }
 }

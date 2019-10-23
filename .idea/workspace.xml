@@ -8,7 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7b9c1bb0-bf5c-435f-81c5-7c6ae852105a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/GoodsinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/GoodsinfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/GoodsinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/GoodsinfoService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -282,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571803229122</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="新建数据库更改">
+      <created>1571814103218</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571814103218</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +314,7 @@
     <MESSAGE value="第二次上传" />
     <MESSAGE value="第三次上传" />
     <MESSAGE value="修改运输货物的实体" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改运输货物的实体" />
+    <MESSAGE value="新建数据库更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="新建数据库更改" />
   </component>
 </project>
