@@ -21,6 +21,8 @@ public class Driverinfo {
     private String rdriver;
     //手机号
     private String rphone;
+    //目的地
+    private String dbourn;
     //车牌号
     private String rnumber;
     //备案号或者许可证照片
