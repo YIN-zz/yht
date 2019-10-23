@@ -13,7 +13,8 @@ import java.util.List;
 public interface DriverinfoDao {
 
     //根据出库 入库和时间，产品名称统计所有信息
-    @Select("SELECT * FROM driverinfo,beian WHERE driverinfo.recordid=beian.recordid AND (driverinfo.rinout=#{rinout} OR driverinfo.rtime like '%${rtime}%' OR beian.dname like '%${dname}%')")
+ //   @Select("SELECT * FROM driverinfo,beian WHERE driverinfo.recordid=beian.recordid AND (driverinfo.rinout=#{rinout} OR driverinfo.rtime like '%${rtime}%' OR beian.dname like '%${dname}%')")
+      @Select("SELECT * FROM driverinfo,beian WHERE driverinfo.recordid=beian.recordid AND (driverinfo.rinout=#{rinout} OR driverinfo.rtime like '%'#{rtime}'%' OR beian.dname like '%'#{dname}'%')")
     List<Driverinfo> allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("dname")String dname);
 
     //查询商品表的id
