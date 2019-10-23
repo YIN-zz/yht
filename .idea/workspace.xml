@@ -7,10 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b9c1bb0-bf5c-435f-81c5-7c6ae852105a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/GoodsinfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/BeiAn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Goodsinfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Policeinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Policeinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/BeiAnDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/GoodsinfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/BeiAnService.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +233,7 @@
       <workItem from="1571705266437" duration="4232000" />
       <workItem from="1571714079754" duration="10513000" />
       <workItem from="1571746819578" duration="737000" />
-      <workItem from="1571791747546" duration="7645000" />
+      <workItem from="1571791747546" duration="9306000" />
     </task>
     <task id="LOCAL-00001" summary="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）">
       <created>1571110664457</created>
@@ -277,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571801719003</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="修改运输货物的实体">
+      <created>1571803229122</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571803229122</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +307,7 @@
     <MESSAGE value="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）" />
     <MESSAGE value="第二次上传" />
     <MESSAGE value="第三次上传" />
-    <option name="LAST_COMMIT_MESSAGE" value="第三次上传" />
+    <MESSAGE value="修改运输货物的实体" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改运输货物的实体" />
   </component>
 </project>
