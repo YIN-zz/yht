@@ -2,6 +2,9 @@ package com.ygt.pojo;
 
 import lombok.*;
 
+
+
+
 @AllArgsConstructor
 @Getter
 @Setter
@@ -10,16 +13,12 @@ import lombok.*;
 public class Driverinfo {
     //出入库id
     private Integer drid;
-    //出入库材料类别
-    private String dtype;
+    //公司名字
+    private String dcompany;
     //备案证号
     private String recordid;
-    //易制毒名称
-    private String dname;
-    //易制毒数量
-    private int dcount;
-    //易制毒总重量
-    private double dwerght;
+    //出入库材料类别
+    private String dtype;
     //出入库时间
     private String rtime;
     //货车司机名字
@@ -40,6 +39,4 @@ public class Driverinfo {
     private String rinout;
     //仓库管理员id
     private Integer mid;
-    //易制毒化学品设备id
-    private Integer chid;
 }

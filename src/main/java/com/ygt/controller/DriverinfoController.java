@@ -1,7 +1,9 @@
 package com.ygt.controller;
 
+import com.ygt.pojo.BeiAn;
 import com.ygt.pojo.Chemicalsinfo;
 import com.ygt.pojo.Driverinfo;
+import com.ygt.service.BeiAnService;
 import com.ygt.service.ChemicalsinfoService;
 import com.ygt.service.DriverinfoService;
 
@@ -31,6 +33,8 @@ public class DriverinfoController {
     private DriverinfoService driverinfoService;
     @Autowired
     private ChemicalsinfoService chemicalsinfoService;
+    @Autowired
+    private BeiAnService beiAnService;
 
 
 
@@ -45,23 +49,13 @@ public class DriverinfoController {
     //出入库信息的添加
     @RequestMapping("addDriverinfo")
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
+        session.setAttribute("recordid", driverinfo.getRecordid());
+        session.setAttribute("rinout",driverinfo.getRinout());
         Integer mid = Integer.parseInt((String) session.getAttribute("mid"));
         driverinfo.setMid(mid);
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 hh时mm分ss秒");
         String format = dateFormat.format(new Date());
         driverinfo.setRtime(format);
-        Integer chid = driverinfoService.selectChemicalsinfo(driverinfo.getDname());
-        driverinfo.setChid(chid);
- /*       driverinfo1.setDtype(driverinfo.getDtype());
-        driverinfo1.setRecordid(driverinfo.getRecordid());
-        driverinfo1.setDname(driverinfo.getDname());
-        driverinfo1.setDwerght(driverinfo.getDwerght());
-        driverinfo1.setRdriver(driverinfo.getRdriver());
-        driverinfo1.setRphone(driverinfo.getRphone());
-        driverinfo1.setRnumber(driverinfo.getRnumber());
-        driverinfo1.setRuse(driverinfo.getRuse());
-        driverinfo1.setRinout(driverinfo.getRinout());*/
-
         File file = new File(request.getSession().getServletContext().getRealPath("/upload"));
         if (!file.exists()){
             file.mkdir();
@@ -87,20 +81,30 @@ public class DriverinfoController {
             }
         }
         driverinfoService.addDriverinfo(driverinfo);
+        return "index";
+    }
+    //出入库货物的登记
+    public String addBeiAnController(BeiAn beiAn,HttpSession session){
+        String recordid = (String) session.getAttribute("recordid");
+        beiAn.setRecordid(recordid);
+        beiAnService.addBeiAn(beiAn);
+        Integer chid = driverinfoService.selectChemicalsinfo(beiAn.getBname());
+        beiAn.setChid(chid);
         Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid);
         //对库中化学品和设备总数量和重量进行修改，
-        if (driverinfo.getRinout().equals("出库")){
+        String rinout = (String) session.getAttribute("rinout");
+        if (rinout .equals("出库")){
             //出库修改
-            double cwerght = chemicalsinfo.getCwerght() - driverinfo.getDwerght();
-            int ccount =  chemicalsinfo.getCcount() - driverinfo.getDcount();
+            double cwerght = chemicalsinfo.getCwerght() - beiAn.getBcwerght();
+            int ccount =  chemicalsinfo.getCcount() - beiAn.getBccount();
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid);
-        }else {
+        }else if(rinout.equals("入库")){
             //入库修改
-            double cwerght = chemicalsinfo.getCwerght() + driverinfo.getDwerght();
-            int ccount =  chemicalsinfo.getCcount() + driverinfo.getDcount();
+            double cwerght = chemicalsinfo.getCwerght() + beiAn.getBcwerght();
+            int ccount =  chemicalsinfo.getCcount() + beiAn.getBccount();
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid);
         }
-        return "index";
+        return "";
     }
 
     //根据运输到达地区查询    出库（警员查询）

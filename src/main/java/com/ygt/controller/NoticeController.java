@@ -36,7 +36,8 @@ public class NoticeController {
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
         String format = dateFormat.format(new Date());
         notice.setNtime(format);
-        File file = new File("F:/项目上传文件存放位置/");
+        // File file = new File(request.getSession().getServletContext().getRealPath("yht/src/main/WEB-INF/upload"));
+        File file = new File("D:/upload");
         if (!file.exists()){
             file.mkdir();
         }
@@ -61,11 +62,11 @@ public class NoticeController {
         return "index";
     }
     //图片下载
-    @RequestMapping(value = "/filedownload")
+    @RequestMapping(value = "filedownload")
     public ResponseEntity<byte[]> fileDownload(HttpServletRequest request) throws Exception {
         ServletContext servletContext = request.getSession().getServletContext();
         String fileName = request.getParameter("filename");
-        String realPath = servletContext.getRealPath("/upload/" + fileName);
+        String realPath = servletContext.getRealPath("D:/upload" + fileName);
         InputStream inputStream = new FileInputStream(realPath);
         byte[] b = new byte[inputStream.available()];
         inputStream.read(b);
@@ -82,6 +83,7 @@ public class NoticeController {
     public String selectNotice(Model model){
         List<Notice> noticeList = noticeService.selectNotice();
         model.addAttribute("list",noticeList);
-        return "index";
+        System.out.println(noticeList.toString());
+        return "selectn";
     }
 }
