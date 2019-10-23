@@ -15,9 +15,9 @@ public class DriverinfoService {
     private DriverinfoDao driverinfoDao;
 
  //查询所有出入库的信息  根据模糊条件
-    public List<Driverinfo> allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("dname")String dname){
+    public List allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("goodname")String goodname){
 
-        return  driverinfoDao.allDriverinfo(rinout,rtime,dname);
+        return  driverinfoDao.allDriverinfo(rinout,rtime,goodname);
     }
     //查询易制毒商品的id
     public int selectChemicalsinfo(String dname){

@@ -40,16 +40,15 @@ public class DriverinfoController {
 
     //出入库和时间、货物名称查询
     @RequestMapping("allDriverinfo")
-    public String allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("dname")String dname, Model model){
-        List<Driverinfo> listDriverinfo = driverinfoService.allDriverinfo(rinout, rtime, dname);
-        model.addAttribute("list",listDriverinfo);
+    public String allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("goodname")String goodname, Model model){
+        List list = driverinfoService.allDriverinfo(rinout, rtime, goodname);
+        model.addAttribute("list",list);
         return  "index";
     }
 
     //出入库信息的添加
     @RequestMapping("addDriverinfo")
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
-        session.setAttribute("recordid", driverinfo.getRecordid());
         session.setAttribute("rinout",driverinfo.getRinout());
         session.setAttribute("company",driverinfo.getDcompany());
         Integer mid = Integer.parseInt((String) session.getAttribute("mid"));
@@ -88,13 +87,14 @@ public class DriverinfoController {
     }
     //出入库货物的登记
     public String addBeiAnController(Goodsinfo goodsinfo,HttpSession session){
-        String recordid = (String) session.getAttribute("recordid");
-        goodsinfo.setRecordid(recordid);
+        Integer drid = (Integer) session.getAttribute("drid");
+        goodsinfo.setDrid(drid);
         String company = (String) session.getAttribute("company");
-        goodsinfoService.addBeiAn(goodsinfo);
-
         Integer chid = driverinfoService.selectChemicalsinfo(goodsinfo.getGoodname());
         goodsinfo.setChid(chid);
+        goodsinfoService.addBeiAn(goodsinfo);
+
+
         Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid,company);
         //对库中化学品和设备总数量和重量进行修改，
         String rinout = (String) session.getAttribute("rinout");

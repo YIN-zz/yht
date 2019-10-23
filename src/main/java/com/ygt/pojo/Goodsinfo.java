@@ -16,8 +16,8 @@ public class Goodsinfo {
     private Integer goodcount;
     //货物重量
     private Double goodeweight;
-    //货物备案证号
-    private String recordid;
+    //出入库id
+    private Integer drid;
     //库内货物总id
     private Integer chid;
 
