@@ -52,7 +52,6 @@ public class DriverinfoController {
         session.setAttribute("recordid", driverinfo.getRecordid());
         session.setAttribute("rinout",driverinfo.getRinout());
         session.setAttribute("company",driverinfo.getDcompany());
-
         Integer mid = Integer.parseInt((String) session.getAttribute("mid"));
         driverinfo.setMid(mid);
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 hh时mm分ss秒");
