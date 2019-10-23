@@ -1,9 +1,7 @@
 package com.ygt.controller;
 
-import com.ygt.pojo.BeiAn;
 import com.ygt.pojo.Chemicalsinfo;
 import com.ygt.pojo.Driverinfo;
-import com.ygt.service.BeiAnService;
 import com.ygt.service.ChemicalsinfoService;
 import com.ygt.service.DriverinfoService;
 
@@ -33,21 +31,21 @@ public class DriverinfoController {
     private DriverinfoService driverinfoService;
     @Autowired
     private ChemicalsinfoService chemicalsinfoService;
-    @Autowired
-    private BeiAnService beiAnService;
+   /* @Autowired*/
+    /*private BeiAnService beiAnService;*/
 
 
 
     //出入库和时间、货物名称查询
-    @RequestMapping("allDriverinfo")
+   /* @RequestMapping("allDriverinfo")
     public String allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("dname")String dname, Model model){
         List<Driverinfo> listDriverinfo = driverinfoService.allDriverinfo(rinout, rtime, dname);
         model.addAttribute("list",listDriverinfo);
         return  "index";
-    }
+    }*/
 
     //出入库信息的添加
-    @RequestMapping("addDriverinfo")
+    /*@RequestMapping("addDriverinfo")
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
         session.setAttribute("recordid", driverinfo.getRecordid());
         session.setAttribute("rinout",driverinfo.getRinout());
@@ -83,9 +81,9 @@ public class DriverinfoController {
         }
         driverinfoService.addDriverinfo(driverinfo);
         return "index";
-    }
+    }*/
     //出入库货物的登记
-    public String addBeiAnController(BeiAn beiAn,HttpSession session){
+ /*   public String addBeiAnController(BeiAn beiAn,HttpSession session){
         String recordid = (String) session.getAttribute("recordid");
         beiAn.setRecordid(recordid);
         String company = (String) session.getAttribute("company");
@@ -107,7 +105,7 @@ public class DriverinfoController {
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid,company);
         }
         return "";
-    }
+    }*/
 
     //根据运输到达地区查询    出库（警员查询）
     @RequestMapping("findoutaddress")
