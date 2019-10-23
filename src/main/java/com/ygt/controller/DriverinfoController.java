@@ -51,6 +51,7 @@ public class DriverinfoController {
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
         session.setAttribute("recordid", driverinfo.getRecordid());
         session.setAttribute("rinout",driverinfo.getRinout());
+        session.setAttribute("company",driverinfo.getDcompany());
         Integer mid = Integer.parseInt((String) session.getAttribute("mid"));
         driverinfo.setMid(mid);
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 hh时mm分ss秒");
@@ -87,22 +88,23 @@ public class DriverinfoController {
     public String addBeiAnController(BeiAn beiAn,HttpSession session){
         String recordid = (String) session.getAttribute("recordid");
         beiAn.setRecordid(recordid);
+        String company = (String) session.getAttribute("company");
         beiAnService.addBeiAn(beiAn);
         Integer chid = driverinfoService.selectChemicalsinfo(beiAn.getBname());
         beiAn.setChid(chid);
-        Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid);
+        Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid,company);
         //对库中化学品和设备总数量和重量进行修改，
         String rinout = (String) session.getAttribute("rinout");
         if (rinout .equals("出库")){
             //出库修改
             double cwerght = chemicalsinfo.getCwerght() - beiAn.getBcwerght();
             int ccount =  chemicalsinfo.getCcount() - beiAn.getBccount();
-            chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid);
+            chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid,company);
         }else if(rinout.equals("入库")){
             //入库修改
             double cwerght = chemicalsinfo.getCwerght() + beiAn.getBcwerght();
             int ccount =  chemicalsinfo.getCcount() + beiAn.getBccount();
-            chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid);
+            chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid,company);
         }
         return "";
     }
