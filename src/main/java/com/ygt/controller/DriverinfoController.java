@@ -1,13 +1,13 @@
 package com.ygt.controller;
 
-import com.ygt.pojo.BeiAn;
 import com.ygt.pojo.Chemicalsinfo;
 import com.ygt.pojo.Driverinfo;
-import com.ygt.service.BeiAnService;
+import com.ygt.pojo.Goodsinfo;
 import com.ygt.service.ChemicalsinfoService;
 import com.ygt.service.DriverinfoService;
 
 
+import com.ygt.service.GoodsinfoService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -34,7 +34,7 @@ public class DriverinfoController {
     @Autowired
     private ChemicalsinfoService chemicalsinfoService;
     @Autowired
-    private BeiAnService beiAnService;
+    private GoodsinfoService goodsinfoService;
 
 
 
@@ -85,25 +85,25 @@ public class DriverinfoController {
         return "index";
     }
     //出入库货物的登记
-    public String addBeiAnController(BeiAn beiAn,HttpSession session){
+    public String addBeiAnController(Goodsinfo goodsinfo,HttpSession session){
         String recordid = (String) session.getAttribute("recordid");
-        beiAn.setRecordid(recordid);
+        goodsinfo.setRecordid(recordid);
         String company = (String) session.getAttribute("company");
-        beiAnService.addBeiAn(beiAn);
-        Integer chid = driverinfoService.selectChemicalsinfo(beiAn.getBname());
-        beiAn.setChid(chid);
+        goodsinfoService.addBeiAn(goodsinfo);
+        Integer chid = driverinfoService.selectChemicalsinfo(goodsinfo.getGoodname());
+        goodsinfo.setChid(chid);
         Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid,company);
         //对库中化学品和设备总数量和重量进行修改，
         String rinout = (String) session.getAttribute("rinout");
         if (rinout .equals("出库")){
             //出库修改
-            double cwerght = chemicalsinfo.getCwerght() - beiAn.getBcwerght();
-            int ccount =  chemicalsinfo.getCcount() - beiAn.getBccount();
+            double cwerght = chemicalsinfo.getCwerght() - goodsinfo.getGoodeweight();
+            int ccount =  chemicalsinfo.getCcount() - goodsinfo.getGoodcount();
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid,company);
         }else if(rinout.equals("入库")){
             //入库修改
-            double cwerght = chemicalsinfo.getCwerght() + beiAn.getBcwerght();
-            int ccount =  chemicalsinfo.getCcount() + beiAn.getBccount();
+            double cwerght = chemicalsinfo.getCwerght() + goodsinfo.getGoodeweight();
+            int ccount =  chemicalsinfo.getCcount() + goodsinfo.getGoodcount();
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid,company);
         }
         return "";
