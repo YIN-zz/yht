@@ -36,7 +36,7 @@ public class NoticeController {
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
         String format = dateFormat.format(new Date());
         notice.setNtime(format);
-        File file = new File(request.getSession().getServletContext().getRealPath("/upload"));
+        File file = new File("F:/项目上传文件存放位置/");
         if (!file.exists()){
             file.mkdir();
         }

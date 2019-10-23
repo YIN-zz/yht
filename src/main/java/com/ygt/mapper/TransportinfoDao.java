@@ -29,4 +29,9 @@ public interface TransportinfoDao {
     //查询运输信息（根据手机号）
     @Select("select * from transportinfo where dphone = #{arg0}")
     List<Transportinfo> findalltransport(String dphone);
+
+    //查看所有的异常信息(倒序查看）
+    @Select("select * from transportinfo order by tid desc")
+    List<Transportinfo> findtransports();
+
 }

@@ -40,4 +40,11 @@ public class TransportinfoService {
         List<Transportinfo> findalltransport = transportinfodao.findalltransport(dphone);
         return findalltransport;
     }
+
+    //查看所有的异常信息(倒序查看）
+    public List<Transportinfo> findtransports(){
+        List<Transportinfo> findtransports = transportinfodao.findtransports();
+        return findtransports;
+    }
+
 }

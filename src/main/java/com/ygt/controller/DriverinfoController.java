@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
@@ -46,7 +47,7 @@ public class DriverinfoController {
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
         Integer mid = Integer.parseInt((String) session.getAttribute("mid"));
         driverinfo.setMid(mid);
-        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 hh时mm分ss秒");
         String format = dateFormat.format(new Date());
         driverinfo.setRtime(format);
         Integer chid = driverinfoService.selectChemicalsinfo(driverinfo.getDname());
@@ -100,5 +101,21 @@ public class DriverinfoController {
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid);
         }
         return "index";
+    }
+
+    //根据运输到达地区查询    出库（警员查询）
+    @RequestMapping("findoutaddress")
+    @ResponseBody
+    public List<Driverinfo> findoutaddress(String tbourn){
+        List<Driverinfo> findoutaddress = driverinfoService.findoutaddress(tbourn);
+        return findoutaddress;
+    }
+
+    //根据运输到达地区查询    入库（警员查询）
+    @RequestMapping("findinaddress")
+    @ResponseBody
+    public List<Driverinfo> findinaddress(String tbourn){
+        List<Driverinfo> findinaddress = driverinfoService.findinaddress(tbourn);
+        return findinaddress;
     }
 }

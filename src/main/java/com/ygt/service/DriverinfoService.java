@@ -29,4 +29,16 @@ public class DriverinfoService {
 
         return driverinfoDao.addDriverinfo( driverinfo);
     }
+
+    //根据运输到达地区查询    出库（警员查询）
+    public List<Driverinfo> findoutaddress(String tbourn){
+        List<Driverinfo> findoutaddress = driverinfoDao.findoutaddress(tbourn);
+        return findoutaddress;
+    }
+
+    //根据运输到达地区查询    入库（警员查询）
+    public List<Driverinfo> findinaddress(String tbourn){
+        List<Driverinfo> findinaddress = driverinfoDao.findinaddress(tbourn);
+        return findinaddress;
+    }
 }

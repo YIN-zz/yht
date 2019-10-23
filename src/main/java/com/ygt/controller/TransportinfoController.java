@@ -68,7 +68,7 @@ public class TransportinfoController {
         return findtransport;
     }
 
-    //查询运输信息（根据手机号，查询司机自己的运输信息）
+    //查询运输信息（根据手机号，查询司机自己的运输信息）（司机查看个人的dphone是从session中取得）
     //@RequestMapping("findalltransport")
    /* public String findalltransport(Model m, HttpSession session){
         String dphone = (String)session.getAttribute("dphone");
@@ -76,11 +76,28 @@ public class TransportinfoController {
         m.addAttribute("findalltransport",findalltransport);
         return "index";
     }*/
+    //查询运输信息（根据手机号，查询司机自己的运输信息）（司机查看个人的dphone是从session中取得）
     @RequestMapping("findalltransport")
     @ResponseBody
     public List<Transportinfo> findalltransport(HttpSession session){
         String dphone = (String)session.getAttribute("dphone");
         List<Transportinfo> findalltransport = transportinfoService.findalltransport(dphone);
         return findalltransport;
+    }
+
+    //查询运输信息（根据输入的手机号查询）
+    @RequestMapping("findalltransports")
+    @ResponseBody
+    public List<Transportinfo> findalltransports(String dphone){
+        List<Transportinfo> findalltransport = transportinfoService.findalltransport(dphone);
+        return findalltransport;
+    }
+
+    //查看所有的异常信息(倒序查看）
+    @RequestMapping("findtransports")
+    @ResponseBody
+    public List<Transportinfo> findtransports(){
+        List<Transportinfo> findtransports = transportinfoService.findtransports();
+        return findtransports;
     }
 }
