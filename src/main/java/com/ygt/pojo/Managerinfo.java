@@ -18,7 +18,7 @@ public class Managerinfo {
     private String mname;
     //企管密码
     private String mpassword;
-    //企业信息卡
+    //企业名称
     private String mrelease;
     //企业地址
     private String maddress;

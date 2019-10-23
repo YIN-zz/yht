@@ -36,6 +36,11 @@ public class ManagerinfoController {
         Managerinfo findmanager = managerService.findmanager(mphone, md5Util.md5(new String (mpassword)));
         Integer mid = findmanager.getMid();
         session.setAttribute("mid",mid);
+        String mname = findmanager.getMname();
+        session.setAttribute("mname",mname);
+        Managerinfo findonemanager = managerService.findonemanager(mphone);
+        String mrelease = findonemanager.getMrelease();
+        session.setAttribute("mrelease",mrelease);
         if(findmanager!=null)
             return "index";
         return "login";

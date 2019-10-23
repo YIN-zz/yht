@@ -1,6 +1,6 @@
 package com.ygt.service;
 
-import com.ygt.mapper.Transportinfodao;
+import com.ygt.mapper.TransportinfoDao;
 import com.ygt.pojo.Transportinfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import java.util.List;
 public class TransportinfoService {
 
     @Autowired
-    private Transportinfodao transportinfodao;
+    private TransportinfoDao transportinfodao;
 
     //添加基本运输的信息并将运输备案号transport保存到session中
     public boolean addtransportinfo(Integer tid,String transport, String tcard, String tbourn, Date ttime,String tstart,String tend,String dphone){
@@ -40,4 +40,11 @@ public class TransportinfoService {
         List<Transportinfo> findalltransport = transportinfodao.findalltransport(dphone);
         return findalltransport;
     }
+
+    //查看所有的异常信息(倒序查看）
+    public List<Transportinfo> findtransports(){
+        List<Transportinfo> findtransports = transportinfodao.findtransports();
+        return findtransports;
+    }
+
 }

@@ -36,6 +36,8 @@ public class PoliceinfoController {
         Policeinfo findonepolice = policeinfoService.findonepolice(pphone,md5Util.md5(new String (ppassword)));
         Integer pid = findonepolice.getPid();
         session.setAttribute("pid",pid);
+        String pname = findonepolice.getPname();
+        session.setAttribute("pname",pname);
         if(findonepolice!=null)
         return "index";
         return "login";
