@@ -52,6 +52,7 @@ public class DriverinfoController {
         session.setAttribute("recordid", driverinfo.getRecordid());
         session.setAttribute("rinout",driverinfo.getRinout());
         session.setAttribute("company",driverinfo.getDcompany());
+
         Integer mid = Integer.parseInt((String) session.getAttribute("mid"));
         driverinfo.setMid(mid);
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 hh时mm分ss秒");
@@ -82,6 +83,8 @@ public class DriverinfoController {
             }
         }
         driverinfoService.addDriverinfo(driverinfo);
+        Integer drid = driverinfo.getDrid();
+        session.setAttribute("drid",drid);
         return "index";
     }
     //出入库货物的登记
@@ -90,6 +93,7 @@ public class DriverinfoController {
         goodsinfo.setRecordid(recordid);
         String company = (String) session.getAttribute("company");
         goodsinfoService.addBeiAn(goodsinfo);
+
         Integer chid = driverinfoService.selectChemicalsinfo(goodsinfo.getGoodname());
         goodsinfo.setChid(chid);
         Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid,company);
