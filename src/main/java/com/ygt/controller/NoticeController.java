@@ -83,6 +83,7 @@ public class NoticeController {
     public String selectNotice(Model model){
         List<Notice> noticeList = noticeService.selectNotice();
         model.addAttribute("list",noticeList);
+        System.out.println(noticeList.toString());
         return "selectn";
     }
 }
