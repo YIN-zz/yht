@@ -10,6 +10,8 @@ import lombok.*;
 public class Chemicalsinfo {
     //易制毒材料id
     private Integer chid;
+    //公司名称
+    private String company;
     //易制毒种类
     private String ctype;
     //易制毒材料名称
