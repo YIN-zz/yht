@@ -1,10 +1,6 @@
 package com.ygt.pojo;
 
 import lombok.*;
-
-
-
-
 @AllArgsConstructor
 @Getter
 @Setter
