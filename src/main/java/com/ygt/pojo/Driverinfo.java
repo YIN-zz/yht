@@ -1,6 +1,9 @@
 package com.ygt.pojo;
 
 import lombok.*;
+
+import java.util.List;
+
 @AllArgsConstructor
 @Getter
 @Setter
@@ -17,12 +20,12 @@ public class Driverinfo {
     private String dtype;
     //出入库时间
     private String rtime;
+    //目的地
+    private String dbourn;
     //货车司机名字
     private String rdriver;
     //手机号
     private String rphone;
-    //目的地
-    private String dbourn;
     //车牌号
     private String rnumber;
     //备案号或者许可证照片
@@ -37,4 +40,7 @@ public class Driverinfo {
     private String rinout;
     //仓库管理员id
     private Integer mid;
+
+    //查询List集合
+    private List<Goodsinfo> goodsinfoList;
 }

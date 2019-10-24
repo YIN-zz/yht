@@ -7,9 +7,108 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b9c1bb0-bf5c-435f-81c5-7c6ae852105a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/GoodsinfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/MomentsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/UploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/UploadVideo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/CommentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/MomentsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Moments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/MomentsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ygt/util/UploadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/map.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/uploadpicture.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/uploadvideo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/AbnormalController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/CommentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/DriverinfoController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/EnterpriseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/GoodsinfoController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/ManagerinfoController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/MomentsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/NoticeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/UploadController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/UploadVideo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/AbnormalDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/ChemicalsinfoDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/CommentDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/DriverinfoDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/EnterpriseDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/GoodsinfoDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/MomentsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/NoticeDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Abnormal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Chemicalsinfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Enterprise.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Goodsinfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Moments.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Notice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/AbnormalService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/ChemicalsinfoService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/CommentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/DriverinfoService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/EnterpriseService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/GoodsinfoService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/MomentsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/NoticeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ygt/util/UploadService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/AbnormalController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/CommentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/GoodsinfoController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/MomentsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/UploadController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/UploadVideo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/AbnormalDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/CommentDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/GoodsinfoDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/MomentsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Abnormal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Goodsinfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Moments.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/AbnormalService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/CommentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/GoodsinfoService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/MomentsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/util/UploadService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/commons-io-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/qiniu-java-sdk-7.2.27.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/map.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/upload.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/uploadpicture.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ygt/uploadvideo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/GoodsinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/GoodsinfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/GoodsinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/GoodsinfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/AbnormalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/AbnormalDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/DriverinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/DriverinfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/META-INF/easytubepass.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/DriveinfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/DriverinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/DriverinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/ManagerinfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/TransportinfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/ChemicalsinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/ChemicalsinfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Driveinfodao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/DriverinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/DriverinfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Managerinfodao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Policeinfodao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/Transportinfodao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Chemicalsinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Chemicalsinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Driverinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Driverinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Policeinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Policeinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/ChemicalsinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/ChemicalsinfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/DriverinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/DriverinfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/ManagerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/lib/qiniu-java-sdk-7.2.26.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/upload/1C85B76D6E84C0000c0dd.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/upload/微信图片_20190801155002.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +134,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,6 +147,7 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -74,7 +174,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/项目上传文件存放位置" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,11 +191,11 @@
       <recent name="com.ygt.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\yht" />
       <recent name="D:\yht\src\main\java\com\ygt\controller" />
       <recent name="D:\yht\src\main\java\com\ygt\util" />
       <recent name="D:\yht\src\main\java\com\ygt\service" />
       <recent name="D:\easytubepass\src\main\resources\spring" />
-      <recent name="D:\easytubepass\src\main\resources\mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -110,21 +210,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.tomcat">
-    <configuration name="com.ygt.pojo in yht" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="yht" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ygt.pojo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ygt.pojo" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -198,15 +284,6 @@
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="JUnit.com.ygt.pojo in yht" />
-      <item itemvalue="Tomcat Server.tomcat" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.com.ygt.pojo in yht" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -233,6 +310,8 @@
       <workItem from="1571714079754" duration="10513000" />
       <workItem from="1571746819578" duration="737000" />
       <workItem from="1571791747546" duration="9306000" />
+      <workItem from="1571815988157" duration="14390000" />
+      <workItem from="1571878598941" duration="2819000" />
     </task>
     <task id="LOCAL-00001" summary="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）">
       <created>1571110664457</created>
@@ -290,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571814103218</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="新建数据库更改">
+      <created>1571814454949</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1571814454949</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +401,6 @@
     <MESSAGE value="第三次上传" />
     <MESSAGE value="修改运输货物的实体" />
     <MESSAGE value="新建数据库更改" />
-    <option name="LAST_COMMIT_MESSAGE" value="新建数据库更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

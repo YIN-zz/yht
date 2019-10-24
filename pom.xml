@@ -377,6 +377,13 @@
     </dependency>
 
 
+    <!--根据手机号获取位置信息-->
+    <dependency>
+      <groupId>com.googlecode.libphonenumber</groupId>
+      <artifactId>geocoder</artifactId>
+      <version>LATEST</version>
+    </dependency>
+
 
   </dependencies>
 

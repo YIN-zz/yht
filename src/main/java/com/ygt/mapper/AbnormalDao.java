@@ -10,7 +10,7 @@ public interface AbnormalDao {
 
     //添加异常信息
     @Insert("insert into abnormal(aid,transport,ainfo,atime,aaddress,acomment,dphone) values(#{arg0},#{arg1},#{arg2},#{arg3},#{arg4},#{arg5},#{arg6})")
-    boolean addabnormal(Integer aid, String transport, String ainfo, String atime, String aaddress, String acomment, String dphone);
+    boolean addabnormal(Integer aid,String transport,String ainfo,String atime,String aaddress,String acomment,String dphone);
 
     //查看异常信息（司机查看自己根据手机号）
     @Select("select * from abnormal where dphone = #{arg0}")

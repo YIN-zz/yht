@@ -31,9 +31,8 @@ public class DriverinfoController {
     private DriverinfoService driverinfoService;
     @Autowired
     private ChemicalsinfoService chemicalsinfoService;
-   /* @Autowired*/
+    /* @Autowired*/
     /*private BeiAnService beiAnService;*/
-
 
 
     //出入库和时间、货物名称查询
@@ -107,19 +106,35 @@ public class DriverinfoController {
         return "";
     }*/
 
-    //根据运输到达地区查询    出库（警员查询）
-    @RequestMapping("findoutaddress")
+    //多个条件模糊查询出库信息
+    /*@RequestMapping("findalloutgoods")
     @ResponseBody
-    public List<Driverinfo> findoutaddress(String tbourn){
-        List<Driverinfo> findoutaddress = driverinfoService.findoutaddress(tbourn);
-        return findoutaddress;
+    private List<Driverinfo> findalloutgoods(String dbourn, String dcompany, String rtime, String goodname) {
+        List<Driverinfo> findalloutgoods = driverinfoService.findalloutgoods(dbourn, dcompany, rtime, goodname);
+        return findalloutgoods;
+    }*/
+
+    //多个条件模糊查询入库信息
+   /* @RequestMapping("findallingoods")
+    @ResponseBody
+    private List<Driverinfo> findallingoods(String dbourn, String dcompany, String rtime, String goodname) {
+        List<Driverinfo> findallingoods = driverinfoService.findallingoods(dbourn, dcompany, rtime, goodname);
+        return findallingoods;
+    }*/
+
+    //多个条件模糊查询出库信息
+    @RequestMapping("findalloutgood")
+    @ResponseBody
+    private List<Driverinfo> findalloutgood(String dbourn,String dcompany,String rtime,String goodname){
+        List<Driverinfo> findalloutgood = driverinfoService.findalloutgood(dbourn, dcompany, rtime, goodname);
+        return findalloutgood;
     }
 
-    //根据运输到达地区查询    入库（警员查询）
-    @RequestMapping("findinaddress")
+    //多个条件模糊查询入库信息
+    @RequestMapping("findallingood")
     @ResponseBody
-    public List<Driverinfo> findinaddress(String tbourn){
-        List<Driverinfo> findinaddress = driverinfoService.findinaddress(tbourn);
-        return findinaddress;
+    private List<Driverinfo> findallingood(String dbourn,String dcompany,String rtime,String goodname){
+        List<Driverinfo> findallingood = driverinfoService.findallingood(dbourn, dcompany, rtime, goodname);
+        return findallingood;
     }
 }

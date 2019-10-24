@@ -2,9 +2,10 @@ package com.ygt.mapper;
 
 
 import com.ygt.pojo.Driverinfo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import com.ygt.pojo.Goodsinfo;
+import com.ygt.pojo.Moments;
+import org.apache.ibatis.annotations.*;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 import java.util.Date;
@@ -25,39 +26,58 @@ public interface DriverinfoDao {
     @Insert("insert into policeinfo(dcompany,recordid, dtype, rtime, rdriver, rphone, dbourn, rnumber, recordphoto, driverphoto, carphoto, ruse, rinout, mid) values(#{dcompany},#{recordid},#{dtype},#{rtime},#{rdriver},#{rphone},#{dbourn},#{rnumber},#{recordphoto},#{driverphoto},#{carphoto},#{ruse},#{rinout},#{mid})")
     boolean addDriverinfo(Driverinfo driverinfo);
 
+    //多个条件模糊查询出库信息
+    /*@Select("select * from driverinfo where (dbourn like CONCAT('%',#{arg0},'%') or dcompany like CONCAT('%',#{arg1},'%') or rtime like CONCAT('%',#{arg2},'%') or drid = (select drid from goodsinfo where goodname = #{arg3})) and rinout = '出库'")
+    @Results({@Result(property = "goodsinfoList",column = "drid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
+    List<Driverinfo> findalloutgoods(String dbourn,String dcompany,String rtime,String goodname);*/
+
+    //多个条件模糊查询入库信息
+   /* @Select("select * from driverinfo where (dbourn like CONCAT('%',#{arg0},'%') or dcompany like CONCAT('%',#{arg1},'%') or rtime like CONCAT('%',#{arg2},'%') or drid = (select drid from goodsinfo where goodname = #{arg3})) and rinout = '入库'")
+    @Results({@Result(property = "goodsinfoList",column = "drid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
+    List<Driverinfo> findallingoods(String dbourn,String dcompany,String rtime,String goodname);*/
 
 
+    //多个条件模糊查询出库信息
+    @Select("<script> " +
+            "select * from driverinfo " +
+            "<where> rinout = '出库' " +
+            "<if test=\"dbourn!= null\">" +
+            "and dbourn like CONCAT('%',#{dbourn},'%')" +
+            "</if>" +
+            "<if test=\"dcompany!= null\">" +
+            "and dcompany like CONCAT('%',#{dcompany},'%')" +
+            "</if> " +
+            "<if test=\"rtime!= null\">" +
+            "and rtime like CONCAT('%',#{rtime},'%')" +
+            "</if>" +
+            "<if test=\"goodname!= null\">" +
+            "and drid = (select drid from goodsinfo where goodname = #{goodname})" +
+            "</if> " +
+            "</where> " +
+            "</script>")
+    @Results({@Result(property = "goodsinfoList",column = "drid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
+    List<Driverinfo> findalloutgood(@Param("dbourn") String dbourn, @Param("dcompany") String dcompany, @Param("rtime") String rtime, @Param("goodname") String goodname);
 
 
-    //根据运输到达地区查询       出库（警员查询）
-    @Select("select * from driverinfo where recordid = (select transport from transportinfo where tbourn = #{arg0}) and rinout = '出库'")
-    List<Driverinfo> findoutaddress(String tbourn);
+    //多个条件模糊查询入库信息
+    @Select("<script> " +
+            "select * from driverinfo " +
+            "<where> rinout = '入库' " +
+            "<if test=\"dbourn!= null\">" +
+            "and dbourn like CONCAT('%',#{dbourn},'%')" +
+            "</if>" +
+            "<if test=\"dcompany!= null\">" +
+            "and dcompany like CONCAT('%',#{dcompany},'%')" +
+            "</if> " +
+            "<if test=\"rtime!= null\">" +
+            "and rtime like CONCAT('%',#{rtime},'%')" +
+            "</if>" +
+            "<if test=\"goodname!= null\">" +
+            "and drid = (select drid from goodsinfo where goodname = #{goodname})" +
+            "</if> " +
+            "</where> " +
+            "</script>")
+    @Results({@Result(property = "goodsinfoList",column = "drid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
+    List<Driverinfo> findallingood(@Param("dbourn") String dbourn, @Param("dcompany") String dcompany, @Param("rtime") String rtime, @Param("goodname") String goodname);
 
-    //根据运输到达地区查询       入库（警员查询）
-    @Select("select * from driverinfo where recordid = (select transport from transportinfo where tbourn = #{arg0}) and rinout = '入库'")
-    List<Driverinfo> findinaddress(String tbourn);
-
-    //企业名称（警员查询）    出库
-    @Select("select * from driverinfo where dcompany = #{arg0} and and rinout = '出库'")
-    Driverinfo findoutrecordid(String dcompany);
-
-    //企业名称（警员查询）    入库
-    @Select("select * from driverinfo where dcompany = #{arg0} and and rinout = '入库'")
-    Driverinfo findinrecordid(String dcompany);
-
-    //货物名称  出库（警员查询）
-    @Select("select * from driverinfo where dname = #{arg0} and and rinout = '出库'")
-    List<Driverinfo> findoutdname(String dname);
-
-    //货物名称  入库（警员查询）
-    @Select("select * from driverinfo where dname = #{arg0} and and rinout = '入库'")
-    List<Driverinfo> findindname(String dname);
-
-    //时间    出库（警员查询）
-    @Select("select * from driverinfo where rinout = '出库' and rtime like %#{rtime}%")
-    List<Driverinfo> findoutrtime(String rtime);
-
-    //时间    入库（警员查询）
-    @Select("select * from driverinfo where rinout = '入库' and rtime like %#{rtime}%")
-    List<Driverinfo> findinrtime(String rtime);
 }

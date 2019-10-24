@@ -3,6 +3,8 @@ package com.ygt.service;
 import com.ygt.mapper.DriverinfoDao;
 import com.ygt.pojo.Driverinfo;
 
+import com.ygt.pojo.Goodsinfo;
+import com.ygt.pojo.Moments;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,15 +32,27 @@ public class DriverinfoService {
         return driverinfoDao.addDriverinfo( driverinfo);
     }
 
-    //根据运输到达地区查询    出库（警员查询）
-    public List<Driverinfo> findoutaddress(String tbourn){
-        List<Driverinfo> findoutaddress = driverinfoDao.findoutaddress(tbourn);
-        return findoutaddress;
+    //多个条件模糊查询出库信息
+    /*public List<Driverinfo> findalloutgoods(String dbourn,String dcompany,String rtime,String goodname){
+        List<Driverinfo> findalloutgoods = driverinfoDao.findalloutgoods(dbourn, dcompany, rtime, goodname);
+        return findalloutgoods;
+    }*/
+
+    //多个条件模糊查询入库信息
+    /*public List<Driverinfo> findallingoods(String dbourn,String dcompany,String rtime,String goodname){
+        List<Driverinfo> findallingoods = driverinfoDao.findallingoods(dbourn, dcompany, rtime, goodname);
+        return findallingoods;
+    }*/
+
+    //多个条件模糊查询出库信息
+    public List<Driverinfo> findalloutgood(String dbourn,String dcompany,String rtime,String goodname){
+        List<Driverinfo> findalloutgood = driverinfoDao.findalloutgood(dbourn, dcompany, rtime, goodname);
+        return findalloutgood;
     }
 
-    //根据运输到达地区查询    入库（警员查询）
-    public List<Driverinfo> findinaddress(String tbourn){
-        List<Driverinfo> findinaddress = driverinfoDao.findinaddress(tbourn);
-        return findinaddress;
+    //多个条件模糊查询入库信息
+    public List<Driverinfo> findallingood(String dbourn,String dcompany,String rtime,String goodname){
+        List<Driverinfo> findallingood = driverinfoDao.findallingood(dbourn, dcompany, rtime, goodname);
+        return findallingood;
     }
 }
