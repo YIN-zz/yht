@@ -24,4 +24,10 @@ public interface AbnormalDao {
     @Select("select * from abnormal")
     List<Abnormal> findallabnormal();
 
+    //管理查询中的异常上报查询
+    @Select("select * from abnormal where transport=#{transport} OR dphone=#{dphone}")
+    List<Abnormal> selectAllAbno(String transport,String dphone);
+
+
+
 }

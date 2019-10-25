@@ -4,6 +4,7 @@ import com.ygt.pojo.Abnormal;
 import com.ygt.service.AbnormalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AbnormalController {
@@ -52,5 +54,14 @@ public class AbnormalController {
     public List<Abnormal> findallabnormal(){
         List<Abnormal> findallabnormal = abnormalService.findallabnormal();
         return findallabnormal;
+    }
+
+    //管理查询中的异常上报查询
+    @RequestMapping("selectAllAbno")
+    public String selectAllAbno(Model model,String transport, String dphone){
+        List<Abnormal> abnormals = abnormalService.selectAllAbno(transport, dphone);
+        model.addAttribute("list",abnormals);
+        return "";
+
     }
 }

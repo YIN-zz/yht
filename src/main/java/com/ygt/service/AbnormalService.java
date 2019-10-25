@@ -35,4 +35,9 @@ public class AbnormalService {
         List<Abnormal> findallabnormal = abnormalDao.findallabnormal();
         return findallabnormal;
     }
+
+    //管理查询中的异常上报查询
+    public List<Abnormal> selectAllAbno(String transport,String dphone){
+        return abnormalDao.selectAllAbno(transport,dphone);
+    }
 }

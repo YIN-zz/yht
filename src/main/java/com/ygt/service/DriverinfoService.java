@@ -55,4 +55,9 @@ public class DriverinfoService {
         List<Driverinfo> findallingood = driverinfoDao.findallingood(dbourn, dcompany, rtime, goodname);
         return findallingood;
     }
+
+    //管理查询的 地址 企业 时间 名称 来查询
+    public List selectAll(@Param("dbourn") String dbourn,@Param("dcompany") String dcompany, @Param("rtime") String rtime, @Param("goodname") String goodname){
+        return driverinfoDao.selectAll(dbourn,dcompany,rtime,goodname);
+    }
 }
