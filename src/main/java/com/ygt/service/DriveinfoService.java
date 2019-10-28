@@ -21,7 +21,9 @@ public class DriveinfoService {
     //司机登录
     public Driveinfo finddriveinfo(String dphone,String dpassword){
         Driveinfo finddriveinfo = driveinfodao.finddriveinfo(dphone, dpassword);
-        return finddriveinfo;
+        if(finddriveinfo!=null)
+            return finddriveinfo;
+        return null;
     }
 
     //司机修改密码

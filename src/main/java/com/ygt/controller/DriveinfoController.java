@@ -1,5 +1,6 @@
 package com.ygt.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ygt.pojo.Driveinfo;
 import com.ygt.service.DriveinfoService;
 import com.ygt.util.MD5Util;
@@ -29,7 +30,8 @@ public class DriveinfoController {
     }
 
     //司机登录
-    @RequestMapping("logindrive")
+    @RequestMapping(value="logindrive",produces = "application/json; charset=utf-8")
+    @ResponseBody
     public String logindrive(String dphone, String dpassword, HttpSession session) throws NoSuchAlgorithmException {
         session.setAttribute("dphone",dphone);
         Driveinfo finddriveinfo = driveinfoService.finddriveinfo(dphone, md5Util.md5(new String (dpassword)));
@@ -37,9 +39,22 @@ public class DriveinfoController {
         session.setAttribute("did",did);
         String dname = finddriveinfo.getDname();
         session.setAttribute("dname",dname);
-        if(finddriveinfo!=null)
+        JSONObject obj = new JSONObject();
+        if(finddriveinfo!=null){
+            obj.put("200","成功");
+            String s = obj.toString();
+            return s;
+        }else{
+            obj.put("400","失败");
+            String s = obj.toString();
+            return s;
+        }
+        /*obj.put("finddriveinfo",finddriveinfo);
+        String s = obj.toString();
+        return s;*/
+        /*if(finddriveinfo!=null)
             return "index";
-        return "main";
+        return "main";*/
     }
 
     //司机修改密码

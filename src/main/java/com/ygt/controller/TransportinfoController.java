@@ -20,45 +20,62 @@ public class TransportinfoController {
 
     //添加基本运输的信息并将运输备案号transport保存到session中
     @RequestMapping("enrolltransport")
-    public String enrolltransport(String transport, String tcard, String tbourn, Date ttime ,HttpSession session) throws NoSuchAlgorithmException {
+    public String enrolltransport(String transport, String tcard, String tbourn, Date ttime,String taddress,HttpSession session) throws NoSuchAlgorithmException {
         session.setAttribute("transport",transport);
         Integer tid = null;
         String tstart = "未出发";
         String tend = "未到达";
         String dphone = (String)session.getAttribute("dphone");
-        transportinfoService.addtransportinfo(tid,transport,tcard, tbourn, ttime,tstart,tend,dphone);
+        session.setAttribute("ttime",ttime);
+        transportinfoService.addtransportinfo(tid,transport,tcard, tbourn, ttime,tstart,tend,taddress,dphone);
         return "index";
     }
 
-    //货物是否开始运输(填写完备案号信息后弹框显示是否显示现在开始运输)
+    //货物是否开始运输(填写完备案号信息后弹框显示是否显示现在开始运输)(表单修改)
     @RequestMapping("changestarttransport")
     public String changestarttransport(String tstart,HttpSession session){
-        String transport = (String) session.getAttribute("transport");
-        transportinfoService.updatestarttransprot(transport,tstart);
+        /*String transport = (String) session.getAttribute("transport");*/
+        String dphone = (String)session.getAttribute("dphone");
+        Date ttime = (Date)session.getAttribute("ttime");
+        transportinfoService.updatestarttransprot(ttime, tstart,dphone);
         return "index";
     }
 
     //货物是否开始运输(表单修改)
-    @RequestMapping("changestart")
-    public String changestarttransport(String transport,String tstart){
-        transportinfoService.updatestarttransprot(transport,tstart);
+    /*@RequestMapping("changestart")
+    public String changestarttransport(String tstart,HttpSession session){
+        String dphone = (String)session.getAttribute("dphone");
+        Date ttime = (Date)session.getAttribute("ttime");
+        transportinfoService.updatestarttransprot(ttime, tstart,dphone);
         return "redirect:findalltransport";
+    }*/
+
+    //修改司机位置信息
+    @RequestMapping("updateaddrsss")
+    public void updateaddrsss(String taddress,HttpSession session){
+        String dphone = (String)session.getAttribute("dphone");
+        Date ttime = (Date)session.getAttribute("ttime");
+        transportinfoService.updateaddrsss(ttime,taddress,dphone);
     }
+
 
     //货物是否运输到达(表单修改)
     @RequestMapping("changeend")
-    public String changeendtransport(String transport,String tend){
-        transportinfoService.updateendtransport(transport, tend);
+    public String changeendtransport(String tend,HttpSession session){
+        String dphone = (String)session.getAttribute("dphone");
+        Date ttime = (Date)session.getAttribute("ttime");
+        transportinfoService.updateendtransport(ttime, tend,dphone);
         return "redirect:findalltransport";
     }
 
     //货物是否运输到达（可能用不到）
-    @RequestMapping("changeendtransport")
+   /* @RequestMapping("changeendtransport")
     public String changeendtransport(String tend,HttpSession session){
-        String transport = (String)session.getAttribute("transport");
-        transportinfoService.updateendtransport(transport, tend);
+        String dphone = (String)session.getAttribute("dphone");
+        Date ttime = (Date)session.getAttribute("ttime");
+        transportinfoService.updateendtransport(ttime, tend,dphone);
         return "index";
-    }
+    }*/
 
     //查询运输信息（根据运输备案号）
     @RequestMapping("findtransport")
