@@ -17,8 +17,8 @@ public interface DriverinfoDao {
     //根据出库 入库和时间，产品名称统计所有信息
     @Select("<script> " +
             "select * from driverinfo " +
-            "<where> rinout=#{rinout} <if test=\'rtime!=null\'> " +
-            "and driverinfo.rtime like CONCAT('%',#{rtime},'%') </if> " +
+            "<where> driver_rinout=#{driver_rinout} <if test=\'driver_rtime!=null\'> " +
+            "and driverinfo.driver_rtime like CONCAT('%',#{driver_rtime},'%') </if> " +
             "<if test=\"goodname!= null\"> and " +
             "drid = (select drid from goodsinfo where goodname = #{goodname}) " +
             "</if> </where> </script>")
@@ -31,7 +31,7 @@ public interface DriverinfoDao {
       int selectChemicalsinfo(String dname);
 
     //出入库信息的生成
-    @Insert("insert into policeinfo(dcompany,recordid, dtype, rtime, rdriver, rphone, dbourn, rnumber, recordphoto, driverphoto, carphoto, ruse, rinout, mid) values(#{dcompany},#{recordid},#{dtype},#{rtime},#{rdriver},#{rphone},#{dbourn},#{rnumber},#{recordphoto},#{driverphoto},#{carphoto},#{ruse},#{rinout},#{mid})")
+    @Insert("insert into driverinfo(driver_company,driver_recordid, driver_type, driver_time, driver_driver, driver_phone, driver_bourn, driver_number, driver_recordphoto, driver_photo, driver_carphoto, driver_ruse, driver_rinout, mid) values(#{driver_company},#{driver_recordid},#{driver_type},#{driver_time},#{driver_driver},#{driver_phone},#{driver_bourn},#{driver_number},#{driver_recordphoto},#{driver_photo},#{driver_carphoto},#{driver_ruse},#{driver_rinout},#{mid})")
     boolean addDriverinfo(Driverinfo driverinfo);
 
     //多个条件模糊查询出库信息
