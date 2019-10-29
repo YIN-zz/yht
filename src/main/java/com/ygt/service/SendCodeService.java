@@ -37,7 +37,7 @@ public class SendCodeService {
 	//验证码长度，范围4～10，默认为4
     private static final String CODELEN="6";
     
-    public String sendCodes(String telphone) throws ClientProtocolException, IOException {
+    public String sendCodes(String userphone) throws ClientProtocolException, IOException {
     			
     		DefaultHttpClient httpClient = new DefaultHttpClient();
     	    HttpPost httpPost = new HttpPost(SERVER_URL);
@@ -64,7 +64,7 @@ public class SendCodeService {
     	    nvps.add(new BasicNameValuePair("templateid", TEMPLATEID));
     	        
     	    //改成发往前台传进来的手机号
-    	    nvps.add(new BasicNameValuePair("mobile", telphone));
+    	    nvps.add(new BasicNameValuePair("mobile", userphone));
     	    //nvps.add(new BasicNameValuePair("mobile", MOBILE));
     	    nvps.add(new BasicNameValuePair("codeLen", CODELEN));
 
