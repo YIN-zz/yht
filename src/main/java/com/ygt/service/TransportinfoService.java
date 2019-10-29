@@ -1,6 +1,7 @@
 package com.ygt.service;
 
 import com.ygt.mapper.TransportinfoDao;
+import com.ygt.pojo.Driverinfo;
 import com.ygt.pojo.Transportinfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +15,28 @@ public class TransportinfoService {
     @Autowired
     private TransportinfoDao transportinfodao;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //添加基本运输的信息并将运输备案号transport保存到session中
-    public boolean addtransportinfo(Integer tid,String transport, String tcard, String tbourn, Date ttime,String tstart,String tend,String taddress,String dphone){
+    /*public boolean addtransportinfo(Integer tid,String transport, String tcard, String tbourn, Date ttime,String tstart,String tend,String taddress,String dphone){
         return transportinfodao.addtransportinfo(tid,transport,tcard, tbourn, ttime,tstart,tend,taddress,dphone);
-    }
+    }*/
 
     //货物是否开始运输
     public boolean updatestarttransprot(Date ttime,String tstart,String dphone){
