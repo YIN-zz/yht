@@ -1,5 +1,6 @@
 package com.ygt.mapper;
 
+import com.ygt.pojo.Driverinfo;
 import com.ygt.pojo.Transportinfo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -10,9 +11,26 @@ import java.util.List;
 
 public interface TransportinfoDao {
 
-    //添加基本运输的信息并将运输备案号transport保存到session中
-    @Insert("insert into transportinfo values(#{arg0},#{arg1},#{arg2},#{arg3},#{arg4},#{arg5},#{arg6},#{arg7},#{arg8})")
-    boolean addtransportinfo(Integer tid,String transport, String tcard, String tbourn, Date ttime,String tstart,String tend,String taddress,String dphone);
+    //遍历司机运输的货物
+    @Select("select * from goodinfo where driverphone = #{arg0}")
+    List<Driverinfo> findalldriverinfo(String userphone);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //货物是否开始运输
     @Update("update transportinfo set tstart = #{arg1} where ttime = #{arg0} and dphone = #{arg2}")

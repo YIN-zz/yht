@@ -6,24 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9c1bb0-bf5c-435f-81c5-7c6ae852105a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriveinfoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/ManagerinfoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/PoliceinfoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/SendCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/SendCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/AbnormalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/AbnormalDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriveinfoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/ManagerinfoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/PoliceinfoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driveinfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Managerinfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Policeinfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/DriveinfoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/ManagerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/PoliceinfoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/SendCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/SendCodeService.java" afterDir="false" />
-    </list>
+    <list default="true" id="7b9c1bb0-bf5c-435f-81c5-7c6ae852105a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +214,7 @@
       <workItem from="1571965585015" duration="12251000" />
       <workItem from="1572051666147" duration="4296000" />
       <workItem from="1572223942794" duration="18511000" />
-      <workItem from="1572310483850" duration="12274000" />
+      <workItem from="1572310483850" duration="16009000" />
     </task>
     <task id="LOCAL-00001" summary="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）">
       <created>1571110664457</created>
@@ -324,7 +307,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572249761405</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="更改用户数据库之后">
+      <created>1572337005575</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572337005575</updated>
+    </task>
+    <task id="LOCAL-00015" summary="更改用户数据库二次上传">
+      <created>1572340750881</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1572340750881</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +348,8 @@
     <MESSAGE value="新建数据库更改" />
     <MESSAGE value="上传警员查询" />
     <MESSAGE value="返回json" />
-    <option name="LAST_COMMIT_MESSAGE" value="返回json" />
+    <MESSAGE value="更改用户数据库之后" />
+    <MESSAGE value="更改用户数据库二次上传" />
+    <option name="LAST_COMMIT_MESSAGE" value="更改用户数据库二次上传" />
   </component>
 </project>

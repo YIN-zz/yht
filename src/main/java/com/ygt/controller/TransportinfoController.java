@@ -18,8 +18,28 @@ public class TransportinfoController {
     @Autowired
     private TransportinfoService transportinfoService;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //添加基本运输的信息并将运输备案号transport保存到session中
-    @RequestMapping("enrolltransport")
+    /*@RequestMapping("enrolltransport")
     public String enrolltransport(String transport, String tcard, String tbourn, Date ttime,String taddress,HttpSession session) throws NoSuchAlgorithmException {
         session.setAttribute("transport",transport);
         Integer tid = null;
@@ -29,7 +49,7 @@ public class TransportinfoController {
         session.setAttribute("ttime",ttime);
         transportinfoService.addtransportinfo(tid,transport,tcard, tbourn, ttime,tstart,tend,taddress,dphone);
         return "index";
-    }
+    }*/
 
     //货物是否开始运输(填写完备案号信息后弹框显示是否显示现在开始运输)(表单修改)
     @RequestMapping("changestarttransport")
