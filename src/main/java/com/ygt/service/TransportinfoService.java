@@ -15,18 +15,23 @@ public class TransportinfoService {
     private TransportinfoDao transportinfodao;
 
     //添加基本运输的信息并将运输备案号transport保存到session中
-    public boolean addtransportinfo(Integer tid,String transport, String tcard, String tbourn, Date ttime,String tstart,String tend,String dphone){
-        return transportinfodao.addtransportinfo(tid,transport,tcard, tbourn, ttime,tstart,tend,dphone);
+    public boolean addtransportinfo(Integer tid,String transport, String tcard, String tbourn, Date ttime,String tstart,String tend,String taddress,String dphone){
+        return transportinfodao.addtransportinfo(tid,transport,tcard, tbourn, ttime,tstart,tend,taddress,dphone);
     }
 
     //货物是否开始运输
-    public boolean updatestarttransprot(String transport,String tstart){
-        return transportinfodao.updatestarttransprot(transport, tstart);
+    public boolean updatestarttransprot(Date ttime,String tstart,String dphone){
+        return transportinfodao.updatestarttransprot(ttime, tstart,dphone);
+    }
+
+    //修改司机位置信息
+    public boolean updateaddrsss(Date ttime,String taddress,String dphone){
+        return transportinfodao.updateaddrsss(ttime, taddress, dphone);
     }
 
     //货物是否运输到达
-    public boolean updateendtransport(String transport,String tend){
-        return transportinfodao.updateendtransport(transport, tend);
+    public boolean updateendtransport(Date ttime,String tend,String dphone){
+        return transportinfodao.updateendtransport(ttime, tend,dphone);
     }
 
     //查询运输信息（根据运输备案号）

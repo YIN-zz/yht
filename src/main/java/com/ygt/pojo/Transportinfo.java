@@ -24,6 +24,8 @@ public class Transportinfo{
     private String tstart;
     //货物是否已经送到
     private String tend;
+    //司机现在所处的位置
+    private String taddress;
     //绑定司机手机号
     private String dphone;
 
