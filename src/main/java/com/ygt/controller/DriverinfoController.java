@@ -84,6 +84,7 @@ public class DriverinfoController {
         return "index";
     }
     //出入库货物的登记
+    @RequestMapping("addBeiAnController")
     public String addBeiAnController(Goodsinfo goodsinfo, HttpSession session){
         Integer drid = (Integer) session.getAttribute("drid");
         goodsinfo.setDrid(drid);
