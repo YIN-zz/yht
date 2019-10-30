@@ -13,4 +13,8 @@ public interface FirminfoDao {
     //企管根据userid去查看注册的信息
     @Select("select * from firminfo where userid = #{arg0}")
     Firminfo findfirm(Integer userid);
+
+    //根据登录id查询公司的名称
+    @Select("SELECT firmname FROM userinfo,firminfo WHERE userinfo.userid=firminfo.userid AND userinfo.userid=#{userid}")
+    String selectUserFind(Integer userid);
 }

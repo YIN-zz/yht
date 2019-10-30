@@ -21,4 +21,8 @@ public class FirminfoService {
         Firminfo findfirm = firminfoDao.findfirm(userid);
         return findfirm;
     }
+    //根据登录id查询公司的名称
+    public String selectUserFind(Integer userid){
+        return firminfoDao.selectUserFind(userid);
+    }
 }

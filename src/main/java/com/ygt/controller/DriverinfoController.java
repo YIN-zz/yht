@@ -9,6 +9,7 @@ import com.ygt.service.ChemicalsinfoService;
 import com.ygt.service.DriverinfoService;
 
 
+import com.ygt.service.FirminfoService;
 import com.ygt.service.GoodsinfoService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,8 @@ public class DriverinfoController {
     private ChemicalsinfoService chemicalsinfoService;
      @Autowired
     private GoodsinfoService goodsinfoService;
+    @Autowired
+    private FirminfoService firminfoService;
 
 
     //出入库和时间、货物名称查询
@@ -51,6 +54,9 @@ public class DriverinfoController {
     @RequestMapping("addDriverinfo")
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
         session.setAttribute("driverrinout",driverinfo.getDriverrinout());
+    /*    Integer userid = (Integer) session.getAttribute("userid");
+        String company = firminfoService.selectUserFind(userid);
+        session.setAttribute("company",company);*/
         session.setAttribute("drivercompany",driverinfo.getDrivercompany());
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 hh时mm分ss秒");
         String format = dateFormat.format(new Date());
@@ -82,16 +88,16 @@ public class DriverinfoController {
         Userinfo userinfo = new Userinfo();
         String username = driverinfo.getDriverdriver();
         String userphone = driverinfo.getDriverphone();
-        Integer userid = driverinfoService.selectUserinfo(username, userphone);
+        Integer uid = driverinfoService.selectUserinfo(username, userphone);
         Integer useridentity = 4;
-        if (userid == null){
+        if (uid == null){
             driverinfoService.insertUserinfo(username,userphone,useridentity);
         }
         Boolean aBoolean = driverinfoService.addDriverinfo(driverinfo);
         session.setAttribute("driverrid",driverinfo.getDriverrid());
         JSONObject obj = new JSONObject();
         if (aBoolean == true){
-            obj.put("200","成功");
+            obj.put("公司","company");
             return obj.toString();
         }else {
             obj.put("400","失败");
