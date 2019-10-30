@@ -2,6 +2,7 @@ package com.ygt.mapper;
 
 import com.ygt.pojo.Driverinfo;
 import com.ygt.pojo.Transportinfo;
+import com.ygt.pojo.Userinfo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -11,11 +12,13 @@ import java.util.List;
 
 public interface TransportinfoDao {
 
-    //遍历司机运输的货物
-    @Select("select * from goodinfo where driverphone = #{arg0}")
+    //遍历司机运输目的地
+    @Select("select * from driverinfo where driverphone = #{arg0}")
     List<Driverinfo> findalldriverinfo(String userphone);
 
-
+    //添加货物运输的信息
+    @Insert("insert into transportinfo values(#{arg0},#{arg1},#{arg2},#{arg3},#{arg4},#{arg5})")
+    boolean enrolltransport(Integer transportid,String transportbourn,Date transporttime,String transportstart,String transportend,String userphone);
 
 
 

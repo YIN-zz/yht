@@ -15,6 +15,11 @@ public class TransportinfoService {
     @Autowired
     private TransportinfoDao transportinfodao;
 
+    public List<Driverinfo> findalldriverinfo(String userphone){
+        List<Driverinfo> findalldriverinfo = transportinfodao.findalldriverinfo(userphone);
+        return findalldriverinfo;
+    }
+
 
 
 

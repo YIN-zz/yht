@@ -46,7 +46,7 @@ public class DriverinfoController {
     }
 
     //出入库信息的添加
-    @RequestMapping("addDriverinfo")
+    /*@RequestMapping("addDriverinfo")
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
         session.setAttribute("rinout",driverinfo.getRinout());
         session.setAttribute("company",driverinfo.getDcompany());
@@ -82,7 +82,7 @@ public class DriverinfoController {
         driverinfoService.addDriverinfo(driverinfo);
         session.setAttribute("drid",driverinfo.getDrid());
         return "index";
-    }
+    }*/
     //出入库货物的登记
     @RequestMapping("addBeiAnController")
     public String addBeiAnController(Goodsinfo goodsinfo, HttpSession session){

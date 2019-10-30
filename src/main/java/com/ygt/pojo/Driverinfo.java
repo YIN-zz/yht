@@ -11,36 +11,33 @@ import java.util.List;
 @ToString
 public class Driverinfo {
     //出入库id
-    private Integer driver_rid;
+    private Integer driverrid;
     //公司名字
-    private String driver_company;
+    private String drivercompany;
     //备案证号
-    private String driver_recordid;
+    private String driverrecordid;
     //出入库材料类别
-    private String driver_type;
+    private String drivertype;
     //出入库时间
-    private String driver_time;
+    private String drivertime;
     //目的地
-    private String driver_bourn;
+    private String driverbourn;
     //货车司机名字
-    private String driver_driver;
+    private String driverdriver;
     //手机号
-    private String driver_phone;
+    private String driverphone;
     //车牌号
-    private String driver_number;
+    private String drivernumber;
     //备案号或者许可证照片
-    private String driver_recordphoto;
+    private String driverrecordphoto;
     //驾驶证或行驶证照片
-    private String driver_photo;
+    private String driverphoto;
     //司机站在货车前照片
-    private String driver_carphoto;
+    private String drivercarphoto;
     //货品用途
-    private String driver_ruse;
+    private String driverruse;
     //货品出入库
-    private String driver_rinout;
-    //仓库管理员id
-    private Integer mid;
-
+    private String driverrinout;
     //查询List集合
     private List<Goodsinfo> goodsinfoList;
 }

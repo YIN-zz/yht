@@ -24,12 +24,13 @@ public class UserinfoController {
     @RequestMapping(value="enrollduser",produces = "application/json; charset=utf-8")
     @ResponseBody
     public String enrolluser(String username,String userphone,String userpassword) throws NoSuchAlgorithmException {
+        System.out.println(username+userphone+userpassword);
         Userinfo finduser = userinfoService.finduser(userphone);
         JSONObject obj = new JSONObject();
         if(finduser==null){
             Integer userid = null;
             Integer useridentity = 1;
-            userinfoService.enrolluser(userid,username, userphone, md5Util.md5(new String (userpassword)),useridentity);
+            userinfoService.enrolluser(userid,username,userphone, md5Util.md5(new String (userpassword)),useridentity);
             obj.put("200","成功");
             return obj.toString();
         }else{

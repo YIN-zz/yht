@@ -8,9 +8,30 @@
   <component name="ChangeListManager">
     <list default="true" id="7b9c1bb0-bf5c-435f-81c5-7c6ae852105a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/GoodsinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/GoodsinfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/TransportinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/TransportinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/UserinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/UserinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/TransportinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/TransportinfoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/TransportinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/TransportinfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/yht.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/DriverinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/DriverinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/TransportinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/TransportinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/UserinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/UserinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/DriverinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/DriverinfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/GoodsinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/GoodsinfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/TransportinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/TransportinfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Driverinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Driverinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Transportinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Transportinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/TransportinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/TransportinfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/META-INF/yht.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/DriverinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/DriverinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/TransportinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/TransportinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/UserinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/UserinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/DriverinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/DriverinfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/TransportinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/TransportinfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Transportinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/pojo/Transportinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/TransportinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/TransportinfoService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,52 +53,6 @@
     <expand />
     <select />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1729">
-              <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/mapper/GoodsinfoDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -89,11 +64,14 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="PUSH_TAGS">
-      <GitPushTagMode />
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -116,88 +94,6 @@
     </option>
   </component>
   <component name="ProjectId" id="1SAuXvNZ4IB5ljZoltMYUQvzLSt" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="yht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yht" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yht" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yht" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yht" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yht" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ygt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yht" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ygt" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yht" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ygt" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yht" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ygt" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yht" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yht" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ygt" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -240,7 +136,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.63" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="yht:war exploded">
@@ -344,7 +240,8 @@
       <workItem from="1571965585015" duration="12251000" />
       <workItem from="1572051666147" duration="4296000" />
       <workItem from="1572223942794" duration="18511000" />
-      <workItem from="1572310483850" duration="16009000" />
+      <workItem from="1572310483850" duration="23186000" />
+      <workItem from="1572396753155" duration="739000" />
     </task>
     <task id="LOCAL-00001" summary="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）">
       <created>1571110664457</created>
@@ -451,52 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1572340750881</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="更改用户数据库二次上传">
+      <created>1572341154268</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1572341154269</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1291000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26412213" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49923664" weight="0.06451613" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49770993" visible="true" weight="0.06451613" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7053435" weight="0.25297114" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49694657" weight="0.15959252" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.37328243" side_tool="true" visible="true" weight="0.06451613" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.62671757" visible="true" weight="0.06451613" />
-      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.49923664" weight="0.55687606" />
-      <window_info anchor="right" id="Bean Validation" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="BPMNPalette" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -507,28 +367,8 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
           </value>
         </entry>
       </map>
@@ -545,24 +385,5 @@
     <MESSAGE value="更改用户数据库之后" />
     <MESSAGE value="更改用户数据库二次上传" />
     <option name="LAST_COMMIT_MESSAGE" value="更改用户数据库二次上传" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

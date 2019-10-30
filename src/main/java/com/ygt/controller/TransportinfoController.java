@@ -1,5 +1,6 @@
 package com.ygt.controller;
 
+import com.ygt.pojo.Driverinfo;
 import com.ygt.pojo.Transportinfo;
 import com.ygt.service.TransportinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,12 @@ public class TransportinfoController {
     @Autowired
     private TransportinfoService transportinfoService;
 
-
+    @RequestMapping("findalldriverinfo")
+    @ResponseBody
+    public List<Driverinfo> findalldriverinfo(String userphone){
+        List<Driverinfo> findalldriverinfo = transportinfoService.findalldriverinfo(userphone);
+        return findalldriverinfo;
+    }
 
 
 
