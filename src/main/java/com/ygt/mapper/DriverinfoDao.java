@@ -31,7 +31,7 @@ public interface DriverinfoDao {
       int selectChemicalsinfo(String dname);
 
     //出入库信息的生成
-    @Insert("insert into driverinfo(drivercompany,driverrecordid, drivertype, drivertime, driverdriver, driverphone, driverbourn, drivernumber, driverrecordphoto, driverphoto, drivercarphoto, driverruse, driverrinout, userid) values(#{drivercompany},#{driverrecordid},#{drivertype},#{drivertime},#{driverdriver},#{driverphone},#{driverbourn},#{drivernumber},#{driverrecordphoto},#{driverphoto},#{drivercarphoto},#{driverruse},#{driverrinout},#{userid})")
+    @Insert("insert into driverinfo(drivercompany,driverrecordid, drivertype, drivertime, driverdriver,driveridentity, driverphone, driverbourn, drivernumber, driverrecordphoto, driverphoto, drivercarphoto, driverruse, driverrinout, userid) values(#{drivercompany},#{driverrecordid},#{drivertype},#{drivertime},#{driverdriver},#{driveridentity}, #{driverphone},#{driverbourn},#{drivernumber},#{driverrecordphoto},#{driverphoto},#{drivercarphoto},#{driverruse},#{driverrinout},#{userid})")
     boolean addDriverinfo(Driverinfo driverinfo);
 
     //多个条件模糊查询出库信息
@@ -114,7 +114,7 @@ public interface DriverinfoDao {
     @Select("SELECT userid FROM userinfo WHERE #{username} and #{userphone}")
     int selectUserinfo(String username ,String userphone);
     //出库时查询用户表中有没有司机的信息，没有的话进行注册
-    @Insert("INSERT INTO userinfo(username,userphone) values(#{username}, #{userphone})")
-    Boolean insertUserinfo(String username ,String userphone);
+    @Insert("INSERT INTO userinfo(username,userphone,useridentity) values(#{username}, #{userphone}, #{useridentity})")
+    Boolean insertUserinfo(String username ,String userphone,Integer useridentity);
 
 }

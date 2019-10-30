@@ -24,6 +24,8 @@ public class Driverinfo {
     private String driverbourn;
     //货车司机名字
     private String driverdriver;
+    //身份证号
+    private String driveridentity;
     //手机号
     private String driverphone;
     //车牌号

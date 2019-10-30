@@ -3,6 +3,7 @@ package com.ygt.controller;
 import com.ygt.pojo.Chemicalsinfo;
 import com.ygt.pojo.Driverinfo;
 import com.ygt.pojo.Goodsinfo;
+import com.ygt.pojo.Userinfo;
 import com.ygt.service.ChemicalsinfoService;
 import com.ygt.service.DriverinfoService;
 
@@ -77,8 +78,17 @@ public class DriverinfoController {
                 }
             }
         }
-        driverinfoService.addDriverinfo(driverinfo);
+        Userinfo userinfo = new Userinfo();
+        String username = driverinfo.getDriverdriver();
+        String userphone = driverinfo.getDriverphone();
+        Integer userid = driverinfoService.selectUserinfo(username, userphone);
+        Integer useridentity = 4;
+        if (userid == null){
+            driverinfoService.insertUserinfo(username,userphone,useridentity);
+        }
+        Boolean aBoolean = driverinfoService.addDriverinfo(driverinfo);
         session.setAttribute("driverrid",driverinfo.getDriverrid());
+        
         return "index";
     }
     //出入库货物的登记

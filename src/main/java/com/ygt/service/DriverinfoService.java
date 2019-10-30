@@ -66,7 +66,7 @@ public class DriverinfoService {
         return driverinfoDao.selectUserinfo(username,userphone);
     }
     //注册用户信息表，增加姓名和手机号
-    public Boolean insertUserinfo(String username ,String userphone){
-        return driverinfoDao.insertUserinfo(username,userphone);
+    public Boolean insertUserinfo(String username ,String userphone,Integer useridentity){
+        return driverinfoDao.insertUserinfo(username,userphone,useridentity);
     }
 }

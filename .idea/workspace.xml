@@ -10,36 +10,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Goodsinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Goodsinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/DriverinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/DriverinfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/AbnormalController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/EnterpriseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/GoodsinfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/NoticeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/PhoneController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/PoliceinfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/SendCodeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/AbnormalDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/ChemicalsinfoDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/EnterpriseDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/NoticeDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/PoliceinfoDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Abnormal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Chemicalsinfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Enterprise.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Goodsinfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Notice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/pojo/Policeinfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/AbnormalService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/ChemicalsinfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/DriverinfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/EnterpriseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/GoodsinfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/NoticeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/PoliceinfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/SendCodeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/util/CheckSumBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/util/MD5Util.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,29 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="92" column="90" selection-start-line="92" selection-start-column="90" selection-end-line="92" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/service/ChemicalsinfoService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/mapper/ChemicalsinfoDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="296">
+              <caret line="89" column="68" lean-forward="true" selection-start-line="89" selection-start-column="68" selection-end-line="89" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -93,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+            <state relative-caret-position="164">
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -102,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="108" column="65" selection-start-line="108" selection-start-column="65" selection-end-line="108" selection-end-column="65" />
+            <state relative-caret-position="-1761">
+              <caret line="33" column="346" selection-start-line="33" selection-start-column="346" selection-end-line="33" selection-end-column="346" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/service/DriverinfoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="19" column="117" selection-start-line="19" selection-start-column="109" selection-end-line="19" selection-end-column="117" />
+            <state relative-caret-position="239">
+              <caret line="68" column="88" selection-start-line="68" selection-start-column="88" selection-end-line="68" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -123,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/pojo/Userinfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="346">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -160,9 +114,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ygt/service/DriverinfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Goodsinfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ygt/service/DriverinfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java" />
       </list>
     </option>
@@ -537,11 +492,18 @@
       <option name="project" value="LOCAL" />
       <updated>1572341154269</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="修改数据库字段名后更改">
+      <created>1572401460054</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1572401460055</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3190000" />
+    <option name="totallyTimeSpent" value="6312000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -630,23 +592,10 @@
     <MESSAGE value="返回json" />
     <MESSAGE value="更改用户数据库之后" />
     <MESSAGE value="更改用户数据库二次上传" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改用户数据库二次上传" />
+    <MESSAGE value="修改数据库字段名后更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改数据库字段名后更改" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/pojo/Userinfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/service/DriverinfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="19" column="117" selection-start-line="19" selection-start-column="109" selection-end-line="19" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/pojo/Goodsinfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -654,27 +603,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/mapper/ChemicalsinfoDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="108" column="65" selection-start-line="108" selection-start-column="65" selection-end-line="108" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="92" column="90" selection-start-line="92" selection-start-column="90" selection-end-line="92" selection-end-column="90" />
+        <state relative-caret-position="100">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -685,10 +617,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/mapper/ChemicalsinfoDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/pojo/Userinfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="346">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/pojo/Driverinfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/mapper/DriverinfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1761">
+          <caret line="33" column="346" selection-start-line="33" selection-start-column="346" selection-end-line="33" selection-end-column="346" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/service/DriverinfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="68" column="88" selection-start-line="68" selection-start-column="88" selection-end-line="68" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ygt/controller/DriverinfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="89" column="68" lean-forward="true" selection-start-line="89" selection-start-column="68" selection-end-line="89" selection-end-column="68" />
         </state>
       </provider>
     </entry>
