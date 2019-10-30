@@ -39,22 +39,20 @@ public class DriverinfoController {
 
     //出入库和时间、货物名称查询
     @RequestMapping("allDriverinfo")
-    public String allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("dname")String dname, Model model){
-        List list = driverinfoService.allDriverinfo(rinout, rtime, dname);
+    public String allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
+        List list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
         model.addAttribute("list",list);
         return  "index";
     }
 
     //出入库信息的添加
-    /*@RequestMapping("addDriverinfo")
+    @RequestMapping("addDriverinfo")
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
-        session.setAttribute("rinout",driverinfo.getRinout());
-        session.setAttribute("company",driverinfo.getDcompany());
-        Integer mid = Integer.parseInt((String) session.getAttribute("mid"));
-        driverinfo.setMid(mid);
+        session.setAttribute("driverrinout",driverinfo.getDriverrinout());
+        session.setAttribute("drivercompany",driverinfo.getDrivercompany());
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 hh时mm分ss秒");
         String format = dateFormat.format(new Date());
-        driverinfo.setRtime(format);
+        driverinfo.setDrivertime(format);
         File file = new File(request.getSession().getServletContext().getRealPath("/upload"));
         if (!file.exists()){
             file.mkdir();
@@ -67,28 +65,28 @@ public class DriverinfoController {
                     multipartFiles[i].transferTo(file2);
                     switch (i) {
                         case 0:
-                            driverinfo.setRecordphoto(filename);
+                            driverinfo.setDriverrecordphoto(filename);
                             break;
                         case 1:
                            driverinfo.setDriverphoto(filename);
                             break;
                         case 2:
-                            driverinfo.setCarphoto(filename);
+                            driverinfo.setDrivercarphoto(filename);
                             break;
                     }
                 }
             }
         }
         driverinfoService.addDriverinfo(driverinfo);
-        session.setAttribute("drid",driverinfo.getDrid());
+        session.setAttribute("driverrid",driverinfo.getDriverrid());
         return "index";
-    }*/
+    }
     //出入库货物的登记
     @RequestMapping("addBeiAnController")
     public String addBeiAnController(Goodsinfo goodsinfo, HttpSession session){
-        Integer drid = (Integer) session.getAttribute("drid");
-        goodsinfo.setDrid(drid);
-        String company = (String) session.getAttribute("company");
+        Integer driverrid = (Integer) session.getAttribute("driverrid");
+        goodsinfo.setDriverrid(driverrid);
+        String company = (String) session.getAttribute("drivercompany");
         Integer chid = driverinfoService.selectChemicalsinfo(goodsinfo.getGoodname());
         goodsinfo.setChid(chid);
         goodsinfoService.addBeiAn(goodsinfo);
@@ -128,23 +126,23 @@ public class DriverinfoController {
     //多个条件模糊查询出库信息
     @RequestMapping("findalloutgood")
     @ResponseBody
-    private List<Driverinfo> findalloutgood(String dbourn,String dcompany,String rtime,String goodname){
-        List<Driverinfo> findalloutgood = driverinfoService.findalloutgood(dbourn, dcompany, rtime, goodname);
+    private List<Driverinfo> findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<Driverinfo> findalloutgood = driverinfoService.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
         return findalloutgood;
     }
 
     //多个条件模糊查询入库信息
     @RequestMapping("findallingood")
     @ResponseBody
-    private List<Driverinfo> findallingood(String dbourn,String dcompany,String rtime,String goodname){
-        List<Driverinfo> findallingood = driverinfoService.findallingood(dbourn, dcompany, rtime, goodname);
+    private List<Driverinfo> findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<Driverinfo> findallingood = driverinfoService.findallingood(driverbourn, drivercompany, drivertime, goodname);
         return findallingood;
     }
 
     //管理查询的 地址 企业 时间 名称 来查询
     @RequestMapping("selectAll")
-    public String selectAll(Model model,@Param("dbourn") String dbourn,@Param("dcompany") String dcompany, @Param("rtime") String rtime, @Param("goodname") String goodname){
-        List list = driverinfoService.selectAll(dbourn, dcompany, rtime, goodname);
+    public String selectAll(Model model,@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
+        List list = driverinfoService.selectAll(driverbourn, drivercompany, drivertime, goodname);
         model.addAttribute("list",list);
         return "";
     }

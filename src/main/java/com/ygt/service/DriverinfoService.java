@@ -17,7 +17,7 @@ public class DriverinfoService {
     private DriverinfoDao driverinfoDao;
 
  //查询所有出入库的信息  根据模糊条件
-    public List allDriverinfo(@Param("rinout")String rinout, @Param("rtime")String rtime, @Param("goodname")String goodname){
+    public List allDriverinfo(@Param("driverrinout")String rinout, @Param("drivertime")String rtime, @Param("goodname")String goodname){
 
         return  driverinfoDao.allDriverinfo(rinout,rtime,goodname);
     }
@@ -45,19 +45,28 @@ public class DriverinfoService {
     }*/
 
     //多个条件模糊查询出库信息
-    public List<Driverinfo> findalloutgood(String dbourn,String dcompany,String rtime,String goodname){
-        List<Driverinfo> findalloutgood = driverinfoDao.findalloutgood(dbourn, dcompany, rtime, goodname);
+    public List<Driverinfo> findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<Driverinfo> findalloutgood = driverinfoDao.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
         return findalloutgood;
     }
 
     //多个条件模糊查询入库信息
-    public List<Driverinfo> findallingood(String dbourn,String dcompany,String rtime,String goodname){
-        List<Driverinfo> findallingood = driverinfoDao.findallingood(dbourn, dcompany, rtime, goodname);
+    public List<Driverinfo> findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<Driverinfo> findallingood = driverinfoDao.findallingood(driverbourn, drivercompany, drivertime, goodname);
         return findallingood;
     }
 
     //管理查询的 地址 企业 时间 名称 来查询
-    public List selectAll(@Param("dbourn") String dbourn,@Param("dcompany") String dcompany, @Param("rtime") String rtime, @Param("goodname") String goodname){
-        return driverinfoDao.selectAll(dbourn,dcompany,rtime,goodname);
+    public List selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
+        return driverinfoDao.selectAll(driverbourn,drivercompany,drivertime,goodname);
+    }
+
+    //出库时查询用户表中有没有司机的信息，没有的话进行注册
+    public int selectUserinfo(String username ,String userphone){
+        return driverinfoDao.selectUserinfo(username,userphone);
+    }
+    //注册用户信息表，增加姓名和手机号
+    public Boolean insertUserinfo(String username ,String userphone){
+        return driverinfoDao.insertUserinfo(username,userphone);
     }
 }

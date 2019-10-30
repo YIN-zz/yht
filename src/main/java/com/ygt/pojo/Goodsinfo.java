@@ -17,7 +17,7 @@ public class Goodsinfo {
     //货物重量
     private Double goodeweight;
     //出入库id
-    private Integer drid;
+    private Integer driverrid;
     //库内货物总id
     private Integer chid;
 
