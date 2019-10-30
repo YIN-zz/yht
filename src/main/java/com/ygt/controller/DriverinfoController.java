@@ -1,5 +1,6 @@
 package com.ygt.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ygt.pojo.Chemicalsinfo;
 import com.ygt.pojo.Driverinfo;
 import com.ygt.pojo.Goodsinfo;
@@ -88,8 +89,14 @@ public class DriverinfoController {
         }
         Boolean aBoolean = driverinfoService.addDriverinfo(driverinfo);
         session.setAttribute("driverrid",driverinfo.getDriverrid());
-        
-        return "index";
+        JSONObject obj = new JSONObject();
+        if (aBoolean == true){
+            obj.put("200","成功");
+            return obj.toString();
+        }else {
+            obj.put("400","失败");
+            return obj.toString();
+        }
     }
     //出入库货物的登记
     @RequestMapping("addBeiAnController")
@@ -99,7 +106,6 @@ public class DriverinfoController {
         String company = (String) session.getAttribute("drivercompany");
         Integer chid = driverinfoService.selectChemicalsinfo(goodsinfo.getGoodname());
         goodsinfo.setChid(chid);
-        goodsinfoService.addBeiAn(goodsinfo);
         Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid,company);
         //对库中化学品和设备总数量和重量进行修改，
         String rinout = (String) session.getAttribute("rinout");
@@ -114,7 +120,15 @@ public class DriverinfoController {
             int ccount =  chemicalsinfo.getCcount() + goodsinfo.getGoodcount();
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid,company);
         }
-        return "";
+        int i = goodsinfoService.addBeiAn(goodsinfo);
+        JSONObject obj = new JSONObject();
+        if (i > 0 ){
+            obj.put("200","成功");
+            return obj.toString();
+        }else {
+            obj.put("400","失败");
+            return obj.toString();
+        }
     }
 
     //多个条件模糊查询出库信息

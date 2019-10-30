@@ -20,16 +20,16 @@ public class Driverinfo {
     private String drivertype;
     //出入库时间
     private String drivertime;
-    //目的地
-    private String driverbourn;
     //货车司机名字
     private String driverdriver;
+    //车牌号
+    private String drivernumber;
     //身份证号
     private String driveridentity;
     //手机号
     private String driverphone;
-    //车牌号
-    private String drivernumber;
+    //目的地
+    private String driverbourn;
     //备案号或者许可证照片
     private String driverrecordphoto;
     //驾驶证或行驶证照片

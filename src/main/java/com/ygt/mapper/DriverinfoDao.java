@@ -31,7 +31,7 @@ public interface DriverinfoDao {
       int selectChemicalsinfo(String dname);
 
     //出入库信息的生成
-    @Insert("insert into driverinfo(drivercompany,driverrecordid, drivertype, drivertime, driverdriver,driveridentity, driverphone, driverbourn, drivernumber, driverrecordphoto, driverphoto, drivercarphoto, driverruse, driverrinout, userid) values(#{drivercompany},#{driverrecordid},#{drivertype},#{drivertime},#{driverdriver},#{driveridentity}, #{driverphone},#{driverbourn},#{drivernumber},#{driverrecordphoto},#{driverphoto},#{drivercarphoto},#{driverruse},#{driverrinout},#{userid})")
+    @Insert("insert into driverinfo(drivercompany,driverrecordid, drivertype, drivertime, driverdriver,drivernumber,driveridentity, driverphone, driverbourn,driverrecordphoto, driverphoto, drivercarphoto, driverruse, driverrinout) values(#{drivercompany},#{driverrecordid},#{drivertype},#{drivertime},#{driverdriver},#{drivernumber},#{driveridentity}, #{driverphone},#{driverbourn},#{driverrecordphoto},#{driverphoto},#{drivercarphoto},#{driverruse},#{driverrinout})")
     boolean addDriverinfo(Driverinfo driverinfo);
 
     //多个条件模糊查询出库信息
