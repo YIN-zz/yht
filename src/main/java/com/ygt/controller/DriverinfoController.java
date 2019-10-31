@@ -44,10 +44,10 @@ public class DriverinfoController {
 
     //出入库和时间、货物名称查询
     @RequestMapping("allDriverinfo")
-    public String allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
+    public List allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
         List list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
         model.addAttribute("list",list);
-        return  "index";
+        return  list;
     }
 
     //出入库信息的添加
@@ -97,7 +97,7 @@ public class DriverinfoController {
         session.setAttribute("driverrid",driverinfo.getDriverrid());
         JSONObject obj = new JSONObject();
         if (aBoolean == true){
-            obj.put("公司","company");
+            obj.put("200","成功");
             return obj.toString();
         }else {
             obj.put("400","失败");
@@ -171,9 +171,9 @@ public class DriverinfoController {
 
     //管理查询的 地址 企业 时间 名称 来查询
     @RequestMapping("selectAll")
-    public String selectAll(Model model,@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
+    public List selectAll(Model model,@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
         List list = driverinfoService.selectAll(driverbourn, drivercompany, drivertime, goodname);
         model.addAttribute("list",list);
-        return "";
+        return list;
     }
 }
