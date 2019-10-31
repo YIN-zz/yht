@@ -25,7 +25,6 @@ public class EnterpriseController {
 
     //修改企业页面的信息
     @RequestMapping("addEnterprise")
-    @ResponseBody
     public String addEnterprise(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Enterprise enterprise)throws IOException {
         Integer userid = Integer.parseInt((String) session.getAttribute("userid"));
         enterprise.setUserid(userid);

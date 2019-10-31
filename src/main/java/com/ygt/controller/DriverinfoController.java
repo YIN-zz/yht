@@ -54,7 +54,6 @@ public class DriverinfoController {
 
     //出入库信息的添加
     @RequestMapping("addDriverinfo")
-    @ResponseBody
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
         session.setAttribute("driverrinout",driverinfo.getDriverrinout());
     /*    Integer userid = (Integer) session.getAttribute("userid");
@@ -109,7 +108,6 @@ public class DriverinfoController {
     }
     //出入库货物的登记
     @RequestMapping("addBeiAnController")
-    @ResponseBody
     public String addBeiAnController(Goodsinfo goodsinfo, HttpSession session){
         Integer driverrid = (Integer) session.getAttribute("driverrid");
         goodsinfo.setDriverrid(driverrid);
