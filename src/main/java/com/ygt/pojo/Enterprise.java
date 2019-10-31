@@ -26,5 +26,5 @@ public class Enterprise {
     //修改的时间
     private String etime;
     //企业登陆人id
-    private Integer mid;
+    private Integer userid;
 }

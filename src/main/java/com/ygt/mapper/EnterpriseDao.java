@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Insert;
 public interface EnterpriseDao {
 
     //企业主页信息的添加
-    @Insert("insert into enterprise(etext, epicture, evideo, einfor, etime, mid) values(#{etext},#{epicture},#{evideo},#{einfor},#{etime},#{mid})")
+    @Insert("insert into enterprise(etext, epicture, evideo, einfor, etime, userid) values(#{etext},#{epicture},#{evideo},#{einfor},#{etime},#{userid})")
     int addEnterprise(Enterprise enterprise);
 }

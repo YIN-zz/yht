@@ -31,6 +31,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@RequestMapping("/DriverinfoController")
 public class DriverinfoController {
     @Autowired
     private DriverinfoService driverinfoService;
@@ -44,6 +45,7 @@ public class DriverinfoController {
 
     //出入库和时间、货物名称查询
     @RequestMapping("allDriverinfo")
+    @ResponseBody
     public List allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
         List list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
         model.addAttribute("list",list);
@@ -52,6 +54,7 @@ public class DriverinfoController {
 
     //出入库信息的添加
     @RequestMapping("addDriverinfo")
+    @ResponseBody
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
         session.setAttribute("driverrinout",driverinfo.getDriverrinout());
     /*    Integer userid = (Integer) session.getAttribute("userid");
@@ -106,6 +109,7 @@ public class DriverinfoController {
     }
     //出入库货物的登记
     @RequestMapping("addBeiAnController")
+    @ResponseBody
     public String addBeiAnController(Goodsinfo goodsinfo, HttpSession session){
         Integer driverrid = (Integer) session.getAttribute("driverrid");
         goodsinfo.setDriverrid(driverrid);
