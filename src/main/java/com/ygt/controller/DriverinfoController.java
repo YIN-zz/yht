@@ -11,12 +11,17 @@ import com.ygt.service.DriverinfoService;
 
 import com.ygt.service.FirminfoService;
 import com.ygt.service.GoodsinfoService;
+/*import io.swagger.annotations.Api;*/
+/*import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;*/
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,6 +37,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/DriverinfoController")
+//@Api(value="出入库信息管理",tags = "出入库信息管理接口")
 public class DriverinfoController {
     @Autowired
     private DriverinfoService driverinfoService;
@@ -44,8 +50,10 @@ public class DriverinfoController {
 
 
     //出入库和时间、货物名称查询
-    @RequestMapping("allDriverinfo")
+    @RequestMapping(value = "allDriverinfo",method = RequestMethod.POST)
     @ResponseBody
+  //  @ApiOperation("根据出库、入库，时间，货物名称来查询信息")
+  //  @ApiImplicitParams(value = {@ApiImplicitParam(name = "driverrinout,drivertime,goodname",value = "出库或者入库,时间,货物名称")})
     public List allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
         List list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
         model.addAttribute("list",list);
@@ -53,7 +61,9 @@ public class DriverinfoController {
     }
 
     //出入库信息的添加
-    @RequestMapping("addDriverinfo")
+    @RequestMapping(value = "addDriverinfo",method = RequestMethod.POST)
+  // @ApiOperation("添加出库的信息")
+  //  @ApiImplicitParams(value = {@ApiImplicitParam(name="Driverinfo",value = "出入库的信息表")})
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
         session.setAttribute("driverrinout",driverinfo.getDriverrinout());
     /*    Integer userid = (Integer) session.getAttribute("userid");
@@ -107,7 +117,9 @@ public class DriverinfoController {
         }
     }
     //出入库货物的登记
-    @RequestMapping("addBeiAnController")
+    @RequestMapping(value = "addBeiAnController",method = RequestMethod.POST)
+   // @ApiOperation("添加出库的信息中货物的信息")
+  //  @ApiImplicitParams(value = {@ApiImplicitParam(name="Goodsinfo",value = "货物信息表")}
     public String addBeiAnController(Goodsinfo goodsinfo, HttpSession session){
         Integer driverrid = (Integer) session.getAttribute("driverrid");
         goodsinfo.setDriverrid(driverrid);
