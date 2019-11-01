@@ -9,7 +9,7 @@ import java.util.List;
 public interface GoodsinfoDao {
 
     //添加出入库货物的信息
-    @Insert("insert into goodsinfo ( goodname, goodcount, goodweight,chid,drid) values(#{goodname},#{goodcount},#{goodweight},#{chid},#{drid})")
+    @Insert("insert into goodsinfo ( goodtype,goodruse,goodname, goodcount, goodweight,chid,drid) values(#{goodtype},#{goodruse},#{goodname},#{goodcount},#{goodweight},#{chid},#{drid})")
     int addBeiAn(Goodsinfo goodsinfo);
 
     @Select("select * from goodsinfo where drid = #{arg}")

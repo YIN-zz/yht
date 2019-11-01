@@ -10,6 +10,10 @@ import lombok.*;
 public class Goodsinfo {
     //货物主键id
     private Integer goodid;
+    //货物类型
+    private String goodtype;
+    //货物的用途
+    private String goodruse;
     //货物名称
     private String goodname;
     //货物数量
