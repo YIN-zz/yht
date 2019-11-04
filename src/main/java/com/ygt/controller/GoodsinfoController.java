@@ -22,4 +22,12 @@ public class GoodsinfoController {
         List<Goodsinfo> findgoodsinfo = goodsinfoService.findgoodsinfo(driverid);
         return findgoodsinfo;
     }
+
+    //根据名字模糊查询driverid，返回集合
+    @RequestMapping("selectName")
+    @ResponseBody
+    public List<Goodsinfo> selectName(String goodname){
+        List<Goodsinfo> goodsinfoList = goodsinfoService.selectName(goodname);
+        return goodsinfoList;
+    }
 }

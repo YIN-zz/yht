@@ -21,4 +21,8 @@ public class GoodsinfoService {
         List<Goodsinfo> findgoodsinfo = goodsinfoDao.findgoodsinfo(driverid);
         return findgoodsinfo;
     }
+    //根据名字模糊查询driverid，返回集合
+    public List<Goodsinfo> selectName(String goodname){
+       return goodsinfoDao.selectName(goodname);
+    }
 }

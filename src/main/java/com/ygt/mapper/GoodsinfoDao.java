@@ -14,4 +14,8 @@ public interface GoodsinfoDao {
 
     @Select("select * from goodsinfo where driverid = #{arg}")
     List<Goodsinfo> findgoodsinfo(Integer driverid);
+
+    //根据名字模糊查询driverid，返回集合
+    @Select("SELECT * FROM goodsinfo WHERE goodname like CONCAT('%',#{goodname},'%')")
+    List<Goodsinfo> selectName(String goodname);
 }
