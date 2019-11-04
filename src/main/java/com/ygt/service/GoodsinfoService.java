@@ -17,8 +17,8 @@ public class GoodsinfoService {
         return goodsinfoDao.addBeiAn(goodsinfo);
     }
 
-    public List<Goodsinfo> findgoodsinfo(Integer drid){
-        List<Goodsinfo> findgoodsinfo = goodsinfoDao.findgoodsinfo(drid);
+    public List<Goodsinfo> findgoodsinfo(Integer driverid){
+        List<Goodsinfo> findgoodsinfo = goodsinfoDao.findgoodsinfo(driverid);
         return findgoodsinfo;
     }
 }

@@ -106,7 +106,7 @@ public class DriverinfoController {
             driverinfoService.insertUserinfo(username,userphone,useridentity);
         }
         Boolean aBoolean = driverinfoService.addDriverinfo(driverinfo);
-        session.setAttribute("driverrid",driverinfo.getDriverrid());
+        session.setAttribute("driverid",driverinfo.getDriverid());
         JSONObject obj = new JSONObject();
         if (aBoolean == true){
             obj.put("200","成功");
@@ -121,8 +121,8 @@ public class DriverinfoController {
    // @ApiOperation("添加出库的信息中货物的信息")
   //  @ApiImplicitParams(value = {@ApiImplicitParam(name="Goodsinfo",value = "货物信息表")}
     public String addBeiAnController(Goodsinfo goodsinfo, HttpSession session){
-        Integer driverrid = (Integer) session.getAttribute("driverrid");
-        goodsinfo.setDriverrid(driverrid);
+        Integer driverid = (Integer) session.getAttribute("driverid");
+        goodsinfo.setDriverid(driverid);
         String company = (String) session.getAttribute("drivercompany");
         Integer chid = driverinfoService.selectChemicalsinfo(goodsinfo.getGoodname());
         goodsinfo.setChid(chid);

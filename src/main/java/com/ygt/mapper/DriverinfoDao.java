@@ -22,7 +22,7 @@ public interface DriverinfoDao {
             "<if test=\"goodname!= null\"> and " +
             "drid = (select drid from goodsinfo where goodname = #{goodname}) " +
             "</if> </where> </script>")
-    @Results({@Result(property = "goodsinfoList",column = "drid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
+    @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
     // @Select("SELECT * FROM driverinfo,goodsinfo WHERE driverinfo.driverrid=goodsinfo.driverrid AND (driverinfo.driverrinout=#{driverrinout} OR driverinfo.drivertime like CONCAT('%',#{drivertime},'%') OR goodsinfo.goodname like CONCAT('%',#{goodname},'%'))")
     List allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname);
 
@@ -63,7 +63,7 @@ public interface DriverinfoDao {
             "</if> " +
             "</where> " +
             "</script>")
-    @Results({@Result(property = "goodsinfoList",column = "driverrid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
+    @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
     List<Driverinfo> findalloutgood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
 
 
@@ -85,7 +85,7 @@ public interface DriverinfoDao {
             "</if> " +
             "</where> " +
             "</script>")
-    @Results({@Result(property = "goodsinfoList",column = "driverrid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
+    @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
     List<Driverinfo> findallingood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
 
     //管理查询的地址 企业 时间 名称 查询
@@ -106,7 +106,7 @@ public interface DriverinfoDao {
             "</if> " +
             "</where> " +
             "</script>")
-    @Results({@Result(property = "goodsinfoList",column = "driverrid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
+    @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
     List selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
 
 

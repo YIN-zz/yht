@@ -1,6 +1,6 @@
 package com.ygt.controller;
 
-import com.ygt.pojo.Notice;
+import com.ygt.pojo.Noticeinfo;
 import com.ygt.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -30,9 +30,9 @@ public class NoticeController {
 
     //警员增加通知信息
     @RequestMapping("addNotice")
-    public String addNotice(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, Notice notice, HttpSession session)throws IOException {
-        Integer pid = (Integer) session.getAttribute("pid");
-        notice.setPid(pid);
+    public String addNotice(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, Noticeinfo notice, HttpSession session)throws IOException {
+        Integer noticeid = (Integer) session.getAttribute("noticeid");
+        notice.setNoticeid(noticeid);
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
         String format = dateFormat.format(new Date());
         notice.setNtime(format);
@@ -49,10 +49,10 @@ public class NoticeController {
                     multipartFiles[i].transferTo(file2);
                     switch (i) {
                         case 0:
-                            notice.setNvideo(filename);
+                            notice.setNoticepicture1(filename);
                             break;
                         case 1:
-                            notice.setNpicture(filename);
+                            notice.setNoticepicture2(filename);
                             break;
                     }
                 }
@@ -81,7 +81,7 @@ public class NoticeController {
     //资讯信息的接收
     @RequestMapping("selectNotice")
     public String selectNotice(Model model){
-        List<Notice> noticeList = noticeService.selectNotice();
+        List<Noticeinfo> noticeList = noticeService.selectNotice();
         model.addAttribute("list",noticeList);
         System.out.println(noticeList.toString());
         return "selectn";

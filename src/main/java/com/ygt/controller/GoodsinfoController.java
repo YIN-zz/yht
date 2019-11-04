@@ -18,8 +18,8 @@ public class GoodsinfoController {
     //查询出入库货物的信息
     @RequestMapping("findgoodsinfo")
     @ResponseBody
-    public List<Goodsinfo> findgoodsinfo(Integer drid){
-        List<Goodsinfo> findgoodsinfo = goodsinfoService.findgoodsinfo(drid);
+    public List<Goodsinfo> findgoodsinfo(Integer driverid){
+        List<Goodsinfo> findgoodsinfo = goodsinfoService.findgoodsinfo(driverid);
         return findgoodsinfo;
     }
 }

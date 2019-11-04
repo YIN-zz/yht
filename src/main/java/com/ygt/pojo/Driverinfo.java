@@ -11,7 +11,7 @@ import java.util.List;
 @ToString
 public class Driverinfo {
     //出入库id
-    private Integer driverrid;
+    private Integer driverid;
     //公司名字
     private String drivercompany;
     //备案证号
