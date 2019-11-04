@@ -12,6 +12,6 @@ public interface GoodsinfoDao {
     @Insert("insert into goodsinfo ( goodtype,goodruse,goodname, goodcount, goodweight,chid,driverid) values(#{goodtype},#{goodruse},#{goodname},#{goodcount},#{goodweight},#{chid},#{driverid})")
     int addBeiAn(Goodsinfo goodsinfo);
 
-    @Select("select * from goodsinfo where drid = #{arg}")
-    List<Goodsinfo> findgoodsinfo(Integer drid);
+    @Select("select * from goodsinfo where driverid = #{arg}")
+    List<Goodsinfo> findgoodsinfo(Integer driverid);
 }

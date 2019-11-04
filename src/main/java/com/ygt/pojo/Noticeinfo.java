@@ -28,7 +28,7 @@ public class Noticeinfo {
     private String noticepicture3;
 
     //发布s时间
-    private String ntime;
+    private String noticetime;
 
    //警员id
     private Integer userid;

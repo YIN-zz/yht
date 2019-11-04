@@ -1,7 +1,7 @@
 package com.ygt.controller;
 
 import com.ygt.pojo.Noticeinfo;
-import com.ygt.service.NoticeService;
+import com.ygt.service.NoticeinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -24,18 +24,18 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-public class NoticeController {
+public class NoticeinfoController {
     @Autowired
-    private NoticeService noticeService;
+    private NoticeinfoService noticeService;
 
     //警员增加通知信息
     @RequestMapping("addNotice")
     public String addNotice(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, Noticeinfo notice, HttpSession session)throws IOException {
         Integer noticeid = (Integer) session.getAttribute("noticeid");
         notice.setNoticeid(noticeid);
-        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy年MM月dd日 :hh:mm:ss");
         String format = dateFormat.format(new Date());
-        notice.setNtime(format);
+        notice.setNoticetime(format);
         // File file = new File(request.getSession().getServletContext().getRealPath("yht/src/main/WEB-INF/upload"));
         File file = new File("D:/upload");
         if (!file.exists()){
@@ -53,6 +53,9 @@ public class NoticeController {
                             break;
                         case 1:
                             notice.setNoticepicture2(filename);
+                            break;
+                        case 2:
+                            notice.setNoticepicture3(filename);
                             break;
                     }
                 }

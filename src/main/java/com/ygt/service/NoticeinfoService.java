@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class NoticeService {
+public class NoticeinfoService {
     @Autowired
     private NoticeinfoDao noticeDao;
     //警员添加信息通知
@@ -16,7 +16,7 @@ public class NoticeService {
         return noticeDao.addNotice(notice);
     }
 
-    //资讯信息的接收
+    //资讯信息的查询
     public List<Noticeinfo> selectNotice(){
         return noticeDao.selectNotice();
     }
