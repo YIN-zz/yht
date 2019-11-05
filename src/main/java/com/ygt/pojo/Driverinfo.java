@@ -16,8 +16,6 @@ public class Driverinfo {
     private String drivercompany;
     //备案证号
     private String driverrecordid;
-    //出入库材料类别
-    private String drivertype;
     //出入库时间
     private String drivertime;
     //货车司机名字
@@ -36,8 +34,6 @@ public class Driverinfo {
     private String driverphoto;
     //司机站在货车前照片
     private String drivercarphoto;
-    //货品用途
-    private String driverruse;
     //货品出入库
     private String driverrinout;
     //查询List集合
