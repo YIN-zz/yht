@@ -20,7 +20,7 @@ public interface DriverinfoDao {
             "<where> driverrinout=#{driverrinout} <if test=\'drivertime!=null\'> " +
             "and driverinfo.drivertime like CONCAT('%',#{drivertime},'%') </if> " +
             "<if test=\"goodname!= null\"> and " +
-            "drid = (select drid from goodsinfo where goodname = #{goodname}) " +
+            "driverid = (select driverid from goodsinfo where goodname = #{goodname}) " +
             "</if> </where> </script>")
     @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
     // @Select("SELECT * FROM driverinfo,goodsinfo WHERE driverinfo.driverrid=goodsinfo.driverrid AND (driverinfo.driverrinout=#{driverrinout} OR driverinfo.drivertime like CONCAT('%',#{drivertime},'%') OR goodsinfo.goodname like CONCAT('%',#{goodname},'%'))")
