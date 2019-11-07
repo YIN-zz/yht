@@ -41,7 +41,7 @@ public class FirminfoController {
     @ResponseBody
     public String enrollerStorekeeper(String username,String userphone,HttpSession session) throws NoSuchAlgorithmException {
         Integer userid = null;
-        Integer useridentity = 2;
+        Integer useridentity = 3;
         userinfoService.enrolluser(userid,username,userphone, md5Util.md5(new String ("123456")),useridentity);
         Userinfo finduser = userinfoService.finduser(userphone);
         Integer userid1 = finduser.getUserid();

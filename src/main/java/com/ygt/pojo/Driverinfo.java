@@ -38,4 +38,7 @@ public class Driverinfo {
     private String driverrinout;
     //查询List集合
     private List<Goodsinfo> goodsinfoList;
+
+    //根据userid查询查询transportinfo表
+    private List<Transportinfo> transportinfos;
 }

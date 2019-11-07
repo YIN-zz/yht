@@ -16,6 +16,8 @@ public class Userinfo {
     private String userphone;
     //注册密码
     private String userpassword;
+    //头像显示
+    private String userphoto;
     //注册人身份
     private Integer useridentity;
 }

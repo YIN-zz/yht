@@ -33,4 +33,15 @@ public class UserinfoService {
             return finduser;
         return null;
     }
+
+    //根据userid查询名字
+    public Userinfo findusername(Integer userid){
+        Userinfo findusername = userinfoDao.findusername(userid);
+        return findusername;
+    }
+
+    //修改头像
+    public boolean updatephoto(Integer userid,String userphoto){
+        return userinfoDao.updatephoto(userid,userphoto);
+    }
 }

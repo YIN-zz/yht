@@ -27,7 +27,7 @@ public class PoliceinfoController {
     @ResponseBody
     public String enrollpolice(String username,String userphone,String policeaddress) throws NoSuchAlgorithmException {
         Integer userid = null;
-        Integer useridentity = 0;
+        Integer useridentity = 1;
         userinfoService.enrolluser(userid,username, userphone, md5Util.md5(new String ("123456")),useridentity);
         Userinfo finduser = userinfoService.finduser(userphone);
         Integer userid1 = finduser.getUserid();

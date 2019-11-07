@@ -79,6 +79,7 @@ public class SendCodeService {
     	        
     	    String str = EntityUtils.toString(response1.getEntity(), "utf-8");
     	    System.out.println("接受验证码的手机为"+MOBILE);
+    	    System.out.println("发送的验证码"+CODELEN);
     	    System.out.println(str);
 			return str;
 

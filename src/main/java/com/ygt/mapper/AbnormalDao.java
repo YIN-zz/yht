@@ -1,6 +1,6 @@
 package com.ygt.mapper;
 
-import com.ygt.pojo.Abnormal;
+import com.ygt.pojo.Abnormalinfo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
@@ -9,23 +9,11 @@ import java.util.List;
 public interface AbnormalDao {
 
     //添加异常信息
-    @Insert("insert into abnormal(aid,transport,ainfo,atime,aaddress,acomment,dphone) values(#{arg0},#{arg1},#{arg2},#{arg3},#{arg4},#{arg5},#{arg6})")
-    boolean addabnormal(Integer aid,String transport,String ainfo,String atime,String aaddress,String acomment,String dphone);
+    @Insert("insert into abnormalinfo values(#{arg0},#{arg1},#{arg2},#{arg3},#{arg4},#{arg5})")
+    boolean enrollabnormal(Integer abnormalid,String abnormalstatus,String abnormalmessage,String abnormaltime,String abnormaladdress,Integer transportid);
 
-    //查看异常信息（司机查看自己根据手机号）
-    @Select("select * from abnormal where dphone = #{arg0}")
-    List<Abnormal> findabnormal(String dphone);
-
-    //查看详细的异常（通过备案证号）
-    @Select("select * from abnormal where transport = #{arg0}")
-    Abnormal findoneabnormal(String transport);
-
-    //查看异常信息（所有）
-    @Select("select * from abnormal")
-    List<Abnormal> findallabnormal();
-
-    //管理查询中的异常上报查询
-    @Select("select * from abnormal where transport=#{transport} OR dphone=#{dphone}")
-    List<Abnormal> selectAllAbno(String transport,String dphone);
+    //查看详细的异常（通过transportid)
+    @Select("select * from abnormalinfo where transportid = #{arg0}")
+    List<Abnormalinfo> findabnormal(Integer transportid);
 
 }

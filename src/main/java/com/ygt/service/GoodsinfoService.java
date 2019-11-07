@@ -23,6 +23,7 @@ public class GoodsinfoService {
     }
     //根据名字模糊查询driverid，返回集合
     public List<Goodsinfo> selectName(String goodname){
-       return goodsinfoDao.selectName(goodname);
+        List<Goodsinfo> goodsinfos = goodsinfoDao.selectName(goodname);
+        return goodsinfos;
     }
 }

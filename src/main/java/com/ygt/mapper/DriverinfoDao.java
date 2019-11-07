@@ -1,15 +1,10 @@
 package com.ygt.mapper;
 
 
-import com.ygt.pojo.Abnormal;
 import com.ygt.pojo.Driverinfo;
-import com.ygt.pojo.Goodsinfo;
-import com.ygt.pojo.Moments;
 import org.apache.ibatis.annotations.*;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 
-import java.util.Date;
 import java.util.List;
 
 public interface DriverinfoDao {

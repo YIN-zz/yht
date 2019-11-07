@@ -1,5 +1,6 @@
 package com.ygt.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ygt.pojo.Driverinfo;
 import com.ygt.pojo.Transportinfo;
 import com.ygt.service.TransportinfoService;
@@ -19,128 +20,57 @@ public class TransportinfoController {
     @Autowired
     private TransportinfoService transportinfoService;
 
-    @RequestMapping("findalldriverinfo")
+    //遍历司机运输目的地（司机查看所有运输的信息）
+    @RequestMapping(value="findallbourn",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public List<Driverinfo> findalldriverinfo(String userphone){
-        List<Driverinfo> findalldriverinfo = transportinfoService.findalldriverinfo(userphone);
-        return findalldriverinfo;
+    public String findallbourn(HttpSession session){
+        Integer userid = (Integer)session.getAttribute("userid");
+        List<Driverinfo> findallbourn = transportinfoService.findallbourn(userid);
+        JSONObject obj = new JSONObject();
+        obj.put("200","成功");
+        obj.put("findallbourn",findallbourn);
+        return obj.toString();
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //添加基本运输的信息并将运输备案号transport保存到session中
-    /*@RequestMapping("enrolltransport")
-    public String enrolltransport(String transport, String tcard, String tbourn, Date ttime,String taddress,HttpSession session) throws NoSuchAlgorithmException {
-        session.setAttribute("transport",transport);
-        Integer tid = null;
-        String tstart = "未出发";
-        String tend = "未到达";
-        String dphone = (String)session.getAttribute("dphone");
-        session.setAttribute("ttime",ttime);
-        transportinfoService.addtransportinfo(tid,transport,tcard, tbourn, ttime,tstart,tend,taddress,dphone);
-        return "index";
-    }*/
-
-    //货物是否开始运输(填写完备案号信息后弹框显示是否显示现在开始运输)(表单修改)
-    @RequestMapping("changestarttransport")
-    public String changestarttransport(String tstart,HttpSession session){
-        /*String transport = (String) session.getAttribute("transport");*/
-        String dphone = (String)session.getAttribute("dphone");
-        Date ttime = (Date)session.getAttribute("ttime");
-        transportinfoService.updatestarttransprot(ttime, tstart,dphone);
-        return "index";
-    }
-
-    //货物是否开始运输(表单修改)
-    /*@RequestMapping("changestart")
-    public String changestarttransport(String tstart,HttpSession session){
-        String dphone = (String)session.getAttribute("dphone");
-        Date ttime = (Date)session.getAttribute("ttime");
-        transportinfoService.updatestarttransprot(ttime, tstart,dphone);
-        return "redirect:findalltransport";
-    }*/
-
-    //修改司机位置信息
-    @RequestMapping("updateaddrsss")
-    public void updateaddrsss(String taddress,HttpSession session){
-        String dphone = (String)session.getAttribute("dphone");
-        Date ttime = (Date)session.getAttribute("ttime");
-        transportinfoService.updateaddrsss(ttime,taddress,dphone);
-    }
-
-
-    //货物是否运输到达(表单修改)
-    @RequestMapping("changeend")
-    public String changeendtransport(String tend,HttpSession session){
-        String dphone = (String)session.getAttribute("dphone");
-        Date ttime = (Date)session.getAttribute("ttime");
-        transportinfoService.updateendtransport(ttime, tend,dphone);
-        return "redirect:findalltransport";
-    }
-
-    //货物是否运输到达（可能用不到）
-   /* @RequestMapping("changeendtransport")
-    public String changeendtransport(String tend,HttpSession session){
-        String dphone = (String)session.getAttribute("dphone");
-        Date ttime = (Date)session.getAttribute("ttime");
-        transportinfoService.updateendtransport(ttime, tend,dphone);
-        return "index";
-    }*/
-
-    //查询运输信息（根据运输备案号）
-    @RequestMapping("findtransport")
+    //添加货物运输的信息
+    @RequestMapping(value="enrolltransport",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public Transportinfo findtransport(String transport){
-        Transportinfo findtransport = transportinfoService.findtransport(transport);
-        return findtransport;
+    public String enrolltransport(Integer transportid,Date transporttime,String transportstart,String transportend,HttpSession session){
+        Integer userid = (Integer)session.getAttribute("userid");
+        transportinfoService.enrolltransport(transportid,transporttime,transportstart,transportend,userid);
+        JSONObject obj = new JSONObject();
+        obj.put("200","成功");
+        return obj.toString();
     }
 
-    //查询运输信息（根据手机号，查询司机自己的运输信息）（司机查看个人的dphone是从session中取得）
-    //@RequestMapping("findalltransport")
-   /* public String findalltransport(Model m, HttpSession session){
-        String dphone = (String)session.getAttribute("dphone");
-        List<Transportinfo> findalltransport = transportinfoService.findalltransport(dphone);
-        m.addAttribute("findalltransport",findalltransport);
-        return "index";
-    }*/
-    //查询运输信息（根据手机号，查询司机自己的运输信息）（司机查看个人的dphone是从session中取得）
-    @RequestMapping("findalltransport")
+    //司机修改运输情况是否出发
+    @RequestMapping(value="changestart",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public List<Transportinfo> findalltransport(HttpSession session){
-        String dphone = (String)session.getAttribute("dphone");
-        List<Transportinfo> findalltransport = transportinfoService.findalltransport(dphone);
-        return findalltransport;
+    public String changestart(Integer transportid,String transportstart){
+        transportinfoService.changestart(transportid,transportstart);
+        JSONObject obj = new JSONObject();
+        obj.put("200","成功");
+        return obj.toString();
     }
 
-    //查询运输信息（根据输入的手机号查询）
-    @RequestMapping("findalltransports")
+    //司机修改运输情况是否到达
+    @RequestMapping(value="changeend",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public List<Transportinfo> findalltransports(String dphone){
-        List<Transportinfo> findalltransport = transportinfoService.findalltransport(dphone);
-        return findalltransport;
+    public String changeend(Integer transportid,String transportend){
+        transportinfoService.changeend(transportid, transportend);
+        JSONObject obj = new JSONObject();
+        obj.put("200","成功");
+        return obj.toString();
     }
 
-    //查看所有的异常信息(倒序查看）
-    @RequestMapping("findtransports")
+    //测试返回时间格式(datetime的时间格式返回的是毫秒值，前台显示的时候把毫秒值转换为想要的格式）
+    @RequestMapping(value="findtransport",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public List<Transportinfo> findtransports(){
-        List<Transportinfo> findtransports = transportinfoService.findtransports();
-        return findtransports;
+    public String findtransport(Integer driverid){
+        List<Transportinfo> findtransport = transportinfoService.findtransport(driverid);
+        JSONObject obj = new JSONObject();
+        obj.put("findtransport",findtransport);
+        obj.put("200","成功");
+        return obj.toString();
     }
 }

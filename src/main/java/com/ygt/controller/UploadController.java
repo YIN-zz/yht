@@ -36,17 +36,16 @@ public class UploadController {
 		//System.out.println(str1);
 		JSONObject obj = new JSONObject();
 		obj.put("msg", str1);
-		String str = obj.toString();
-		//System.out.println(str);s
-		return str;
+		obj.put("200", "成功");
+		return obj.toString();
 	}
 
 	//上传多个文件(表单里面填写的是myfiles，次处是数组传值要注意）
 	//哪里发送的请求带有上传文件哪里使用下面的代码
-	@RequestMapping("/filesUpload")
+	@RequestMapping(value="/filesUpload",produces = "application/json; charset=utf-8")
 	@ResponseBody
 	//requestParam要写才知道是前台的那个数组
-	public List<String> filesUpload(@RequestParam("myfiles") MultipartFile[] files,
+	public String filesUpload(@RequestParam("myfiles") MultipartFile[] files,
 									HttpServletRequest request) {
 		List<String> list = new ArrayList<String>();
 		if (files != null && files.length > 0) {
@@ -60,7 +59,9 @@ public class UploadController {
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println("成功上传文件：" + list.get(i));
 		}
-		//*return "index";*//	/跳转的页面
-		return list;
+		JSONObject obj = new JSONObject();
+		obj.put("list", list);
+		obj.put("200", "成功");
+		return obj.toString();
 	}
 }

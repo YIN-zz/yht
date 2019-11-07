@@ -3,8 +3,6 @@ package com.ygt.service;
 import com.ygt.mapper.DriverinfoDao;
 import com.ygt.pojo.Driverinfo;
 
-import com.ygt.pojo.Goodsinfo;
-import com.ygt.pojo.Moments;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
