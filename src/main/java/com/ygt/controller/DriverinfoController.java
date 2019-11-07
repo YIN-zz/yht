@@ -54,8 +54,8 @@ public class DriverinfoController {
     @ResponseBody
   //  @ApiOperation("根据出库、入库，时间，货物名称来查询信息")
   //  @ApiImplicitParams(value = {@ApiImplicitParam(name = "driverrinout,drivertime,goodname",value = "出库或者入库,时间,货物名称")})
-    public List allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
-        List list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
+    public List<Driverinfo> allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
+        List<Driverinfo> list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
         model.addAttribute("list",list);
         return  list;
     }

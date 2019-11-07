@@ -288,6 +288,17 @@
       <artifactId>httpcore</artifactId>
       <version>4.3.2</version>
     </dependency>-->
+    <!--短信sdk-->
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-core</artifactId>
+      <version>3.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+      <version>1.1.0</version>
+    </dependency>
 
     <!-- 物流查询的资源文件 -->
    <!-- <dependency>
