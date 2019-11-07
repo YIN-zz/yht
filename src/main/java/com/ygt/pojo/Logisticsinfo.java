@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Logistics {
+public class Logisticsinfo {
 
     //物流id
     private Integer logisticsid;
