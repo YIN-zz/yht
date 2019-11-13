@@ -1,10 +1,7 @@
 package com.ygt.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ygt.pojo.Chemicalsinfo;
-import com.ygt.pojo.Driverinfo;
-import com.ygt.pojo.Goodsinfo;
-import com.ygt.pojo.Userinfo;
+import com.ygt.pojo.*;
 import com.ygt.service.ChemicalsinfoService;
 import com.ygt.service.DriverinfoService;
 
@@ -54,8 +51,8 @@ public class DriverinfoController {
     @ResponseBody
   //  @ApiOperation("根据出库、入库，时间，货物名称来查询信息")
   //  @ApiImplicitParams(value = {@ApiImplicitParam(name = "driverrinout,drivertime,goodname",value = "出库或者入库,时间,货物名称")})
-    public List<Driverinfo> allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
-        List<Driverinfo> list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
+    public List<StatisticsByGoods> allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
+        List<StatisticsByGoods> list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
         model.addAttribute("list",list);
         return  list;
     }
@@ -170,24 +167,29 @@ public class DriverinfoController {
     //多个条件模糊查询出库信息
     @RequestMapping("findalloutgood")
     @ResponseBody
-    private List<Driverinfo> findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
-        List<Driverinfo> findalloutgood = driverinfoService.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
+    private List<StatisticsByGoods> findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<StatisticsByGoods> findalloutgood = driverinfoService.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
         return findalloutgood;
     }
 
     //多个条件模糊查询入库信息
     @RequestMapping("findallingood")
     @ResponseBody
-    private List<Driverinfo> findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
-        List<Driverinfo> findallingood = driverinfoService.findallingood(driverbourn, drivercompany, drivertime, goodname);
+    private List<StatisticsByGoods> findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<StatisticsByGoods> findallingood = driverinfoService.findallingood(driverbourn, drivercompany, drivertime, goodname);
         return findallingood;
     }
 
     //管理查询的 地址 企业 时间 名称 来查询
     @RequestMapping("selectAll")
-    public List selectAll(Model model,@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
-        List list = driverinfoService.selectAll(driverbourn, drivercompany, drivertime, goodname);
+    public List<StatisticsByGoods> selectAll(Model model,@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
+        List<StatisticsByGoods> list = driverinfoService.selectAll(driverbourn, drivercompany, drivertime, goodname);
         model.addAttribute("list",list);
         return list;
+    }
+
+    //查询到达目的地时所需入库的数据,根据目的地和入库来查询
+    public List<StatisticsByGoods> selectDriAll(String driverrinout, String driverbourn){
+        return driverinfoService.selectDriAll(driverrinout,driverbourn);
     }
 }

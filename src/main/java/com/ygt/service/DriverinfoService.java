@@ -3,6 +3,7 @@ package com.ygt.service;
 import com.ygt.mapper.DriverinfoDao;
 import com.ygt.pojo.Driverinfo;
 
+import com.ygt.pojo.StatisticsByGoods;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class DriverinfoService {
     private DriverinfoDao driverinfoDao;
 
  //查询所有出入库的信息  根据模糊条件
-    public List allDriverinfo(@Param("driverrinout")String rinout, @Param("drivertime")String rtime, @Param("goodname")String goodname){
+    public List<StatisticsByGoods> allDriverinfo(@Param("driverrinout")String rinout, @Param("drivertime")String rtime, @Param("goodname")String goodname){
 
         return  driverinfoDao.allDriverinfo(rinout,rtime,goodname);
     }
@@ -43,19 +44,19 @@ public class DriverinfoService {
     }*/
 
     //多个条件模糊查询出库信息
-    public List<Driverinfo> findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
-        List<Driverinfo> findalloutgood = driverinfoDao.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
+    public List<StatisticsByGoods> findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<StatisticsByGoods> findalloutgood = driverinfoDao.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
         return findalloutgood;
     }
 
     //多个条件模糊查询入库信息
-    public List<Driverinfo> findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
-        List<Driverinfo> findallingood = driverinfoDao.findallingood(driverbourn, drivercompany, drivertime, goodname);
+    public List<StatisticsByGoods> findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<StatisticsByGoods> findallingood = driverinfoDao.findallingood(driverbourn, drivercompany, drivertime, goodname);
         return findallingood;
     }
 
     //管理查询的 地址 企业 时间 名称 来查询
-    public List selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
+    public List<StatisticsByGoods> selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
         return driverinfoDao.selectAll(driverbourn,drivercompany,drivertime,goodname);
     }
 
@@ -66,5 +67,9 @@ public class DriverinfoService {
     //注册用户信息表，增加姓名和手机号
     public Boolean insertUserinfo(String username ,String userphone,Integer useridentity){
         return driverinfoDao.insertUserinfo(username,userphone,useridentity);
+    }
+    //查询到达目的地时所需入库的数据,根据目的地和入库来查询
+    public List<StatisticsByGoods> selectDriAll(String driverrinout, String driverbourn){
+        return driverinfoDao.selectDriAll(driverrinout,driverbourn);
     }
 }

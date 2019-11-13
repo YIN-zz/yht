@@ -2,6 +2,7 @@ package com.ygt.mapper;
 
 
 import com.ygt.pojo.Driverinfo;
+import com.ygt.pojo.StatisticsByGoods;
 import org.apache.ibatis.annotations.*;
 
 
@@ -19,7 +20,7 @@ public interface DriverinfoDao {
             "</if> </where> </script>")
     @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
     // @Select("SELECT * FROM driverinfo,goodsinfo WHERE driverinfo.driverrid=goodsinfo.driverrid AND (driverinfo.driverrinout=#{driverrinout} OR driverinfo.drivertime like CONCAT('%',#{drivertime},'%') OR goodsinfo.goodname like CONCAT('%',#{goodname},'%'))")
-    List allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname);
+    List<StatisticsByGoods> allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname);
 
     //查询商品表的id
     @Select("SELECT chemicalsinfo.chid from chemicalsinfo,driverinfo WHERE chemicalsinfo.chid = goodsinfo.chid and chemicalsinfo.cgoods = #{goodname}")
@@ -59,7 +60,7 @@ public interface DriverinfoDao {
             "</where> " +
             "</script>")
     @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
-    List<Driverinfo> findalloutgood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
+    List<StatisticsByGoods> findalloutgood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
 
 
     //多个条件模糊查询入库信息
@@ -81,7 +82,7 @@ public interface DriverinfoDao {
             "</where> " +
             "</script>")
     @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
-    List<Driverinfo> findallingood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
+    List<StatisticsByGoods> findallingood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
 
     //管理查询的地址 企业 时间 名称 查询
     @Select("<script> " +
@@ -102,7 +103,7 @@ public interface DriverinfoDao {
             "</where> " +
             "</script>")
     @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
-    List selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
+    List<StatisticsByGoods> selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
 
 
 
@@ -112,4 +113,7 @@ public interface DriverinfoDao {
     @Insert("INSERT INTO userinfo(username,userphone,useridentity) values(#{username}, #{userphone}, #{useridentity})")
     Boolean insertUserinfo(String username ,String userphone,Integer useridentity);
 
+    //查询到达目的地时所需入库的数据,根据目的地和入库来查询
+    @Select("SELECT * FROM driverinfo,goodsinfo WHERE driverinfo.driverid=goodsinfo.driverid AND driverrinout=#{driverrinout} AND driverbourn=#{driverbourn}")
+    List<StatisticsByGoods> selectDriAll(String driverrinout, String driverbourn);
 }
