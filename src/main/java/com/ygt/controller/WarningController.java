@@ -25,7 +25,8 @@ public class WarningController {
     public String findallwarning(){
         List<Driverinfo> findallwarning = warningService.findallwarning();
         JSONObject obj = new JSONObject();
-        obj.put("findallwarning",findallwarning);
+        obj.put("message",findallwarning);
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -35,7 +36,8 @@ public class WarningController {
     public String findonewarning(Integer driverid){
         List<Driverinfo> findonewarning = warningService.findonewarning(driverid);
         JSONObject obj = new JSONObject();
-        obj.put("findonewarning",findonewarning);
+        obj.put("message",findonewarning);
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -45,8 +47,8 @@ public class WarningController {
     public String findabnormalwarning(Integer transportid){
         List<Abnormalinfo> findabnormal = abnormalService.findabnormal(transportid);
         JSONObject obj = new JSONObject();
-        obj.put("findabnormal",findabnormal);
-        obj.put("200","成功");
+        obj.put("message",findabnormal);
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -56,8 +58,8 @@ public class WarningController {
     public String findbyaddress(String driverbourn){
         List<Driverinfo> findbyaddress = warningService.findbyaddress(driverbourn);
         JSONObject obj = new JSONObject();
-        obj.put("findbyaddress",findbyaddress);
-        obj.put("200","成功");
+        obj.put("message",findbyaddress);
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -67,8 +69,8 @@ public class WarningController {
     public String findbycompany(String drivercompany){
         List<Driverinfo> findbycompany = warningService.findbycompany(drivercompany);
         JSONObject obj = new JSONObject();
-        obj.put("findbycompany",findbycompany);
-        obj.put("200","成功");
+        obj.put("message",findbycompany);
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -78,8 +80,8 @@ public class WarningController {
     public String findbytime(String drivertime){
         List<Driverinfo> findbytime = warningService.findbytime(drivertime);
         JSONObject obj = new JSONObject();
-        obj.put("findbytime",findbytime);
-        obj.put("200","成功");
+        obj.put("message",findbytime);
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -89,8 +91,8 @@ public class WarningController {
     public String findbyname(String goodname){
         List<StatisticsByName> findbyname = warningService.findbyname(goodname);
         JSONObject obj = new JSONObject();
-        obj.put("findbyname",findbyname);
-        obj.put("200","成功");
+        obj.put("message",findbyname);
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -100,8 +102,8 @@ public class WarningController {
     public String findbyabnormal(String abnormalstatus){
         List<StatisticsByAbnormal> findbyabnormal = warningService.findbyabnormal(abnormalstatus);
         JSONObject obj = new JSONObject();
-        obj.put("findbyabnormal",findbyabnormal);
-        obj.put("200","成功");
+        obj.put("message",findbyabnormal);
+        obj.put("msg","成功");
         return obj.toString();
     }
 }

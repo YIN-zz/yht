@@ -23,7 +23,7 @@ public class LogisticsController {
         Integer userid = (Integer)session.getAttribute("userid");
         logisticsinfoService.enrollLogisticsinfo(logisticsid,logisticscompany,logisticsaddress,logisticsname,logisticsphone,userid);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 }

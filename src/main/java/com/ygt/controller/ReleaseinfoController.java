@@ -69,7 +69,7 @@ public class ReleaseinfoController {
         }
         releaseinfoService.enrollrelease(releaseid, releasename, releasecontent, releasefirst, releasesecond, releasethird, releasetime);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -79,8 +79,8 @@ public class ReleaseinfoController {
     public String findallrelease(){
         List<Releaseinfo> findallrelease = releaseinfoService.findallrelease();
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
-        obj.put("findallrelease",findallrelease);
+        obj.put("msg","成功");
+        obj.put("message",findallrelease);
         return obj.toString();
     }
 
@@ -93,8 +93,8 @@ public class ReleaseinfoController {
         String releasename = findusername.getUsername();
         List<Releaseinfo> findrelease = releaseinfoService.findrelease(releasename);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
-        obj.put("findrelease",findrelease);
+        obj.put("msg","成功");
+        obj.put("message",findrelease);
         return obj.toString();
     }
 
@@ -104,8 +104,8 @@ public class ReleaseinfoController {
     public String findonerelease(String releasename,String releasetime){
         List<Releaseinfo> findonerelease = releaseinfoService.findonerelease(releasename, releasetime);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
-        obj.put("findonerelease",findonerelease);
+        obj.put("msg","成功");
+        obj.put("message",findonerelease);
         return obj.toString();
     }
 
@@ -118,7 +118,7 @@ public class ReleaseinfoController {
         String releasename = findusername.getUsername();
         releaseinfoService.removerelease(releasename,releasetime);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 

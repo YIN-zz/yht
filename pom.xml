@@ -388,14 +388,6 @@
     </dependency>
 
 
-    <!--根据手机号获取归属地-->
-    <dependency>
-      <groupId>com.googlecode.libphonenumber</groupId>
-      <artifactId>geocoder</artifactId>
-      <version>LATEST</version>
-    </dependency>
-
-
     <!--聊天功能需要的jar包-->
     <!-- springboot websocket -->
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->

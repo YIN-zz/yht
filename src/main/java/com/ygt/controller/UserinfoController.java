@@ -2,7 +2,6 @@ package com.ygt.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.ygt.pojo.Userinfo;
-import com.ygt.service.SendCodeService;
 import com.ygt.service.UserinfoService;
 import com.ygt.util.MD5Util;
 import com.ygt.util.UploadService;
@@ -15,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.util.UUID;
 
 @Controller
 public class UserinfoController {
@@ -25,18 +23,14 @@ public class UserinfoController {
     @Autowired
     private MD5Util md5Util;
     @Autowired
-    private SendCodeService sendCodeService;
-    @Autowired
     private UploadService uploadService;
 
     //企管用户注册
     @RequestMapping(value="enrolluser",produces = "application/json; charset=utf-8")
     @ResponseBody
     public String enrolluser(String username,String userphone,String userpassword,String usersecurity,HttpSession session) throws NoSuchAlgorithmException {
-        System.out.println(usersecurity);
         JSONObject obj = new JSONObject();
         String codes = (String)session.getAttribute("codes");
-        System.out.println(codes);
         if(usersecurity.equals(codes)) {
             Userinfo finduser = userinfoService.finduser(userphone);
             if (finduser == null) {
@@ -46,67 +40,101 @@ public class UserinfoController {
                 Userinfo finduser1 = userinfoService.finduser(userphone);
                 Integer userid1 = finduser1.getUserid();
                 session.setAttribute("userid", userid1);
-                obj.put("200", "成功");
+                obj.put("msg", "成功");
                 return obj.toString();
-            } else if(finduser!=null){
-                obj.put("400", "该账户已经注册");
+            } else{
+                obj.put("msg", "该账户已经注册");
                 return obj.toString();
             }
         }else {
-            obj.put("400", "验证码错误");
+            obj.put("msg", "验证码输入错误");
             return obj.toString();
         }
-        return null;
     }
     //账号登录
     @RequestMapping(value="loginuser",produces = "application/json; charset=utf-8")
     @ResponseBody
     public String loginuser(String userphone, String userpassword, HttpSession session) throws NoSuchAlgorithmException {
-        Userinfo loginuser = userinfoService.loginuser(userphone, md5Util.md5(new String (userpassword)));
+        Userinfo finduser = userinfoService.finduser(userphone);
         JSONObject obj = new JSONObject();
-        if(loginuser!=null){
-            Userinfo finduser = userinfoService.finduser(userphone);
-            Integer userid = finduser.getUserid();
-            session.setAttribute("userid",userid);
-            String userphoto = finduser.getUserphoto();
-            obj.put("userphoto",userphoto);
-            obj.put("200","成功");
-            return obj.toString();
-        }else{
-            obj.put("400","失败");
+        if(finduser!=null){
+            Userinfo loginuser = userinfoService.loginuser(userphone, md5Util.md5(new String (userpassword)));
+            if(loginuser!=null){
+                Integer userid = finduser.getUserid();
+                session.setAttribute("userid",userid);
+                String username = finduser.getUsername();
+                String userphoto = finduser.getUserphoto();
+                session.setAttribute("userphoto",userphoto);
+                Integer useridentity = loginuser.getUseridentity();
+                obj.put("登录人名字",username);
+                obj.put("message",useridentity);
+                obj.put("msg","成功");
+                return obj.toString();
+            }else{
+                obj.put("msg","密码输入错误");
+                return obj.toString();
+            }
+        }else {
+            obj.put("msg","该账户不存在");
             return obj.toString();
         }
+
     }
     //手机验证码登录
     @RequestMapping(value="enteruser",produces = "application/json; charset=utf-8")
     @ResponseBody
     public String enteruser(String userphone,String usersecurity,HttpSession session){
         JSONObject obj = new JSONObject();
-        if(usersecurity.equals(session.getAttribute("codes"))){
+        String codes = (String)session.getAttribute("codes");
+        if(usersecurity.equals(codes)){
             Userinfo finduser = userinfoService.finduser(userphone);
             Integer userid = finduser.getUserid();
             session.setAttribute("userid",userid);
+            String username = finduser.getUsername();
             String userphoto = finduser.getUserphoto();
-            obj.put("userphoto",userphoto);
-            obj.put("200","成功");
+            session.setAttribute("userphoto",userphoto);
+            Integer useridentity = finduser.getUseridentity();
+            obj.put("登录人名字",username);
+            obj.put("message",useridentity);
+            obj.put("msg","成功");
             return obj.toString();
         }else{
-            obj.put("400","失败");
+            obj.put("msg","失败");
             return obj.toString();
         }
     }
     //修改密码
     @RequestMapping(value="changeuser",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public String changeuser(String userphone,String userpassword) throws NoSuchAlgorithmException {
-        Userinfo finduser = userinfoService.finduser(userphone);
+    public String changeuser(HttpSession session,String userpassword) throws NoSuchAlgorithmException {
         JSONObject obj = new JSONObject();
-        if(finduser!=null){
-            userinfoService.changeuser(userphone,  md5Util.md5(new String (userpassword)));
-            obj.put("200","成功");
-            return obj.toString();
+        Integer userid = (Integer)session.getAttribute("userid");
+        Userinfo findusername = userinfoService.findusername(userid);
+        String userphone = findusername.getUserphone();
+        userinfoService.changeuser(userphone,  md5Util.md5(new String (userpassword)));
+        obj.put("msg","成功");
+        return obj.toString();
+    }
+
+    //忘记密码
+    @RequestMapping(value="changeps",produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public String changeps(String userphone,String userpassword,String usersecurity,HttpSession session) throws NoSuchAlgorithmException {
+        String codes = (String)session.getAttribute("codes");
+        System.out.println(userphone+userpassword+usersecurity);
+        JSONObject obj = new JSONObject();
+        if(usersecurity.equals(codes)){
+            Userinfo finduser = userinfoService.finduser(userphone);
+            if(finduser!=null){
+                userinfoService.changeuser(userphone,  md5Util.md5(new String (userpassword)));
+                obj.put("msg","成功");
+                return obj.toString();
+            }else{
+                obj.put("msg","该手机号未注册");
+                return obj.toString();
+            }
         }else{
-            obj.put("400","失败");
+            obj.put("msg","验证码输入错误");
             return obj.toString();
         }
     }
@@ -121,7 +149,7 @@ public class UserinfoController {
         //String userphoto= UUID.randomUUID().toString().replace("-", "")+"-"+file;
         userinfoService.updatephoto(userid,userphoto);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -142,14 +170,14 @@ public class UserinfoController {
                 Userinfo finduser1 = userinfoService.finduser(userphone);
                 Integer userid1 = finduser1.getUserid();
                 session.setAttribute("userid", userid1);
-                obj.put("200", "成功");
+                obj.put("msg", "成功");
                 return obj.toString();
             } else if(finduser!=null){
-                obj.put("400", "该账户已经注册");
+                obj.put("msg", "该账户已经注册");
                 return obj.toString();
             }
         }else {
-            obj.put("400", "验证码错误");
+            obj.put("msg", "验证码错误");
             return obj.toString();
         }
         return null;

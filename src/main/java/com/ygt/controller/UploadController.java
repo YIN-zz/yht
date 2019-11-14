@@ -35,8 +35,8 @@ public class UploadController {
 		str1="http://192.168.3.10:8080/项目上传文件存放位置/"+str1;
 		//System.out.println(str1);
 		JSONObject obj = new JSONObject();
-		obj.put("msg", str1);
-		obj.put("200", "成功");
+		obj.put("message", str1);
+		obj.put("msg", "成功");
 		return obj.toString();
 	}
 
@@ -60,8 +60,8 @@ public class UploadController {
 			System.out.println("成功上传文件：" + list.get(i));
 		}
 		JSONObject obj = new JSONObject();
-		obj.put("list", list);
-		obj.put("200", "成功");
+		obj.put("message", list);
+		obj.put("msg", "成功");
 		return obj.toString();
 	}
 }

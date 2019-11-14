@@ -32,7 +32,7 @@ public class FirminfoController {
         Integer userid = (Integer)session.getAttribute("userid");
         firminfoService.enrollfirm(firmid,firmname,firmaddress,firmprincipal,firmphone,userid);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -54,7 +54,7 @@ public class FirminfoController {
         String firmphone = findfirm.getFirmphone();
         firminfoService.enrollfirm(firmid,firmname,firmaddress,firmprincipal,firmphone,userid1);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 }

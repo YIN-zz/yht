@@ -38,7 +38,7 @@ public class CommentinfoController {
         Integer releaseid = findreleaseid.getReleaseid();
         commentinfoService.enrollcomment(commentid, commentname, commentcontent, commenttime, releaseid);
         JSONObject obj = new JSONObject();
-        obj.put("200", "成功");
+        obj.put("msg", "成功");
         return obj.toString();
     }
 
@@ -48,7 +48,7 @@ public class CommentinfoController {
     public String removecomment(String commentname, String commenttime) {
         commentinfoService.removecomment(commentname, commenttime);
         JSONObject obj = new JSONObject();
-        obj.put("200", "成功");
+        obj.put("msg", "成功");
         return obj.toString();
     }
 
@@ -66,7 +66,7 @@ public class CommentinfoController {
         Integer replyid = commentid;
         commentinfoService.enrollonecomment(commentname, commentcontent, commenttime, releaseid, replyid);
         JSONObject obj = new JSONObject();
-        obj.put("200", "成功");
+        obj.put("msg", "成功");
         return obj.toString();
     }
 
@@ -76,7 +76,7 @@ public class CommentinfoController {
     public String findcomment(Integer commentid){
         Commentinfo findcomment = commentinfoService.findcomment(commentid);
         JSONObject obj = new JSONObject();
-        obj.put("200", "成功");
+        obj.put("msg", "成功");
         obj.put("findcomment",findcomment);
         return obj.toString();
     }

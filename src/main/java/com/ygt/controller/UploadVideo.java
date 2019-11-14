@@ -56,13 +56,13 @@ public class UploadVideo {
             System.out.println("上传时间" + time);
             System.out.println("视频时长" + vtime);
             JSONObject obj = new JSONObject();
-            obj.put("videosrc",videosrc);
-            obj.put("200","成功");
+            obj.put("message",videosrc);
+            obj.put("msg","成功");
             return obj.toString();
             // 重定向到查询所有用户的Controller，测试图片回显
         } else {
             JSONObject obj = new JSONObject();
-            obj.put("400","失败");
+            obj.put("msg","失败");
             return obj.toString();
         }
     }

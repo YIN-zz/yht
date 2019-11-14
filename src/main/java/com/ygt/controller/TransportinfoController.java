@@ -27,8 +27,8 @@ public class TransportinfoController {
         Integer userid = (Integer)session.getAttribute("userid");
         List<Driverinfo> findallbourn = transportinfoService.findallbourn(userid);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
-        obj.put("findallbourn",findallbourn);
+        obj.put("msg","成功");
+        obj.put("message",findallbourn);
         return obj.toString();
     }
 
@@ -39,7 +39,7 @@ public class TransportinfoController {
         Integer userid = (Integer)session.getAttribute("userid");
         transportinfoService.enrolltransport(transportid,transporttime,transportstart,transportend,userid);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -49,7 +49,7 @@ public class TransportinfoController {
     public String changestart(Integer transportid,String transportstart){
         transportinfoService.changestart(transportid,transportstart);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -59,7 +59,7 @@ public class TransportinfoController {
     public String changeend(Integer transportid,String transportend){
         transportinfoService.changeend(transportid, transportend);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -69,8 +69,8 @@ public class TransportinfoController {
     public String findtransport(Integer driverid){
         List<Transportinfo> findtransport = transportinfoService.findtransport(driverid);
         JSONObject obj = new JSONObject();
-        obj.put("findtransport",findtransport);
-        obj.put("200","成功");
+        obj.put("message",findtransport);
+        obj.put("msg","成功");
         return obj.toString();
     }
 }

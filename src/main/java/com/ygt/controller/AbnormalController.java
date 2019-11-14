@@ -29,7 +29,7 @@ public class AbnormalController {
         String abnormaltime = sdf.format(new Date());
         abnormalService.enrollabnormal(abnormalid,abnormalstatus,abnormalmessage,abnormaltime,abnormaladdress,transportid);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -40,7 +40,7 @@ public class AbnormalController {
         List<Abnormalinfo> findabnormal = abnormalService.findabnormal(transportid);
         JSONObject obj = new JSONObject();
         obj.put("findabnormal",findabnormal);
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 }

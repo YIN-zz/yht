@@ -34,7 +34,7 @@ public class PoliceinfoController {
         Integer policeid = null;
         policeinfoService.enrollpolice(policeid,policeaddress,userid1);
         JSONObject obj = new JSONObject();
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 }
