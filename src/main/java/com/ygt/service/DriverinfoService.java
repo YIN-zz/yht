@@ -61,15 +61,15 @@ public class DriverinfoService {
     }
 
     //出库时查询用户表中有没有司机的信息，没有的话进行注册
-    public int selectUserinfo(String username ,String userphone){
+    public int selectUserinfo(@Param("username")String username ,@Param("userphone")String userphone){
         return driverinfoDao.selectUserinfo(username,userphone);
     }
     //注册用户信息表，增加姓名和手机号
-    public Boolean insertUserinfo(String username ,String userphone,Integer useridentity){
+    public Boolean insertUserinfo(@Param("username")String username ,@Param("userphone")String userphone,@Param("useridentity")Integer useridentity){
         return driverinfoDao.insertUserinfo(username,userphone,useridentity);
     }
     //查询到达目的地时所需入库的数据,根据目的地和入库来查询
-    public List<StatisticsByGoods> selectDriAll(String driverrinout, String driverbourn){
+    public List<StatisticsByGoods> selectDriAll(@Param("driverrinout")String driverrinout, @Param("driverbourn")String driverbourn){
         return driverinfoDao.selectDriAll(driverrinout,driverbourn);
     }
 }

@@ -108,12 +108,12 @@ public interface DriverinfoDao {
 
 
     @Select("SELECT userid FROM userinfo WHERE #{username} and #{userphone}")
-    int selectUserinfo(String username ,String userphone);
+    int selectUserinfo(@Param("username")String username ,@Param("userphone")String userphone);
     //出库时查询用户表中有没有司机的信息，没有的话进行注册
     @Insert("INSERT INTO userinfo(username,userphone,useridentity) values(#{username}, #{userphone}, #{useridentity})")
-    Boolean insertUserinfo(String username ,String userphone,Integer useridentity);
+    Boolean insertUserinfo(@Param("username")String username ,@Param("userphone")String userphone,@Param("useridentity")Integer useridentity);
 
     //查询到达目的地时所需入库的数据,根据目的地和入库来查询
     @Select("SELECT * FROM driverinfo,goodsinfo WHERE driverinfo.driverid=goodsinfo.driverid AND driverrinout=#{driverrinout} AND driverbourn=#{driverbourn}")
-    List<StatisticsByGoods> selectDriAll(String driverrinout, String driverbourn);
+    List<StatisticsByGoods> selectDriAll(@Param("driverrinout")String driverrinout, @Param("driverbourn")String driverbourn);
 }

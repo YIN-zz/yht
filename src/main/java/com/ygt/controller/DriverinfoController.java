@@ -182,6 +182,7 @@ public class DriverinfoController {
 
     //管理查询的 地址 企业 时间 名称 来查询
     @RequestMapping("selectAll")
+    @ResponseBody
     public List<StatisticsByGoods> selectAll(Model model,@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
         List<StatisticsByGoods> list = driverinfoService.selectAll(driverbourn, drivercompany, drivertime, goodname);
         model.addAttribute("list",list);
@@ -189,7 +190,9 @@ public class DriverinfoController {
     }
 
     //查询到达目的地时所需入库的数据,根据目的地和入库来查询
-    public List<StatisticsByGoods> selectDriAll(String driverrinout, String driverbourn){
+    @RequestMapping("selectDriAll")
+    @ResponseBody
+    public List<StatisticsByGoods> selectDriAll(@Param("driverrinout")String driverrinout, @Param("driverbourn")String driverbourn){
         return driverinfoService.selectDriAll(driverrinout,driverbourn);
     }
 }

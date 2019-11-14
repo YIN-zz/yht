@@ -22,7 +22,7 @@ public class SmsUtils {
      * 生成验证码
      * @return
      */
-    public static String getCaptcha() {
+   /* public static String getCaptcha() {
         String str = "0,1,2,3,4,5,6,7,8,9";
         String str2[] = str.split(",");// 将字符串以,分割
         Random rand = new Random();// 创建Random类的对象rand
@@ -110,5 +110,5 @@ public class SmsUtils {
 
         return querySendDetailsResponse;
     }
-
+*/
 }
