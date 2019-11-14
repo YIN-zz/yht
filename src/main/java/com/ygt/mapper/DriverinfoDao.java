@@ -2,6 +2,7 @@ package com.ygt.mapper;
 
 
 import com.ygt.pojo.Driverinfo;
+import com.ygt.pojo.StatisticsByAbnormal;
 import com.ygt.pojo.StatisticsByGoods;
 import org.apache.ibatis.annotations.*;
 
@@ -116,4 +117,9 @@ public interface DriverinfoDao {
     //查询到达目的地时所需入库的数据,根据目的地和入库来查询
     @Select("SELECT * FROM driverinfo,goodsinfo WHERE driverinfo.driverid=goodsinfo.driverid AND driverrinout=#{driverrinout} AND driverbourn=#{driverbourn}")
     List<StatisticsByGoods> selectDriAll(@Param("driverrinout")String driverrinout, @Param("driverbourn")String driverbourn);
+
+    //企库管运输信息的查询,是否到达，运输情况
+    @Select("SELECT * FROM driverinfo,transportinfo WHERE driverinfo.driverid=transportinfo.driverid AND driverinfo.driverphone=#{driverphone}")
+    List<StatisticsByAbnormal> selectByAbnormal(@Param("driverphone")String driverphone);
+
 }

@@ -195,4 +195,11 @@ public class DriverinfoController {
     public List<StatisticsByGoods> selectDriAll(@Param("driverrinout")String driverrinout, @Param("driverbourn")String driverbourn){
         return driverinfoService.selectDriAll(driverrinout,driverbourn);
     }
+
+    //企库管运输信息的查询,是否到达，运输情况
+    @RequestMapping("selectByAbnormal")
+    @ResponseBody
+    public List<StatisticsByAbnormal> selectByAbnormal(@Param("driverphone")String driverphone){
+        return driverinfoService.selectByAbnormal(driverphone);
+    }
 }

@@ -3,6 +3,7 @@ package com.ygt.service;
 import com.ygt.mapper.DriverinfoDao;
 import com.ygt.pojo.Driverinfo;
 
+import com.ygt.pojo.StatisticsByAbnormal;
 import com.ygt.pojo.StatisticsByGoods;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,5 +72,10 @@ public class DriverinfoService {
     //查询到达目的地时所需入库的数据,根据目的地和入库来查询
     public List<StatisticsByGoods> selectDriAll(@Param("driverrinout")String driverrinout, @Param("driverbourn")String driverbourn){
         return driverinfoDao.selectDriAll(driverrinout,driverbourn);
+    }
+
+    //企库管运输信息的查询,是否到达，运输情况
+    public List<StatisticsByAbnormal> selectByAbnormal(@Param("driverphone")String driverphone){
+        return driverinfoDao.selectByAbnormal(driverphone);
     }
 }
