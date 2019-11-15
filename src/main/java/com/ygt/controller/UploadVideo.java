@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Controller
+@RequestMapping("/UploadVideo")
 public class UploadVideo {
 
     //上传视频

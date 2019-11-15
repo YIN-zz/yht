@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@RequestMapping("/CommentinfoController")
 public class CommentinfoController {
 
     @Autowired

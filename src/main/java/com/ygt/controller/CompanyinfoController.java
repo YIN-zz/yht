@@ -1,5 +1,6 @@
 package com.ygt.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ygt.pojo.Companyinfo;
 import com.ygt.service.CompanyinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,13 @@ public class CompanyinfoController {
     private CompanyinfoService companyinfoService;
 
     //根据公司名字模糊查询公司信息
-    @RequestMapping("allCompanyinfo")
+    @RequestMapping(value = "allCompanyinfo",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public List<Companyinfo> allCompanyinfo(String companyname){
-        return companyinfoService.allCompanyinfo(companyname);
+    public String allCompanyinfo(String companyname){
+        List<Companyinfo> companyinfos = companyinfoService.allCompanyinfo(companyname);
+        JSONObject obj = new JSONObject();
+        obj.put("companyinfos",companyinfos);
+        obj.put("200","成功");
+        return obj.toString();
     }
 }

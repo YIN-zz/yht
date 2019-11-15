@@ -47,18 +47,20 @@ public class DriverinfoController {
 
 
     //出入库和时间、货物名称查询
-    @RequestMapping(value = "allDriverinfo",method = RequestMethod.POST)
+    @RequestMapping(value = "allDriverinfo",method = RequestMethod.POST,produces = "application/json; charset=utf-8")
     @ResponseBody
   //  @ApiOperation("根据出库、入库，时间，货物名称来查询信息")
   //  @ApiImplicitParams(value = {@ApiImplicitParam(name = "driverrinout,drivertime,goodname",value = "出库或者入库,时间,货物名称")})
-    public List<StatisticsByGoods> allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname, Model model){
+    public String allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname){
         List<StatisticsByGoods> list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
-        model.addAttribute("list",list);
-        return  list;
+        JSONObject obj = new JSONObject();
+        obj.put("list",list);
+        obj.put("200","成功");
+        return  obj.toString();
     }
 
     //出入库信息的添加
-    @RequestMapping(value = "addDriverinfo",method = RequestMethod.POST)
+    @RequestMapping(value = "addDriverinfo",method = RequestMethod.POST,produces = "application/json; charset=utf-8")
   // @ApiOperation("添加出库的信息")
   //  @ApiImplicitParams(value = {@ApiImplicitParam(name="Driverinfo",value = "出入库的信息表")})
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
@@ -114,7 +116,7 @@ public class DriverinfoController {
         }
     }
     //出入库货物的登记
-    @RequestMapping(value = "addBeiAnController",method = RequestMethod.POST)
+    @RequestMapping(value = "addBeiAnController",method = RequestMethod.POST,produces = "application/json; charset=utf-8")
    // @ApiOperation("添加出库的信息中货物的信息")
   //  @ApiImplicitParams(value = {@ApiImplicitParam(name="Goodsinfo",value = "货物信息表")}
     public String addBeiAnController(Goodsinfo goodsinfo, HttpSession session){
@@ -165,41 +167,58 @@ public class DriverinfoController {
     }*/
 
     //多个条件模糊查询出库信息
-    @RequestMapping("findalloutgood")
+    @RequestMapping(value = "findalloutgood",produces = "application/json; charset=utf-8")
     @ResponseBody
-    private List<StatisticsByGoods> findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
+    private String findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
         List<StatisticsByGoods> findalloutgood = driverinfoService.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
-        return findalloutgood;
+        JSONObject obj = new JSONObject();
+        obj.put("findalloutgood",findalloutgood);
+        obj.put("200","成功");
+        return obj.toString();
     }
 
     //多个条件模糊查询入库信息
-    @RequestMapping("findallingood")
+    @RequestMapping(value = "findallingood",produces = "application/json; charset=utf-8")
     @ResponseBody
-    private List<StatisticsByGoods> findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
+    private String findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
         List<StatisticsByGoods> findallingood = driverinfoService.findallingood(driverbourn, drivercompany, drivertime, goodname);
-        return findallingood;
+        JSONObject obj = new JSONObject();
+        obj.put("findallingood",findallingood);
+        obj.put("200","成功");
+        return obj.toString();
     }
 
     //管理查询的 地址 企业 时间 名称 来查询
-    @RequestMapping("selectAll")
+    @RequestMapping(value = "selectAll",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public List<StatisticsByGoods> selectAll(Model model,@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
+    public String selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
         List<StatisticsByGoods> list = driverinfoService.selectAll(driverbourn, drivercompany, drivertime, goodname);
-        model.addAttribute("list",list);
-        return list;
+        JSONObject obj = new JSONObject();
+        obj.put("list",list);
+        obj.put("200","成功");
+        return obj.toString();
     }
 
     //查询到达目的地时所需入库的数据,根据目的地和入库来查询
-    @RequestMapping("selectDriAll")
+    @RequestMapping(value = "selectDriAll",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public List<StatisticsByGoods> selectDriAll(@Param("driverrinout")String driverrinout, @Param("driverbourn")String driverbourn){
-        return driverinfoService.selectDriAll(driverrinout,driverbourn);
+    public String selectDriAll(@Param("driverrinout")String driverrinout, @Param("driverbourn")String driverbourn){
+        List<StatisticsByGoods> statisticsByGoods = driverinfoService.selectDriAll(driverrinout, driverbourn);
+        JSONObject obj = new JSONObject();
+        obj.put("list",statisticsByGoods);
+        obj.put("200","成功");
+        return obj.toString();
     }
 
     //企库管运输信息的查询,是否到达，运输情况
-    @RequestMapping("selectByAbnormal")
+    @RequestMapping(value = "selectByAbnormal",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public List<StatisticsByAbnormal> selectByAbnormal(@Param("driverphone")String driverphone){
-        return driverinfoService.selectByAbnormal(driverphone);
+    public String selectByAbnormal(@Param("driverphone")String driverphone){
+        List<StatisticsByAbnormal> statisticsByAbnormals = driverinfoService.selectByAbnormal(driverphone);
+        JSONObject obj = new JSONObject();
+        obj.put("list",statisticsByAbnormals);
+        obj.put("200","成功");
+        return obj.toString();
+
     }
 }

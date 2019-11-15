@@ -11,6 +11,7 @@ import com.aliyuncs.exceptions.ClientException;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping("/SmsController")
 public class SmsController {
     @Autowired
     private SmsService smsService;

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
+@RequestMapping("/SendCodeController")
 public class SendCodeController {
 
     @Autowired

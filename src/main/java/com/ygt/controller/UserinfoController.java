@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 @Controller
+@RequestMapping("/UserinfoController")
 public class UserinfoController {
 
     @Autowired

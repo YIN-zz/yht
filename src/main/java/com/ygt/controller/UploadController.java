@@ -17,6 +17,7 @@ import com.alibaba.fastjson.JSONObject;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
+@RequestMapping("/UploadController")
 public class UploadController {
 
 	//上传方法

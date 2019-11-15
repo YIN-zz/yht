@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.security.NoSuchAlgorithmException;
 
 @Controller
+@RequestMapping("/FirminfoController")
 public class FirminfoController {
 
     @Autowired

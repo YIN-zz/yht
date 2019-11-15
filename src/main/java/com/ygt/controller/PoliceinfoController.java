@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.security.NoSuchAlgorithmException;
 
 @Controller
+@RequestMapping("/PoliceinfoController")
 public class PoliceinfoController {
 
     @Autowired
