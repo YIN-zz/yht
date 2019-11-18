@@ -122,4 +122,7 @@ public interface DriverinfoDao {
     @Select("SELECT * FROM driverinfo,transportinfo WHERE driverinfo.driverid=transportinfo.driverid AND driverinfo.driverphone=#{driverphone}")
     List<StatisticsByAbnormal> selectByAbnormal(@Param("driverphone")String driverphone);
 
+    //查询出入库所有的信息,滚动播放的查询所需
+    @Select("SELECT * FROM driverinfo,goodsinfo WHERE driverinfo.driverid=goodsinfo.driverid order by drivertime desc")
+    List<StatisticsByGoods> selectDriGood();
 }

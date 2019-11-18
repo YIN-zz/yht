@@ -221,4 +221,15 @@ public class DriverinfoController {
         return obj.toString();
 
     }
+
+    //查询出入库所有的信息,滚动播放的查询所需
+    @RequestMapping(value = "selectDriGood",produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public String selectDriGood(){
+        List<StatisticsByGoods> statisticsByGoods = driverinfoService.selectDriGood();
+        JSONObject obj = new JSONObject();
+        obj.put("list",statisticsByGoods);
+        obj.put("200","成功");
+        return obj.toString();
+    }
 }

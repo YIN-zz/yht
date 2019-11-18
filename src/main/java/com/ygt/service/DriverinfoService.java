@@ -78,4 +78,9 @@ public class DriverinfoService {
     public List<StatisticsByAbnormal> selectByAbnormal(@Param("driverphone")String driverphone){
         return driverinfoDao.selectByAbnormal(driverphone);
     }
+
+    //查询出入库所有的信息,滚动播放的查询所需
+   public List<StatisticsByGoods> selectDriGood(){
+        return driverinfoDao.selectDriGood();
+   }
 }
