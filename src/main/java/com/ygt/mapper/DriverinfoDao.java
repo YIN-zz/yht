@@ -14,21 +14,21 @@ public interface DriverinfoDao {
     //根据出库 入库和时间，产品名称统计所有信息
     @Select("<script> " +
             "select * from driverinfo " +
-            "<where> driverrinout=#{driverrinout} <if test=\'drivertime!=null\'> " +
+            "<where> driverrinout=#{driverrinout} <if test=\"drivertime!=''\"> " +
             "and driverinfo.drivertime like CONCAT('%',#{drivertime},'%') </if> " +
-            "<if test=\"goodname!= null\"> and " +
+            "<if test=\"goodname!= ''\"> and " +
             "driverid = (select driverid from goodsinfo where goodname = #{goodname}) " +
             "</if> </where> </script>")
     @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
     // @Select("SELECT * FROM driverinfo,goodsinfo WHERE driverinfo.driverrid=goodsinfo.driverrid AND (driverinfo.driverrinout=#{driverrinout} OR driverinfo.drivertime like CONCAT('%',#{drivertime},'%') OR goodsinfo.goodname like CONCAT('%',#{goodname},'%'))")
-    List<StatisticsByGoods> allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname);
+    List<Driverinfo> allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname);
 
     //查询商品表的id
-    @Select("SELECT chemicalsinfo.chid from chemicalsinfo,driverinfo WHERE chemicalsinfo.chid = goodsinfo.chid and chemicalsinfo.cgoods = #{goodname}")
-      int selectChemicalsinfo(String dname);
+    @Select("SELECT chemicalsinfo.chid from chemicalsinfo,goodsinfo WHERE chemicalsinfo.chid = goodsinfo.chid and chemicalsinfo.cgoods = #{goodname}")
+      int selectChemicalsinfo(String goodname);
 
     //出入库信息的生成
-    @Insert("insert into driverinfo(drivercompany,driverrecordid,  drivertime, driverdriver,drivernumber,driveridentity, driverphone, driverbourn,driverrecordphoto, driverphoto, drivercarphoto, driverrinout) values(#{drivercompany},#{driverrecordid},#{drivertime},#{driverdriver},#{drivernumber},#{driveridentity}, #{driverphone},#{driverbourn},#{driverrecordphoto},#{driverphoto},#{drivercarphoto},#{driverrinout})")
+    @Insert("insert into driverinfo(drivercompany,driverrecordid,  drivertime, driverdriver,drivernumber,driveridentity, driverphone, driverbourn,driverrecordphoto, driverphoto, drivercarphoto, driverrinout,userid) values(#{drivercompany},#{driverrecordid},#{drivertime},#{driverdriver},#{drivernumber},#{driveridentity}, #{driverphone},#{driverbourn},#{driverrecordphoto},#{driverphoto},#{drivercarphoto},#{driverrinout},#{userid})")
     boolean addDriverinfo(Driverinfo driverinfo);
 
     //多个条件模糊查询出库信息
@@ -61,7 +61,7 @@ public interface DriverinfoDao {
             "</where> " +
             "</script>")
     @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
-    List<StatisticsByGoods> findalloutgood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
+    List<Driverinfo> findalloutgood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
 
 
     //多个条件模糊查询入库信息
@@ -83,7 +83,7 @@ public interface DriverinfoDao {
             "</where> " +
             "</script>")
     @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
-    List<StatisticsByGoods> findallingood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
+    List<Driverinfo> findallingood(@Param("driverbourn") String driverbourn, @Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
 
     //管理查询的地址 企业 时间 名称 查询
     @Select("<script> " +
@@ -104,7 +104,7 @@ public interface DriverinfoDao {
             "</where> " +
             "</script>")
     @Results({@Result(property = "goodsinfoList",column = "driverid",many = @Many(select = "com.ygt.mapper.GoodsinfoDao.findgoodsinfo"))})
-    List<StatisticsByGoods> selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
+    List<Driverinfo> selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname);
 
 
 

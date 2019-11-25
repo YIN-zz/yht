@@ -17,13 +17,13 @@ public class DriverinfoService {
     private DriverinfoDao driverinfoDao;
 
  //查询所有出入库的信息  根据模糊条件
-    public List<StatisticsByGoods> allDriverinfo(@Param("driverrinout")String rinout, @Param("drivertime")String rtime, @Param("goodname")String goodname){
+    public List<Driverinfo> allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname){
 
-        return  driverinfoDao.allDriverinfo(rinout,rtime,goodname);
+        return  driverinfoDao.allDriverinfo(driverrinout,drivertime,goodname);
     }
     //查询易制毒商品的id
-    public int selectChemicalsinfo(String dname){
-        return driverinfoDao.selectChemicalsinfo(dname);
+    public int selectChemicalsinfo(String goodname){
+        return driverinfoDao.selectChemicalsinfo(goodname);
     }
 
     //出入库信息的添加
@@ -45,19 +45,19 @@ public class DriverinfoService {
     }*/
 
     //多个条件模糊查询出库信息
-    public List<StatisticsByGoods> findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
-        List<StatisticsByGoods> findalloutgood = driverinfoDao.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
+    public List<Driverinfo> findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<Driverinfo> findalloutgood = driverinfoDao.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
         return findalloutgood;
     }
 
     //多个条件模糊查询入库信息
-    public List<StatisticsByGoods> findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
-        List<StatisticsByGoods> findallingood = driverinfoDao.findallingood(driverbourn, drivercompany, drivertime, goodname);
+    public List<Driverinfo> findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
+        List<Driverinfo> findallingood = driverinfoDao.findallingood(driverbourn, drivercompany, drivertime, goodname);
         return findallingood;
     }
 
     //管理查询的 地址 企业 时间 名称 来查询
-    public List<StatisticsByGoods> selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
+    public List<Driverinfo> selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
         return driverinfoDao.selectAll(driverbourn,drivercompany,drivertime,goodname);
     }
 

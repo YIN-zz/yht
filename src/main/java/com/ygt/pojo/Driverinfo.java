@@ -36,6 +36,8 @@ public class Driverinfo {
     private String drivercarphoto;
     //货品出入库
     private String driverrinout;
+    //库管id
+    private Integer userid;
     //查询List集合
     private List<Goodsinfo> goodsinfoList;
 

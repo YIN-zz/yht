@@ -1,6 +1,10 @@
 package com.ygt.controller;
 
-import com.alibaba.fastjson.JSONObject;
+
+import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.JsonObject;
 import com.ygt.pojo.*;
 import com.ygt.service.ChemicalsinfoService;
 import com.ygt.service.DriverinfoService;
@@ -12,15 +16,13 @@ import com.ygt.service.GoodsinfoService;
 /*import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;*/
+import net.sf.json.JSONObject;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
@@ -29,11 +31,10 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Controller
-@RequestMapping("/DriverinfoController")
+//@RequestMapping("/DriverinfoController")
 //@Api(value="出入库信息管理",tags = "出入库信息管理接口")
 public class DriverinfoController {
     @Autowired
@@ -44,18 +45,22 @@ public class DriverinfoController {
     private GoodsinfoService goodsinfoService;
     @Autowired
     private FirminfoService firminfoService;
+    //private String list;
 
 
     //出入库和时间、货物名称查询
-    @RequestMapping(value = "allDriverinfo",method = RequestMethod.POST,produces = "application/json; charset=utf-8")
+    @RequestMapping(value = "allDriverinfo",produces = "application/json; charset=utf-8")
     @ResponseBody
-  //  @ApiOperation("根据出库、入库，时间，货物名称来查询信息")
+  //  @ApiOperation("根据出库、入库，时间，货物名称来查询信息,method = RequestMethod.POST")
   //  @ApiImplicitParams(value = {@ApiImplicitParam(name = "driverrinout,drivertime,goodname",value = "出库或者入库,时间,货物名称")})
     public String allDriverinfo(@Param("driverrinout")String driverrinout, @Param("drivertime")String drivertime, @Param("goodname")String goodname){
-        List<StatisticsByGoods> list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
+        System.out.println(driverrinout);
+        System.out.println(drivertime);
+        System.out.println(goodname);
+        List<Driverinfo> list = driverinfoService.allDriverinfo(driverrinout, drivertime, goodname);
         JSONObject obj = new JSONObject();
         obj.put("list",list);
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return  obj.toString();
     }
 
@@ -64,6 +69,14 @@ public class DriverinfoController {
   // @ApiOperation("添加出库的信息")
   //  @ApiImplicitParams(value = {@ApiImplicitParam(name="Driverinfo",value = "出入库的信息表")})
     public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
+        System.out.println("++++++++++++");
+        System.out.println(driverinfo.toString());
+        System.out.println(driverinfo.getDriverrecordphoto());
+        System.out.println(driverinfo.getDriverphoto());
+        System.out.println(driverinfo.getDrivercarphoto());
+        Integer userid = (Integer) session.getAttribute("userid");
+        driverinfo.setUserid(userid);;
+
         session.setAttribute("driverrinout",driverinfo.getDriverrinout());
     /*    Integer userid = (Integer) session.getAttribute("userid");
         String company = firminfoService.selectUserFind(userid);
@@ -96,6 +109,9 @@ public class DriverinfoController {
                 }
             }
         }
+        System.out.println(driverinfo.getDriverrecordphoto());
+        System.out.println(driverinfo.getDriverphoto());
+        System.out.println(driverinfo.getDrivercarphoto());
         Userinfo userinfo = new Userinfo();
         String username = driverinfo.getDriverdriver();
         String userphone = driverinfo.getDriverphone();
@@ -108,25 +124,61 @@ public class DriverinfoController {
         session.setAttribute("driverid",driverinfo.getDriverid());
         JSONObject obj = new JSONObject();
         if (aBoolean == true){
-            obj.put("200","成功");
+            obj.put("msg","成功");
             return obj.toString();
         }else {
-            obj.put("400","失败");
+            obj.put("agg","失败");
             return obj.toString();
         }
     }
     //出入库货物的登记
     @RequestMapping(value = "addBeiAnController",method = RequestMethod.POST,produces = "application/json; charset=utf-8")
-   // @ApiOperation("添加出库的信息中货物的信息")
-  //  @ApiImplicitParams(value = {@ApiImplicitParam(name="Goodsinfo",value = "货物信息表")}
-    public String addBeiAnController(Goodsinfo goodsinfo, HttpSession session){
-        Integer driverid = (Integer) session.getAttribute("driverid");
-        goodsinfo.setDriverid(driverid);
-        String company = (String) session.getAttribute("drivercompany");
-        Integer chid = driverinfoService.selectChemicalsinfo(goodsinfo.getGoodname());
-        goodsinfo.setChid(chid);
-        Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid,company);
-        //对库中化学品和设备总数量和重量进行修改，
+    @ResponseBody
+    public String addBeiAnController( String[] list,HttpSession session){
+       System.out.println(list.length);
+        Goodsinfo goodsinfo = new Goodsinfo();
+        JSONObject obj = new JSONObject();
+        if (list.length<=0) {
+            obj.put("agg","提交内容参数错误");
+            return obj.toString();
+        }
+
+
+      /*  ObjectMapper objectMapper = new ObjectMapper();
+        JavaType javaType = objectMapper.getTypeFactory().constructParametricType(List.class,Goodsinfo.class);
+
+        List<Goodsinfo> goodsinfoList = null;
+        try{
+            goodsinfoList = objectMapper.readValue(list,javaType);
+            for (int i = 0;i<goodsinfoList.size();i++){
+                Integer driverid = (Integer) session.getAttribute("driverid");
+                goodsinfo.setDriverid(driverid);
+                System.out.println(goodsinfoList.toString());
+                goodsinfoService.addBeiAn(goodsinfo);
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }*/
+      /*  System.out.println(list);
+        Goodsinfo goodsinfo = new Goodsinfo();
+        JSONObject jsonObject = JSONObject.fromObject(list);
+        System.out.println(jsonObject);*/
+//        for (int i = 0; i <size; i++){
+//            Integer driverid = (Integer) session.getAttribute("driverid");
+//            goodsinfo.setDriverid(driverid);
+//            System.out.println(goodsinfo);
+//            goodsinfoService.addBeiAn(goodsinfo);
+//        }
+
+      obj.put("msg","成功");
+     return obj.toString();
+     }
+       /* String company = (String) session.getAttribute("drivercompany");
+        goodsinfo.setGoodname(goodsinfo.getGoodname());*/
+       /* Integer chid = driverinfoService.selectChemicalsinfo(goodsinfo.getGoodname());
+        goodsinfo.setChid(chid);*/
+     //   Chemicalsinfo chemicalsinfo = chemicalsinfoService.selectChemicalsinfo(chid,company);
+       /* //对库中化学品和设备总数量和重量进行修改，
         String rinout = (String) session.getAttribute("rinout");
         if (rinout .equals("出库")){
             //出库修改
@@ -138,18 +190,7 @@ public class DriverinfoController {
             double cwerght = chemicalsinfo.getCwerght() + goodsinfo.getGoodeweight();
             int ccount =  chemicalsinfo.getCcount() + goodsinfo.getGoodcount();
             chemicalsinfoService.updateChemicalsin(cwerght,ccount,chid,company);
-        }
-        int i = goodsinfoService.addBeiAn(goodsinfo);
-        JSONObject obj = new JSONObject();
-        if (i > 0 ){
-            obj.put("200","成功");
-            return obj.toString();
-        }else {
-            obj.put("400","失败");
-            return obj.toString();
-        }
-    }
-
+        }*/
     //多个条件模糊查询出库信息
     /*@RequestMapping("findalloutgoods")
     @ResponseBody
@@ -170,10 +211,10 @@ public class DriverinfoController {
     @RequestMapping(value = "findalloutgood",produces = "application/json; charset=utf-8")
     @ResponseBody
     private String findalloutgood(String driverbourn,String drivercompany,String drivertime,String goodname){
-        List<StatisticsByGoods> findalloutgood = driverinfoService.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
+        List<Driverinfo> findalloutgood = driverinfoService.findalloutgood(driverbourn, drivercompany, drivertime, goodname);
         JSONObject obj = new JSONObject();
         obj.put("findalloutgood",findalloutgood);
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -181,10 +222,10 @@ public class DriverinfoController {
     @RequestMapping(value = "findallingood",produces = "application/json; charset=utf-8")
     @ResponseBody
     private String findallingood(String driverbourn,String drivercompany,String drivertime,String goodname){
-        List<StatisticsByGoods> findallingood = driverinfoService.findallingood(driverbourn, drivercompany, drivertime, goodname);
+        List<Driverinfo> findallingood = driverinfoService.findallingood(driverbourn, drivercompany, drivertime, goodname);
         JSONObject obj = new JSONObject();
         obj.put("findallingood",findallingood);
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -192,10 +233,10 @@ public class DriverinfoController {
     @RequestMapping(value = "selectAll",produces = "application/json; charset=utf-8")
     @ResponseBody
     public String selectAll(@Param("driverbourn") String driverbourn,@Param("drivercompany") String drivercompany, @Param("drivertime") String drivertime, @Param("goodname") String goodname){
-        List<StatisticsByGoods> list = driverinfoService.selectAll(driverbourn, drivercompany, drivertime, goodname);
+        List<Driverinfo> list = driverinfoService.selectAll(driverbourn, drivercompany, drivertime, goodname);
         JSONObject obj = new JSONObject();
         obj.put("list",list);
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -206,7 +247,7 @@ public class DriverinfoController {
         List<StatisticsByGoods> statisticsByGoods = driverinfoService.selectDriAll(driverrinout, driverbourn);
         JSONObject obj = new JSONObject();
         obj.put("list",statisticsByGoods);
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 
@@ -217,7 +258,7 @@ public class DriverinfoController {
         List<StatisticsByAbnormal> statisticsByAbnormals = driverinfoService.selectByAbnormal(driverphone);
         JSONObject obj = new JSONObject();
         obj.put("list",statisticsByAbnormals);
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
 
     }
@@ -229,7 +270,7 @@ public class DriverinfoController {
         List<StatisticsByGoods> statisticsByGoods = driverinfoService.selectDriGood();
         JSONObject obj = new JSONObject();
         obj.put("list",statisticsByGoods);
-        obj.put("200","成功");
+        obj.put("msg","成功");
         return obj.toString();
     }
 }

@@ -19,10 +19,10 @@ public class Goodsinfo {
     //货物数量
     private Integer goodcount;
     //货物重量
-    private Double goodeweight;
+    private Double goodweight;
     //出入库id
     private Integer driverid;
-    //库内货物总id
-    private Integer chid;
+/*    //库内货物总id
+    private Integer chid;*/
 
 }
