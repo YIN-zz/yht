@@ -68,7 +68,7 @@ public class DriverinfoController {
     @RequestMapping(value = "addDriverinfo",method = RequestMethod.POST,produces = "application/json; charset=utf-8")
   // @ApiOperation("添加出库的信息")
   //  @ApiImplicitParams(value = {@ApiImplicitParam(name="Driverinfo",value = "出入库的信息表")})
-    public String addDriverinfo(@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session, Driverinfo driverinfo)throws IOException {
+    public String addDriverinfo(Driverinfo driverinfo,@RequestParam("files") MultipartFile[] multipartFiles, HttpServletRequest request, HttpSession session)throws IOException {
         System.out.println("++++++++++++");
         System.out.println(driverinfo.toString());
         System.out.println(driverinfo.getDriverrecordphoto());

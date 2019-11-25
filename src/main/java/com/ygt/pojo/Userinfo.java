@@ -20,4 +20,6 @@ public class Userinfo {
     private String userphoto;
     //注册人身份
     private Integer useridentity;
+    //人员是否可见（可见0、不可见1）
+    private Integer uservisible;
 }

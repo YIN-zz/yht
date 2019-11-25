@@ -15,7 +15,6 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-@RequestMapping("/TransportinfoController")
 public class TransportinfoController {
 
     @Autowired

@@ -61,11 +61,6 @@
       <artifactId>commonUtil</artifactId>
       <version>1.0.9</version>
     </dependency>
-    <dependency>
-      <groupId>net.sf.json-lib</groupId>
-      <artifactId>json-lib</artifactId>
-      <version>2.4</version>
-    </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.json/json -->
     <dependency>
@@ -73,34 +68,11 @@
       <artifactId>json</artifactId>
       <version>20180130</version>
     </dependency>
-    <!-- 导出表格 -->
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi</artifactId>
-      <version>3.6</version>
-    </dependency>
     <!-- log4j -->
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
-    </dependency>
-    <!-- 微信4j -->
-    <dependency>
-      <groupId>org.weixin4j</groupId>
-      <artifactId>weixin4j</artifactId>
-      <version>0.1.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-websocket</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.websocket</groupId>
-      <artifactId>javax.websocket-api</artifactId>
-      <version>1.0</version>
-      <scope>provided</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>
@@ -155,11 +127,6 @@
       <version>${spring.version}</version>
     </dependency>
 
-    <!-- Mybatis -->
-    <!-- <dependency> <groupId>org.mybatis</groupId> <artifactId>mybatis</artifactId>
-        <version>${mybatis.version}</version> </dependency> <dependency> <groupId>org.mybatis</groupId>
-        <artifactId>mybatis-spring</artifactId> <version>${mybatis.spring.version}</version>
-        </dependency> -->
     <!-- 分页助手 -->
     <dependency>
       <groupId>com.github.pagehelper</groupId>
@@ -211,22 +178,12 @@
       <version>2.9.8</version>
     </dependency>
 
-
-
-
     <!-- 连接池 -->
     <dependency>
       <groupId>com.jolbox</groupId>
       <artifactId>bonecp-spring</artifactId>
       <version>0.8.0.RELEASE</version>
     </dependency>
-
-    <!-- httpclient -->
-   <!-- <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>${httpclient.version}</version>
-    </dependency>-->
 
     <!-- JSP相关 -->
     <dependency>
@@ -269,11 +226,6 @@
       <artifactId>commons-lang3</artifactId>
       <version>${commons-lang3.version}</version>
     </dependency>
-      <!--<dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-io</artifactId>
-        <version>${commons-io.version}</version>
-      </dependency>-->
     <!-- 短信验证码 -->
     <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
     <dependency>
@@ -287,12 +239,6 @@
       <artifactId>httpclient</artifactId>
       <version>4.5.2</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
-    <!--<dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpcore</artifactId>
-      <version>4.3.2</version>
-    </dependency>-->
     <!--短信sdk-->
     <dependency>
       <groupId>com.aliyun</groupId>
@@ -305,54 +251,11 @@
       <version>1.1.0</version>
     </dependency>
 
-    <!-- 物流查询的资源文件 -->
-   <!-- <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.15</version>
-    </dependency>-->
-<!--    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.3</version>
-    </dependency>-->
-    <!--<dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpcore</artifactId>
-      <version>4.2.1</version>
-    </dependency>-->
-    <!--<dependency>
-      <groupId>commons-lang</groupId>
-      <artifactId>commons-lang</artifactId>
-      <version>2.6</version>
-    </dependency>
-    <dependency>-->
-      <!--<groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-util</artifactId>
-      <version>9.3.7.v20160115</version>
-    </dependency>-->
-    <!--支付宝支付所需的核心包 -->
-    <dependency>
-      <groupId>com.alipay.sdk</groupId>
-      <artifactId>alipay-sdk-java</artifactId>
-      <version>3.0.0</version>
-    </dependency>
     <!-- 公共接口封装返回类 -->
     <dependency>
       <groupId>org.codehaus.jackson</groupId>
       <artifactId>jackson-jaxrs</artifactId>
       <version>1.9.11</version>
-    </dependency>
-    <!-- 七牛云 -->
-    <dependency>
-      <groupId>com.qiniu</groupId>
-      <artifactId>sdk</artifactId>
-      <version>6.1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.qiniu</groupId>
-      <artifactId>qiniu-java-sdk</artifactId>
-      <version>[7.2.0, 7.2.99]</version>
     </dependency>
     <!-- 读取xml -->
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2 -->
@@ -367,31 +270,6 @@
       <artifactId>wxpay-sdk</artifactId>
       <version>0.0.3</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-    <!--<dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.5.2</version>
-    </dependency>-->
-
-    <!-- https://mvnrepository.com/artifact/com.google.zxing/core -->
-    <!--<dependency>
-      <groupId>com.google.zxing</groupId>
-      <artifactId>core</artifactId>
-      <version>3.3.0</version>
-    </dependency>-->
-    <!--微信支付 -->
-    <dependency>
-      <groupId>org.jdom</groupId>
-      <artifactId>jdom2</artifactId>
-      <version>2.0.5</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.zxing</groupId>
-      <artifactId>core</artifactId>
-      <version>3.3.0</version>
-    </dependency>
-
 
     <!--聊天功能需要的jar包-->
     <!-- springboot websocket -->

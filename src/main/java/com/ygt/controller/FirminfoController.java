@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 import java.security.NoSuchAlgorithmException;
 
 @Controller
-@RequestMapping("/FirminfoController")
 public class FirminfoController {
 
     @Autowired
@@ -43,7 +42,8 @@ public class FirminfoController {
     public String enrollerStorekeeper(String username,String userphone,HttpSession session) throws NoSuchAlgorithmException {
         Integer userid = null;
         Integer useridentity = 3;
-        userinfoService.enrolluser(userid,username,userphone, md5Util.md5(new String ("123456")),useridentity);
+        Integer uservisible = 0;
+        userinfoService.enrolluser(userid,username,userphone, md5Util.md5(new String ("123456")),useridentity,uservisible);
         Userinfo finduser = userinfoService.finduser(userphone);
         Integer userid1 = finduser.getUserid();
         Integer firmid = null;

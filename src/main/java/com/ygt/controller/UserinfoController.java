@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/UserinfoController")
@@ -37,7 +38,8 @@ public class UserinfoController {
             if (finduser == null) {
                 Integer userid = null;
                 Integer useridentity = 2;
-                userinfoService.enrolluser(userid, username, userphone, md5Util.md5(new String(userpassword)), useridentity);
+                Integer uservisible = 0;
+                userinfoService.enrolluser(userid, username, userphone, md5Util.md5(new String(userpassword)), useridentity,uservisible);
                 Userinfo finduser1 = userinfoService.finduser(userphone);
                 Integer userid1 = finduser1.getUserid();
                 session.setAttribute("userid", userid1);
@@ -167,7 +169,8 @@ public class UserinfoController {
             if (finduser == null) {
                 Integer userid = null;
                 Integer useridentity = 5;
-                userinfoService.enrolluser(userid, username, userphone, md5Util.md5(new String(userpassword)), useridentity);
+                Integer uservisible = 0;
+                userinfoService.enrolluser(userid, username, userphone, md5Util.md5(new String(userpassword)), useridentity,uservisible);
                 Userinfo finduser1 = userinfoService.finduser(userphone);
                 Integer userid1 = finduser1.getUserid();
                 session.setAttribute("userid", userid1);
@@ -182,5 +185,26 @@ public class UserinfoController {
             return obj.toString();
         }
         return null;
+    }
+
+    //查询企业注册人员
+    @RequestMapping(value="checkus",produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public String checkus(String firmname){
+        List<Userinfo> checkus = userinfoService.checkus(firmname);
+        JSONObject obj = new JSONObject();
+        obj.put("message",checkus);
+        obj.put("msg","成功");
+        return obj.toString();
+    }
+
+    //删除企业注册人员(假删除)
+    @RequestMapping(value="remonveus",produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public String remonveus(String username,String userphone){
+        userinfoService.remonveus(username, userphone);
+        JSONObject obj = new JSONObject();
+        obj.put("msg","成功");
+        return obj.toString();
     }
 }
