@@ -46,16 +46,16 @@ public interface DriverinfoDao {
     @Select("<script> " +
             "select * from driverinfo " +
             "<where> driverrinout = '出库' " +
-            "<if test=\"driverbourn!= null\">" +
+            "<if test=\"driverbourn!= ''\">" +
             "and driverbourn like CONCAT('%',#{driverbourn},'%')" +
             "</if>" +
-            "<if test=\"drivercompany!= null\">" +
+            "<if test=\"drivercompany!= ''\">" +
             "and drivercompany like CONCAT('%',#{drivercompany},'%')" +
             "</if> " +
-            "<if test=\"drivertime!= null\">" +
+            "<if test=\"drivertime!= ''\">" +
             "and drivertime like CONCAT('%',#{drivertime},'%')" +
             "</if>" +
-            "<if test=\"goodname!= null\">" +
+            "<if test=\"goodname!= ''\">" +
             "and driverrid = (select driverrid from goodsinfo where goodname = #{goodname})" +
             "</if> " +
             "</where> " +
@@ -68,16 +68,16 @@ public interface DriverinfoDao {
     @Select("<script> " +
             "select * from driverinfo " +
             "<where> driverrinout = '入库' " +
-            "<if test=\"driverbourn!= null\">" +
+            "<if test=\"driverbourn!= ''\">" +
             "and driverbourn like CONCAT('%',#{driverbourn},'%')" +
             "</if>" +
-            "<if test=\"drivercompany!= null\">" +
+            "<if test=\"drivercompany!= ''\">" +
             "and drivercompany like CONCAT('%',#{drivercompany},'%')" +
             "</if> " +
-            "<if test=\"drivertime!= null\">" +
+            "<if test=\"drivertime!= ''\">" +
             "and drivertime like CONCAT('%',#{drivertime},'%')" +
             "</if>" +
-            "<if test=\"goodname!= null\">" +
+            "<if test=\"goodname!= ''\">" +
             "and driverrid = (select driverrid from goodsinfo where goodname = #{goodname})" +
             "</if> " +
             "</where> " +
@@ -89,16 +89,16 @@ public interface DriverinfoDao {
     @Select("<script> " +
             "select * from driverinfo " +
             "<where> " +
-            "<if test=\"driverbourn!= null\">" +
+            "<if test=\"driverbourn!= ''\">" +
             "and driverbourn like CONCAT('%',#{driverbourn},'%')" +
             "</if>" +
-            "<if test=\"drivercompany!= null\">" +
+            "<if test=\"drivercompany!= ''\">" +
             "and drivercompany like CONCAT('%',#{drivercompany},'%')" +
             "</if> " +
-            "<if test=\"drivertime!= null\">" +
+            "<if test=\"drivertime!= ''\">" +
             "and drivertime like CONCAT('%',#{drivertime},'%')" +
             "</if>" +
-            "<if test=\"goodname!= null\">" +
+            "<if test=\"goodname!= ''\">" +
             "and driverrid = (select drid from goodsinfo where goodname = #{goodname})" +
             "</if> " +
             "</where> " +
