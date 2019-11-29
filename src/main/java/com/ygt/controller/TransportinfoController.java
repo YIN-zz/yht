@@ -2,7 +2,6 @@ package com.ygt.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.ygt.pojo.Driverinfo;
-import com.ygt.pojo.Transportinfo;
 import com.ygt.service.TransportinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.List;
 
@@ -20,15 +18,27 @@ public class TransportinfoController {
     @Autowired
     private TransportinfoService transportinfoService;
 
-    //遍历司机运输目的地（司机查看所有运输的信息）
-    @RequestMapping(value="findallbourn",produces = "application/json; charset=utf-8")
+    //遍历司机运输目的地（司机查看所有运输的信息）（未到达的）
+    @RequestMapping(value="findallbournno",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public String findallbourn(HttpSession session){
+    public String findallbournno(HttpSession session){
         Integer userid = (Integer)session.getAttribute("userid");
-        List<Driverinfo> findallbourn = transportinfoService.findallbourn(userid);
+        List<Driverinfo> findallbournno = transportinfoService.findallbournno(userid);
         JSONObject obj = new JSONObject();
         obj.put("msg","成功");
-        obj.put("message",findallbourn);
+        obj.put("message",findallbournno);
+        return obj.toString();
+    }
+
+    //遍历司机运输目的地（司机查看所有运输的信息）（到达）
+    @RequestMapping(value="findallbournyes",produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public String findallbournyes(HttpSession session){
+        Integer userid = (Integer)session.getAttribute("userid");
+        List<Driverinfo> findallbournyes = transportinfoService.findallbournyes(userid);
+        JSONObject obj = new JSONObject();
+        obj.put("msg","成功");
+        obj.put("message",findallbournyes);
         return obj.toString();
     }
 
@@ -59,17 +69,6 @@ public class TransportinfoController {
     public String changeend(Integer transportid,String transportend){
         transportinfoService.changeend(transportid, transportend);
         JSONObject obj = new JSONObject();
-        obj.put("msg","成功");
-        return obj.toString();
-    }
-
-    //测试返回时间格式(datetime的时间格式返回的是毫秒值，前台显示的时候把毫秒值转换为想要的格式）
-    @RequestMapping(value="findtransport",produces = "application/json; charset=utf-8")
-    @ResponseBody
-    public String findtransport(Integer driverid){
-        List<Transportinfo> findtransport = transportinfoService.findtransport(driverid);
-        JSONObject obj = new JSONObject();
-        obj.put("message",findtransport);
         obj.put("msg","成功");
         return obj.toString();
     }

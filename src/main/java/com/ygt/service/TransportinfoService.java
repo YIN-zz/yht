@@ -15,15 +15,28 @@ public class TransportinfoService {
     @Autowired
     private TransportinfoDao transportinfodao;
 
-    //遍历司机运输目的地（司机查看所有运输的信息）
-    public List<Driverinfo> findallbourn(Integer userid){
-        List<Driverinfo> findallbourn = transportinfodao.findallbourn(userid);
-        return findallbourn;
+    //遍历司机运输目的地（司机查看所有运输的信息）（未到达的）
+    public List<Driverinfo> findallbournno(Integer userid){
+        List<Driverinfo> findallbournno = transportinfodao.findallbournno(userid);
+        return findallbournno;
     }
-    //查询的附表的信息
-    public List<Transportinfo> findtransport(Integer driverid){
-        List<Transportinfo> findtransport = transportinfodao.findtransport(driverid);
-        return findtransport;
+
+    //遍历司机运输目的地（司机查看所有运输的信息）（到达）
+    public List<Driverinfo> findallbournyes(Integer userid){
+        List<Driverinfo> findallbournyes = transportinfodao.findallbournyes(userid);
+        return findallbournyes;
+    }
+
+    //查询的附表的信息(未到达）
+    public List<Transportinfo> findtransportno(Integer driverid){
+        List<Transportinfo> findtransportno = transportinfodao.findtransportno(driverid);
+        return findtransportno;
+    }
+
+    //查询的附表的信息(到达）
+    public List<Transportinfo> findtransportyes(Integer driverid){
+        List<Transportinfo> findtransportyes = transportinfodao.findtransportyes(driverid);
+        return findtransportyes;
     }
 
     //添加货物运输的信息
