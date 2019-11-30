@@ -9,18 +9,23 @@
     <list default="true" id="7b9c1bb0-bf5c-435f-81c5-7c6ae852105a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/AbnormalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/AbnormalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/CommentinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/CommentinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/CompanyinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/CompanyinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/FirminfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/FirminfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/LogisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/LogisticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/MapsinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/MapsinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/PoliceinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/PoliceinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/ReleaseinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/ReleaseinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/SendCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/SendCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/SmsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/SmsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/TransportinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/TransportinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/TransportinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/mapper/TransportinfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/service/TransportinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/service/TransportinfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/AbnormalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/AbnormalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/TransportinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/TransportinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/mapper/TransportinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/mapper/TransportinfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/service/TransportinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/service/TransportinfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/AbnormalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/AbnormalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/TransportinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/TransportinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/TransportinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/mapper/TransportinfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/TransportinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/service/TransportinfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ygt/upload.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/UploadVideo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/UserinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/UserinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ygt/controller/WarningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ygt/controller/WarningController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadvideo.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ygt/controller/UserinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ygt/controller/UserinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/UserinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ygt/WEB-INF/classes/com/ygt/controller/UserinfoController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +88,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1SAuXvNZ4IB5ljZoltMYUQvzLSt" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -318,7 +326,12 @@
       <workItem from="1574751195164" duration="1257000" />
       <workItem from="1574752638937" duration="1176000" />
       <workItem from="1574921129975" duration="246000" />
-      <workItem from="1574990923862" duration="4774000" />
+      <workItem from="1574990923862" duration="5222000" />
+      <workItem from="1574996280979" duration="32000" />
+      <workItem from="1575076012233" duration="2344000" />
+      <workItem from="1575084106047" duration="2799000" />
+      <workItem from="1575097821772" duration="27000" />
+      <workItem from="1575099506796" duration="6486000" />
     </task>
     <task id="LOCAL-00001" summary="警员注册、登录、修改密码、查询所有注册警员（发送手机验证码、md5加密）">
       <created>1571110664457</created>
@@ -467,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574649018479</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="2019/11/29">
+      <created>1574995756253</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1574995756253</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,6 +518,7 @@
     <MESSAGE value="更改用户数据库二次上传" />
     <MESSAGE value="2019/11/7" />
     <MESSAGE value="2019/11/14" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019/11/14" />
+    <MESSAGE value="2019/11/29" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019/11/29" />
   </component>
 </project>

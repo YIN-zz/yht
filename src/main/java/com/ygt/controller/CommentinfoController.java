@@ -1,6 +1,5 @@
 package com.ygt.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.ygt.pojo.Commentinfo;
 import com.ygt.pojo.Releaseinfo;
 import com.ygt.pojo.Userinfo;
@@ -14,10 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
-@RequestMapping("/CommentinfoController")
+@RequestMapping("/easytubepass")
 public class CommentinfoController {
 
     @Autowired
@@ -25,10 +25,13 @@ public class CommentinfoController {
     @Autowired
     private UserinfoService userinfoService;
 
+    //存储预返回页面的结果对象
+    private Map<String, Object> result = new HashMap<>();
+
     //添加评论信息（连表查询不会返回releaseid）
     @RequestMapping(value = "enrollcomment", produces = "application/json; charset=utf-8")
     @ResponseBody
-    public String enrollcomment(String releasename, String releasetime, String commentcontent, HttpSession session) {
+    public Map<String, Object> enrollcomment(String releasename, String releasetime, String commentcontent, HttpSession session) {
         Integer commentid = null;
         Integer userid = (Integer) session.getAttribute("userid");
         Userinfo findusername = userinfoService.findusername(userid);
@@ -37,26 +40,32 @@ public class CommentinfoController {
         String commenttime = sdf.format(new Date());
         Releaseinfo findreleaseid = commentinfoService.findreleaseid(releasename, releasetime);
         Integer releaseid = findreleaseid.getReleaseid();
-        commentinfoService.enrollcomment(commentid, commentname, commentcontent, commenttime, releaseid);
-        JSONObject obj = new JSONObject();
-        obj.put("msg", "成功");
-        return obj.toString();
+        boolean enrollcomment = commentinfoService.enrollcomment(commentid, commentname, commentcontent, commenttime, releaseid);
+        if(enrollcomment){
+            result.put("msg","成功");
+        }else{
+            result.put("msg","服务器异常，请稍后重试");
+        }
+        return result;
     }
 
     //删除评论
     @RequestMapping(value = "removecomment", produces = "application/json; charset=utf-8")
     @ResponseBody
-    public String removecomment(String commentname, String commenttime) {
-        commentinfoService.removecomment(commentname, commenttime);
-        JSONObject obj = new JSONObject();
-        obj.put("msg", "成功");
-        return obj.toString();
+    public Map<String, Object> removecomment(String commentname, String commenttime) {
+        boolean removecomment = commentinfoService.removecomment(commentname, commenttime);
+        if(removecomment){
+            result.put("msg","成功");
+        }else{
+            result.put("msg","服务器异常，请稍后重试");
+        }
+        return result;
     }
 
     //回复评论信息
     @RequestMapping(value = "enrollonecomment", produces = "application/json; charset=utf-8")
     @ResponseBody
-    public String enrollonecomment(String releasename, String releasetime, Integer commentid, String commentcontent, HttpSession session) {
+    public Map<String, Object> enrollonecomment(String releasename, String releasetime, Integer commentid, String commentcontent, HttpSession session) {
         Integer userid = (Integer) session.getAttribute("userid");
         Userinfo findusername = userinfoService.findusername(userid);
         String commentname = findusername.getUsername();
@@ -65,20 +74,22 @@ public class CommentinfoController {
         Releaseinfo findreleaseid = commentinfoService.findreleaseid(releasename, releasetime);
         Integer releaseid = findreleaseid.getReleaseid();
         Integer replyid = commentid;
-        commentinfoService.enrollonecomment(commentname, commentcontent, commenttime, releaseid, replyid);
-        JSONObject obj = new JSONObject();
-        obj.put("msg", "成功");
-        return obj.toString();
+        boolean enrollonecomment = commentinfoService.enrollonecomment(commentname, commentcontent, commenttime, releaseid, replyid);
+        if(enrollonecomment){
+            result.put("msg","成功");
+        }else{
+            result.put("msg","服务器异常，请稍后重试");
+        }
+        return result;
     }
 
     //查看单个评论
     @RequestMapping(value = "findcomment", produces = "application/json; charset=utf-8")
     @ResponseBody
-    public String findcomment(Integer commentid){
+    public Map<String, Object> findcomment(Integer commentid){
         Commentinfo findcomment = commentinfoService.findcomment(commentid);
-        JSONObject obj = new JSONObject();
-        obj.put("msg", "成功");
-        obj.put("findcomment",findcomment);
-        return obj.toString();
+        result.put("msg", "成功");
+        result.put("findcomment",findcomment);
+        return result;
     }
 }

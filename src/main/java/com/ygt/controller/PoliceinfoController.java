@@ -1,6 +1,5 @@
 package com.ygt.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.ygt.pojo.Userinfo;
 import com.ygt.service.PoliceinfoService;
 import com.ygt.service.UserinfoService;
@@ -11,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
-@RequestMapping("/PoliceinfoController")
+@RequestMapping("/easytubepass")
 public class PoliceinfoController {
 
     @Autowired
@@ -23,10 +24,13 @@ public class PoliceinfoController {
     @Autowired
     private MD5Util md5Util;
 
+    //存储预返回页面的结果对象
+    private Map<String, Object> result = new HashMap<>();
+
     //添加其余警员的注册
     @RequestMapping(value="enrollpolice",produces = "application/json; charset=utf-8")
     @ResponseBody
-    public String enrollpolice(String username,String userphone,String policeaddress) throws NoSuchAlgorithmException {
+    public Map<String, Object> enrollpolice(String username,String userphone,String policeaddress) throws NoSuchAlgorithmException {
         Integer userid = null;
         Integer useridentity = 1;
         Integer uservisible = 0;
@@ -34,9 +38,12 @@ public class PoliceinfoController {
         Userinfo finduser = userinfoService.finduser(userphone);
         Integer userid1 = finduser.getUserid();
         Integer policeid = null;
-        policeinfoService.enrollpolice(policeid,policeaddress,userid1);
-        JSONObject obj = new JSONObject();
-        obj.put("msg","成功");
-        return obj.toString();
+        boolean enrollpolice = policeinfoService.enrollpolice(policeid, policeaddress, userid1);
+        if(enrollpolice){
+            result.put("msg","成功");
+        }else{
+            result.put("msg","服务器异常，请稍后重试");
+        }
+        return result;
     }
 }
